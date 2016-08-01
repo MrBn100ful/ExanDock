@@ -10,8 +10,6 @@ package fr.MrBn100ful.ExanLauncher;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.swing.JFrame;
-
 import com.sun.jna.Native;
 import com.sun.jna.Structure;
 import com.sun.jna.platform.win32.WinDef.HWND;
@@ -19,8 +17,8 @@ import com.sun.jna.ptr.IntByReference;
 import com.sun.jna.win32.StdCallLibrary;
 import com.sun.jna.win32.W32APIOptions;
 
-@SuppressWarnings("serial")
-public class Blurred extends JFrame {
+
+public class Blurred {
 
 	public static interface Dwmapi extends StdCallLibrary {
 		Dwmapi INSTANCE = (Dwmapi) Native.loadLibrary("Dwmapi", Dwmapi.class, W32APIOptions.UNICODE_OPTIONS);
