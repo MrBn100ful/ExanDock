@@ -1,7 +1,18 @@
 # ExanLauncher WIP
 A replace for the windows start menu in java.
-![ExanLauncher Logo](https://puu.sh/ql2Qo/0af211b5fa.png)
+
 =====
+==todo
+
+- [ ] Drag and drop icon.
+- [ ] List program.
+- [x] Suport all screen.
+- [ ] See what program is runing.
+- [ ] Make it wort is linux mac and windows.
+- [ ] Make the program nice.
+- 
 A example of the launcher
+
 =====
-![ExanLauncher example](https://puu.sh/ql2BD/b986445c20.png)
+![ExanLauncher example](https://puu.sh/qmjnV/406f82a2c5.gif)
+:)
