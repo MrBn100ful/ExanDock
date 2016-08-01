@@ -2,7 +2,7 @@
 A replace for the windows start menu in java.
 
 =====
-todo
+##todo
 
 - [ ] Drag and drop icon.
 - [ ] List program.
@@ -10,7 +10,8 @@ todo
 - [ ] See what program is runing.
 - [ ] Make it wort is linux mac and windows.
 - [ ] Make the program nice.
-- 
+
+
 A example of the launcher
 
 =====
