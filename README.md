@@ -1,8 +1,8 @@
-# ExanLauncher WIP
+# ExanLauncher 
 A replace for the windows start menu in java.
 
 =====
-==todo
+todo
 
 - [ ] Drag and drop icon.
 - [ ] List program.
