@@ -12,7 +12,7 @@ A replace for the windows start menu in java.
 - [ ] Make the program nice.
 
 
-A example of the launcher
+##A example of the launcher
 
 =====
 ![ExanLauncher example](https://puu.sh/qmjnV/406f82a2c5.gif)
