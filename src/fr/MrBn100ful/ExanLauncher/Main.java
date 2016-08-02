@@ -17,7 +17,11 @@ import java.awt.GraphicsEnvironment;
 import java.awt.dnd.DropTarget;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.LocalDateTime;
+
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -42,9 +46,24 @@ public class Main extends JFrame {
 	public JLabel dropicon;
 	public JFrame style = new JFrame();
 	public JFrame main = new JFrame();
+	@SuppressWarnings("unused")
+	private DragAndDropIcon DragAndDropIcon;
 
 
-	public Main(Component c) {
+	@SuppressWarnings("resource")
+	public Main(Component c) throws IOException {
+		
+		File iconinfo = new File("iconinfo.txt");
+		System.out.println("Debug program launch");
+		if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+			FileReader iconinforead = new FileReader("iconinfo.txt");
+			int iconinfonumber = iconinforead.read();
+			System.out.println("Debug " + (iconinfonumber - 1) + " icon create");
+		}
+		
+		
+		
+		
 		
 		GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
 		int width = gd.getDisplayMode().getWidth();
@@ -58,6 +77,9 @@ public class Main extends JFrame {
 		main.setAlwaysOnTop(true);
 		main.setResizable(false);
 		main.setContentPane(frame = new Frame());
+		//main.setContentPane(DragAndDropIcon = new DragAndDropIcon());
+		
+		
 		main.setBackground(new Color(243, 243, 243, 150));
 
 		dropicon = new JLabel();
@@ -65,8 +87,7 @@ public class Main extends JFrame {
 		main.add(dropicon);
 		DragAndDropIcon DropIcon = new DragAndDropIcon();
 		new DropTarget(dropicon, DropIcon);
-
-
+        
 		clock = new JTextArea();
 		clock.setBounds(0, (height - 28), 60, height);
 		clock.setFont(UIManager.getFont("Label.font").deriveFont(Font.BOLD, 16f));
@@ -107,11 +128,11 @@ public class Main extends JFrame {
 
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		ButtonAPI.setSystemLookNFeel();
-		ButtonAPI.setResourcePath("/fr/MrBn100ful/ExanLauncher/rescources");
+		ButtonAPI.setResourcePath("/fr/MrBn100ful/ExanLauncher/Rescources");
 		instance = new Main(null);
-		System.out.println("Debug program launch");
+		
 	}
 	public void tickTock() {
 		int hourint = LocalDateTime.now().getHour();

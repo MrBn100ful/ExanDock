@@ -1,6 +1,6 @@
 package fr.MrBn100ful.ExanLauncher;
 
-
+import java.awt.Image;
 import java.awt.datatransfer.DataFlavor;
 
 /**
@@ -15,62 +15,158 @@ import java.awt.dnd.DropTargetDragEvent;
 import java.awt.dnd.DropTargetDropEvent;
 import java.awt.dnd.DropTargetEvent;
 import java.awt.dnd.DropTargetListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 
+import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import javax.swing.filechooser.FileSystemView;
 
-import fr.MrBn100ful.ButtonAPI.ButtonAPI;
 import fr.MrBn100ful.ButtonAPI.event.ButtonAPIEvent;
 import fr.MrBn100ful.ButtonAPI.event.ButtonAPIEventListener;
-import fr.MrBn100ful.ButtonAPI.textured.STexturedButton;
+import net.coobird.thumbnailator.Thumbnails;
 
 @SuppressWarnings("serial")
 public class DragAndDropIcon extends JPanel implements DropTargetListener, ButtonAPIEventListener  {
 	
-	private STexturedButton app1 = new STexturedButton(ButtonAPI.getResource("app.png"));
-	private STexturedButton app2 = new STexturedButton(ButtonAPI.getResource("app.png"));
-	private STexturedButton app3 = new STexturedButton(ButtonAPI.getResource("app.png"));
-	private STexturedButton app4 = new STexturedButton(ButtonAPI.getResource("app.png"));
-	private STexturedButton app5 = new STexturedButton(ButtonAPI.getResource("app.png"));
-	
-	@SuppressWarnings("unchecked")
+	int iconnumber = 1;
+	Frame Frame = new Frame();
+	@SuppressWarnings({ "unchecked", "resource" })
 	@Override
 	public void drop(DropTargetDropEvent event) {
+		
+		
+		
 		System.out.println("Debug drag and drop");
         try {
            event.acceptDrop(DnDConstants.ACTION_COPY);
             List<File> droppedFiles = (List<File>)
                 event.getTransferable().getTransferData(DataFlavor.javaFileListFlavor);
             
-            app1.setBounds(0, 70);
-    		app1.addEventListener(this);
-
-    		app2.setBounds(0, 140);
-    		app2.addEventListener(this);
-
-    		app3.setBounds(0, 210);
-    		app3.addEventListener(this);
-
-    		app4.setBounds(0, 280);
-    		app4.addEventListener(this);
-
-    		app5.setBounds(0, 350);
-    		app5.addEventListener(this);
-    		
-        	this.add(app1);
-    		this.add(app2);
-    		this.add(app3);
-    		this.add(app4);
-    		this.add(app5);
+            
+            
     		
             for (File file : droppedFiles) {
             	System.out.println(file);
-            	
-            	
-        		
-        		
-            	
+        		try {
+
+        			File iconinfo = new File("iconinfo.txt");
+        			
+					if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+						FileReader iconinforead = new FileReader("iconinfo.txt");
+						int iconinfonumber = iconinforead.read();
+						if (!(iconinfonumber > 12)){
+	        				String iconpath = file.getPath();
+	        				if (iconpath.endsWith(".exe")){
+	        					
+	        					
+	        					
+	        					File icon = new File("icon"+ iconinfonumber+".txt");
+	                			FileWriter iconpathwriter = new FileWriter(icon);
+	                			
+	                			iconpathwriter.write(iconpath);
+	                			iconpathwriter.flush();
+	                			iconpathwriter.close();
+
+	                			
+	                			
+	                			
+	                			Icon ico = FileSystemView.getFileSystemView().getSystemIcon(file);
+
+	                			Image image = ((ImageIcon) ico).getImage();
+	                			
+	                			BufferedImage bi = (BufferedImage)image;
+	                			
+	                			File f = new File("icon"+ iconinfonumber + ".png");
+	                			
+	                			ImageIO.write(bi, "png", f);
+	                			Thumbnails.of("icon"+iconinfonumber + ".png").size(40, 40).toFile("icon"+iconinfonumber + ".png");
+	                			
+	                			iconinfonumber = iconinfonumber + 1;
+	                			
+	                			FileWriter iconinfowriter = new FileWriter(iconinfo);
+	    	        			iconinfowriter.write(iconinfonumber);
+	    	        			iconinfowriter.flush();
+	    	        			iconinfowriter.close();
+	                			
+	                			
+	                			System.out.println("Debug txt create");
+	                			System.out.println("Debug image create");
+	                			Frame.icon1();
+	        					
+	        				}else {
+	        					System.out.println("Debug file is no a exe");
+	        					
+	        				}
+	        				
+	        			}
+					}else {
+						
+						FileWriter iconinfowriter = new FileWriter(iconinfo);
+	        			iconinfowriter.write(iconnumber);
+	        			iconinfowriter.flush();
+	        			iconinfowriter.close();
+	        			int iconinfonumber = 1;
+						if (!(iconnumber > 12)){
+	        				String iconpath = file.getPath();
+	        				if (iconpath.endsWith(".exe")){
+	        					
+	        					
+	        					
+	        					File icon = new File("icon"+ iconinfonumber+".txt");
+	                			FileWriter iconpathwriter = new FileWriter(icon);
+	                			
+	                			iconpathwriter.write(iconpath);
+	                			iconpathwriter.flush();
+	                			iconpathwriter.close();
+
+	                			
+	                			
+	                			
+	                			Icon ico = FileSystemView.getFileSystemView().getSystemIcon(file);
+
+	                			Image image = ((ImageIcon) ico).getImage();
+	                			
+	                			BufferedImage bi = (BufferedImage)image;
+	                			
+	                			File f = new File("icon"+ iconinfonumber + ".png");
+	                			
+	                			ImageIO.write(bi, "png", f);
+	                			Thumbnails.of("icon"+iconnumber + ".png").size(40, 40).toFile("icon"+iconinfonumber + ".png");
+	                			
+	                			iconinfonumber = iconinfonumber + 1;
+	                			System.out.println(iconinfonumber);
+	                			
+	    	        			iconinfowriter.write(iconinfonumber);
+	    	        			iconinfowriter.flush();
+	    	        			iconinfowriter.close();
+	                			
+	                			
+	                			System.out.println("Debug txt create");
+	                			System.out.println("Debug image create");
+	        					
+	                			Frame.icon1();
+	        				}else {
+	        					System.out.println("Debug file is no a exe");
+	        					
+	        				}
+	        				
+	        			}
+					
+        			}
+        			
+        			
+        		} catch (IOException e) {
+        			e.printStackTrace();
+        			System.out.println("Debug file error");
+        		}
+
             }
         } catch (Exception ex) {
             ex.printStackTrace();

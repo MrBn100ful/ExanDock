@@ -13,6 +13,8 @@ import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.io.IOException;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -50,16 +52,14 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 
 	public Frame() {
 		
-		
-		
-
-		
 		programemenu.setUndecorated(true);
 		programestyle.setUndecorated(true);
 		this.setLayout(null);
 		start.setBounds(0, 0);
 		start.addEventListener(this);
 		this.add(start);
+		
+		
 
 	}
 
@@ -70,7 +70,7 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 
 			if (ProgMenuOpen == false) {
 				if (ProgMenuCreate == false) {
-
+					
 					programemenu.setTitle("ExanLauncher Dev Programe Menu");
 					programemenu.setSize(200, (height));
 					programemenu.setLocation((width - 260), -(height - 680));
@@ -176,7 +176,16 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 
 	}
 
-
+	public void icon1 () {
+		this.setLayout(null);
+		ImageIcon icon1 = new ImageIcon("icon1.png");
+        JButton buttonicon1 = new JButton(icon1);
+        buttonicon1.setBounds(0, 70, 60, 60);
+        
+        this.add(buttonicon1);
+        System.out.println("Debug Drag And Drop Icon active");
+        
+	}
 
 
 }
