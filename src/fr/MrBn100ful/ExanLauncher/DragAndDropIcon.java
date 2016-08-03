@@ -1,5 +1,6 @@
 package fr.MrBn100ful.ExanLauncher;
 
+
 import java.awt.Image;
 import java.awt.datatransfer.DataFlavor;
 
@@ -26,6 +27,7 @@ import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.filechooser.FileSystemView;
 
 import fr.MrBn100ful.ButtonAPI.event.ButtonAPIEvent;
@@ -36,7 +38,7 @@ import net.coobird.thumbnailator.Thumbnails;
 public class DragAndDropIcon extends JPanel implements DropTargetListener, ButtonAPIEventListener  {
 	
 	int iconnumber = 1;
-	Frame Frame = new Frame();
+	//Main shutdown = new Main();
 	@SuppressWarnings({ "unchecked", "resource" })
 	@Override
 	public void drop(DropTargetDropEvent event) {
@@ -98,7 +100,8 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener, Butto
 	                			
 	                			System.out.println("Debug txt create");
 	                			System.out.println("Debug image create");
-	                			Frame.icon1();
+	                			//icon.Main();
+	                			SwingUtilities.updateComponentTreeUI(this);
 	        					
 	        				}else {
 	        					System.out.println("Debug file is no a exe");
@@ -150,8 +153,8 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener, Butto
 	                			
 	                			System.out.println("Debug txt create");
 	                			System.out.println("Debug image create");
-	        					
-	                			Frame.icon1();
+	                			SwingUtilities.updateComponentTreeUI(this);
+	                			//icon.icon1();
 	        				}else {
 	        					System.out.println("Debug file is no a exe");
 	        					
@@ -193,7 +196,6 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener, Butto
 
 	@Override
 	public void onEvent(ButtonAPIEvent event) {
-		// TODO Auto-generated method stub
 		
 	}
 

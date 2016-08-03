@@ -22,10 +22,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDateTime;
 
-
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
+import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 import javax.swing.UIManager;
 
@@ -125,7 +127,18 @@ public class Main extends JFrame {
 		pBlurBehind.fEnable = true;
 		pBlurBehind.fTransitionOnMaximized = false;
 		Dwmapi.INSTANCE.DwmEnableBlurBehindWindow(hwnd, pBlurBehind);
-
+		Icon1();
+		Icon2();
+		Icon3();
+		Icon4();
+		Icon5();
+		Icon6();
+		Icon7();
+		Icon8();
+		Icon9();
+		Icon10();
+		Icon11();
+		Icon12();
 	}
 
 	public static void main(String[] args) throws IOException {
@@ -172,5 +185,258 @@ public class Main extends JFrame {
 	
 		
 	}
+	public void Icon1 () {
+		//this.setLayout(null);
+		 try {
+             UIManager.setLookAndFeel(
+                     UIManager.getSystemLookAndFeelClassName());
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+		
+		ImageIcon icon1 = new ImageIcon("icon1.png");
+        JButton buttonicon1 = new JButton(icon1);
+        buttonicon1.setBounds(0, 70, 60, 60);
+        buttonicon1.setBorder(null);
+        buttonicon1.setOpaque(false);
+        buttonicon1.setContentAreaFilled(false);
+        buttonicon1.setBorderPainted(false);
+        
+        main.add(buttonicon1);
+        System.out.println("Debug Drag And Drop Icon active");
+        SwingUtilities.updateComponentTreeUI(main);
+	}
+	public void Icon2 () {
+		//this.setLayout(null);
+		 try {
+             UIManager.setLookAndFeel(
+                     UIManager.getSystemLookAndFeelClassName());
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+		
+		ImageIcon icon1 = new ImageIcon("icon2.png");
+        JButton buttonicon1 = new JButton(icon1);
+        buttonicon1.setBounds(0, 130, 60, 60);
+        buttonicon1.setBorder(null);
+        buttonicon1.setOpaque(false);
+        buttonicon1.setContentAreaFilled(false);
+        buttonicon1.setBorderPainted(false);
+        
+        main.add(buttonicon1);
+        System.out.println("Debug Drag And Drop Icon active");
+        SwingUtilities.updateComponentTreeUI(main);
+	}
+	public void Icon3 () {
+		//this.setLayout(null);
+		 try {
+             UIManager.setLookAndFeel(
+                     UIManager.getSystemLookAndFeelClassName());
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+		
+		ImageIcon icon1 = new ImageIcon("icon3.png");
+        JButton buttonicon1 = new JButton(icon1);
+        buttonicon1.setBounds(0, 190, 60, 60);
+        buttonicon1.setBorder(null);
+        buttonicon1.setOpaque(false);
+        buttonicon1.setContentAreaFilled(false);
+        buttonicon1.setBorderPainted(false);
+        
+        main.add(buttonicon1);
+        System.out.println("Debug Drag And Drop Icon active");
+        SwingUtilities.updateComponentTreeUI(main);
+	}
+	public void Icon4 () {
+		//this.setLayout(null);
+		 try {
+             UIManager.setLookAndFeel(
+                     UIManager.getSystemLookAndFeelClassName());
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+		
+		ImageIcon icon1 = new ImageIcon("icon4.png");
+        JButton buttonicon1 = new JButton(icon1);
+        buttonicon1.setBounds(0, 250, 60, 60);
+        buttonicon1.setBorder(null);
+        buttonicon1.setOpaque(false);
+        buttonicon1.setContentAreaFilled(false);
+        buttonicon1.setBorderPainted(false);
+        
+        main.add(buttonicon1);
+        System.out.println("Debug Drag And Drop Icon active");
+        SwingUtilities.updateComponentTreeUI(main);
+	}
+	public void Icon5 () {
+		//this.setLayout(null);
+		 try {
+             UIManager.setLookAndFeel(
+                     UIManager.getSystemLookAndFeelClassName());
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+		
+		ImageIcon icon1 = new ImageIcon("icon5.png");
+        JButton buttonicon1 = new JButton(icon1);
+        buttonicon1.setBounds(0, 310, 60, 60);
+        buttonicon1.setBorder(null);
+        buttonicon1.setOpaque(false);
+        buttonicon1.setContentAreaFilled(false);
+        buttonicon1.setBorderPainted(false);
+        
+        main.add(buttonicon1);
+        System.out.println("Debug Drag And Drop Icon active");
+        SwingUtilities.updateComponentTreeUI(main);
+	}
+	public void Icon6 () {
+		//this.setLayout(null);
+		 try {
+             UIManager.setLookAndFeel(
+                     UIManager.getSystemLookAndFeelClassName());
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+		
+		ImageIcon icon1 = new ImageIcon("icon6.png");
+        JButton buttonicon1 = new JButton(icon1);
+        buttonicon1.setBounds(0, 370, 60, 60);
+        buttonicon1.setBorder(null);
+        buttonicon1.setOpaque(false);
+        buttonicon1.setContentAreaFilled(false);
+        buttonicon1.setBorderPainted(false);
+        
+        main.add(buttonicon1);
+        System.out.println("Debug Drag And Drop Icon active");
+        SwingUtilities.updateComponentTreeUI(main);
+	}
+	public void Icon7 () {
+		//this.setLayout(null);
+		 try {
+             UIManager.setLookAndFeel(
+                     UIManager.getSystemLookAndFeelClassName());
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+		
+		ImageIcon icon1 = new ImageIcon("icon7.png");
+        JButton buttonicon1 = new JButton(icon1);
+        buttonicon1.setBounds(0, 430, 60, 60);
+        buttonicon1.setBorder(null);
+        buttonicon1.setOpaque(false);
+        buttonicon1.setContentAreaFilled(false);
+        buttonicon1.setBorderPainted(false);
+        
+        main.add(buttonicon1);
+        System.out.println("Debug Drag And Drop Icon active");
+        SwingUtilities.updateComponentTreeUI(main);
+	}
+	public void Icon8 () {
+		//this.setLayout(null);
+		 try {
+             UIManager.setLookAndFeel(
+                     UIManager.getSystemLookAndFeelClassName());
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+		
+		ImageIcon icon1 = new ImageIcon("icon8.png");
+        JButton buttonicon1 = new JButton(icon1);
+        buttonicon1.setBounds(0, 490, 60, 60);
+        buttonicon1.setBorder(null);
+        buttonicon1.setOpaque(false);
+        buttonicon1.setContentAreaFilled(false);
+        buttonicon1.setBorderPainted(false);
+        
+        main.add(buttonicon1);
+        System.out.println("Debug Drag And Drop Icon active");
+        SwingUtilities.updateComponentTreeUI(main);
+	}
+	public void Icon9 () {
+		//this.setLayout(null);
+		 try {
+             UIManager.setLookAndFeel(
+                     UIManager.getSystemLookAndFeelClassName());
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+		
+		ImageIcon icon1 = new ImageIcon("icon9.png");
+        JButton buttonicon1 = new JButton(icon1);
+        buttonicon1.setBounds(0, 550, 60, 60);
+        buttonicon1.setBorder(null);
+        buttonicon1.setOpaque(false);
+        buttonicon1.setContentAreaFilled(false);
+        buttonicon1.setBorderPainted(false);
+        
+        main.add(buttonicon1);
+        System.out.println("Debug Drag And Drop Icon active");
+        SwingUtilities.updateComponentTreeUI(main);
+	}
+	public void Icon10 () {
+		//this.setLayout(null);
+		 try {
+             UIManager.setLookAndFeel(
+                     UIManager.getSystemLookAndFeelClassName());
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+		
+		ImageIcon icon1 = new ImageIcon("icon10.png");
+        JButton buttonicon1 = new JButton(icon1);
+        buttonicon1.setBounds(0, 610, 60, 60);
+        buttonicon1.setBorder(null);
+        buttonicon1.setOpaque(false);
+        buttonicon1.setContentAreaFilled(false);
+        buttonicon1.setBorderPainted(false);
+        
+        main.add(buttonicon1);
+        System.out.println("Debug Drag And Drop Icon active");
+        SwingUtilities.updateComponentTreeUI(main);
+	}
+	public void Icon11 () {
+		//this.setLayout(null);
+		 try {
+             UIManager.setLookAndFeel(
+                     UIManager.getSystemLookAndFeelClassName());
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+		
+		ImageIcon icon1 = new ImageIcon("icon11.png");
+        JButton buttonicon1 = new JButton(icon1);
+        buttonicon1.setBounds(0, 670, 60, 60);
+        buttonicon1.setBorder(null);
+        buttonicon1.setOpaque(false);
+        buttonicon1.setContentAreaFilled(false);
+        buttonicon1.setBorderPainted(false);
+        
+        main.add(buttonicon1);
+        System.out.println("Debug Drag And Drop Icon active");
+        SwingUtilities.updateComponentTreeUI(main);
+	}
+	public void Icon12 () {
+		//this.setLayout(null);
+		 try {
+             UIManager.setLookAndFeel(
+                     UIManager.getSystemLookAndFeelClassName());
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+		
+		ImageIcon icon1 = new ImageIcon("icon12.png");
+        JButton buttonicon1 = new JButton(icon1);
+        buttonicon1.setBounds(0, 730, 60, 60);
+        buttonicon1.setBorder(null);
+        buttonicon1.setOpaque(false);
+        buttonicon1.setContentAreaFilled(false);
+        buttonicon1.setBorderPainted(false);
+        
+        main.add(buttonicon1);
+        System.out.println("Debug Drag And Drop Icon active");
+        SwingUtilities.updateComponentTreeUI(main);
+	}
+	
 
 }
