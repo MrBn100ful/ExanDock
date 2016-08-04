@@ -39,7 +39,8 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener, Butto
 	
 	int iconnumber = 1;
 	//Main shutdown = new Main();
-	@SuppressWarnings({ "unchecked", "resource" })
+	Shutdown shutdown = new Shutdown();
+	@SuppressWarnings({ "unchecked", "resource", "static-access" })
 	@Override
 	public void drop(DropTargetDropEvent event) {
 		
@@ -63,7 +64,7 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener, Butto
 					if(iconinfo.exists() && !iconinfo.isDirectory()) { 
 						FileReader iconinforead = new FileReader("iconinfo.txt");
 						int iconinfonumber = iconinforead.read();
-						if (!(iconinfonumber > 12)){
+						if (!(iconinfonumber > 16)){
 	        				String iconpath = file.getPath();
 	        				if (iconpath.endsWith(".exe")){
 	        					
@@ -88,7 +89,7 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener, Butto
 	                			File f = new File("icon"+ iconinfonumber + ".png");
 	                			
 	                			ImageIO.write(bi, "png", f);
-	                			Thumbnails.of("icon"+iconinfonumber + ".png").size(40, 40).toFile("icon"+iconinfonumber + ".png");
+	                			Thumbnails.of("icon"+iconinfonumber + ".png").size(30, 30).toFile("icon"+iconinfonumber + ".png");
 	                			
 	                			iconinfonumber = iconinfonumber + 1;
 	                			
@@ -100,7 +101,7 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener, Butto
 	                			
 	                			System.out.println("Debug txt create");
 	                			System.out.println("Debug image create");
-	                			//icon.Main();
+	                			shutdown.restartApplication(null);
 	                			SwingUtilities.updateComponentTreeUI(this);
 	        					
 	        				}else {
@@ -116,7 +117,7 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener, Butto
 	        			iconinfowriter.flush();
 	        			iconinfowriter.close();
 	        			int iconinfonumber = 1;
-						if (!(iconnumber > 12)){
+						if (!(iconnumber > 16)){
 	        				String iconpath = file.getPath();
 	        				if (iconpath.endsWith(".exe")){
 	        					
@@ -141,7 +142,7 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener, Butto
 	                			File f = new File("icon"+ iconinfonumber + ".png");
 	                			
 	                			ImageIO.write(bi, "png", f);
-	                			Thumbnails.of("icon"+iconnumber + ".png").size(40, 40).toFile("icon"+iconinfonumber + ".png");
+	                			Thumbnails.of("icon"+iconnumber + ".png").size(30, 30).toFile("icon"+iconinfonumber + ".png");
 	                			
 	                			iconinfonumber = iconinfonumber + 1;
 	                			System.out.println(iconinfonumber);
@@ -154,7 +155,7 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener, Butto
 	                			System.out.println("Debug txt create");
 	                			System.out.println("Debug image create");
 	                			SwingUtilities.updateComponentTreeUI(this);
-	                			//icon.icon1();
+	                			shutdown.restartApplication(null);
 	        				}else {
 	        					System.out.println("Debug file is no a exe");
 	        					

@@ -20,6 +20,8 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 
 import javax.swing.ImageIcon;
@@ -139,6 +141,10 @@ public class Main extends JFrame {
 		Icon10();
 		Icon11();
 		Icon12();
+		Icon13();
+		Icon14();
+		Icon15();
+		Icon16();
 	}
 
 	public static void main(String[] args) throws IOException {
@@ -194,6 +200,7 @@ public class Main extends JFrame {
              e.printStackTrace();
          }
 		
+		
 		ImageIcon icon1 = new ImageIcon("icon1.png");
         JButton buttonicon1 = new JButton(icon1);
         buttonicon1.setBounds(0, 70, 60, 60);
@@ -203,6 +210,22 @@ public class Main extends JFrame {
         buttonicon1.setBorderPainted(false);
         
         main.add(buttonicon1);
+        buttonicon1.addActionListener(new ActionListener()
+        {
+          @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+          {
+        	  String filepath = "icon1.txt";
+        	  try {
+				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+				Process process = new ProcessBuilder(iconfile).start();
+				System.out.println("Debug launch program");
+			} catch (IOException e2) {
+				System.out.println("Debug launch program error");
+				e2.printStackTrace();
+			}
+          }
+        });
         System.out.println("Debug Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
@@ -224,6 +247,22 @@ public class Main extends JFrame {
         buttonicon1.setBorderPainted(false);
         
         main.add(buttonicon1);
+        buttonicon1.addActionListener(new ActionListener()
+        {
+          @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+          {
+        	  String filepath = "icon2.txt";
+        	  try {
+				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+				Process process = new ProcessBuilder(iconfile).start();
+				System.out.println("Debug launch program");
+			} catch (IOException e2) {
+				System.out.println("Debug launch program error");
+				e2.printStackTrace();
+			}
+          }
+        });
         System.out.println("Debug Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
@@ -245,6 +284,22 @@ public class Main extends JFrame {
         buttonicon1.setBorderPainted(false);
         
         main.add(buttonicon1);
+        buttonicon1.addActionListener(new ActionListener()
+        {
+          @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+          {
+        	  String filepath = "icon3.txt";
+        	  try {
+				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+				Process process = new ProcessBuilder(iconfile).start();
+				System.out.println("Debug launch program");
+			} catch (IOException e2) {
+				System.out.println("Debug launch program error");
+				e2.printStackTrace();
+			}
+          }
+        });
         System.out.println("Debug Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
@@ -266,6 +321,22 @@ public class Main extends JFrame {
         buttonicon1.setBorderPainted(false);
         
         main.add(buttonicon1);
+        buttonicon1.addActionListener(new ActionListener()
+        {
+          @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+          {
+        	  String filepath = "icon4.txt";
+        	  try {
+				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+				Process process = new ProcessBuilder(iconfile).start();
+				System.out.println("Debug launch program");
+			} catch (IOException e2) {
+				System.out.println("Debug launch program error");
+				e2.printStackTrace();
+			}
+          }
+        });
         System.out.println("Debug Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
@@ -287,6 +358,22 @@ public class Main extends JFrame {
         buttonicon1.setBorderPainted(false);
         
         main.add(buttonicon1);
+        buttonicon1.addActionListener(new ActionListener()
+        {
+          @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+          {
+        	  String filepath = "icon5.txt";
+        	  try {
+				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+				Process process = new ProcessBuilder(iconfile).start();
+				System.out.println("Debug launch program");
+			} catch (IOException e2) {
+				System.out.println("Debug launch program error");
+				e2.printStackTrace();
+			}
+          }
+        });
         System.out.println("Debug Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
@@ -308,6 +395,22 @@ public class Main extends JFrame {
         buttonicon1.setBorderPainted(false);
         
         main.add(buttonicon1);
+        buttonicon1.addActionListener(new ActionListener()
+        {
+          @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+          {
+        	  String filepath = "icon6.txt";
+        	  try {
+				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+				Process process = new ProcessBuilder(iconfile).start();
+				System.out.println("Debug launch program");
+			} catch (IOException e2) {
+				System.out.println("Debug launch program error");
+				e2.printStackTrace();
+			}
+          }
+        });
         System.out.println("Debug Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
@@ -329,6 +432,22 @@ public class Main extends JFrame {
         buttonicon1.setBorderPainted(false);
         
         main.add(buttonicon1);
+        buttonicon1.addActionListener(new ActionListener()
+        {
+          @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+          {
+        	  String filepath = "icon7.txt";
+        	  try {
+				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+				Process process = new ProcessBuilder(iconfile).start();
+				System.out.println("Debug launch program");
+			} catch (IOException e2) {
+				System.out.println("Debug launch program error");
+				e2.printStackTrace();
+			}
+          }
+        });
         System.out.println("Debug Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
@@ -350,6 +469,22 @@ public class Main extends JFrame {
         buttonicon1.setBorderPainted(false);
         
         main.add(buttonicon1);
+        buttonicon1.addActionListener(new ActionListener()
+        {
+          @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+          {
+        	  String filepath = "icon8.txt";
+        	  try {
+				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+				Process process = new ProcessBuilder(iconfile).start();
+				System.out.println("Debug launch program");
+			} catch (IOException e2) {
+				System.out.println("Debug launch program error");
+				e2.printStackTrace();
+			}
+          }
+        });
         System.out.println("Debug Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
@@ -371,6 +506,22 @@ public class Main extends JFrame {
         buttonicon1.setBorderPainted(false);
         
         main.add(buttonicon1);
+        buttonicon1.addActionListener(new ActionListener()
+        {
+          @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+          {
+        	  String filepath = "icon9.txt";
+        	  try {
+				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+				Process process = new ProcessBuilder(iconfile).start();
+				System.out.println("Debug launch program");
+			} catch (IOException e2) {
+				System.out.println("Debug launch program error");
+				e2.printStackTrace();
+			}
+          }
+        });
         System.out.println("Debug Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
@@ -392,6 +543,22 @@ public class Main extends JFrame {
         buttonicon1.setBorderPainted(false);
         
         main.add(buttonicon1);
+        buttonicon1.addActionListener(new ActionListener()
+        {
+          @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+          {
+        	  String filepath = "icon10.txt";
+        	  try {
+				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+				Process process = new ProcessBuilder(iconfile).start();
+				System.out.println("Debug launch program");
+			} catch (IOException e2) {
+				System.out.println("Debug launch program error");
+				e2.printStackTrace();
+			}
+          }
+        });
         System.out.println("Debug Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
@@ -413,6 +580,22 @@ public class Main extends JFrame {
         buttonicon1.setBorderPainted(false);
         
         main.add(buttonicon1);
+        buttonicon1.addActionListener(new ActionListener()
+        {
+          @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+          {
+        	  String filepath = "icon11.txt";
+        	  try {
+				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+				Process process = new ProcessBuilder(iconfile).start();
+				System.out.println("Debug launch program");
+			} catch (IOException e2) {
+				System.out.println("Debug launch program error");
+				e2.printStackTrace();
+			}
+          }
+        });
         System.out.println("Debug Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
@@ -434,6 +617,170 @@ public class Main extends JFrame {
         buttonicon1.setBorderPainted(false);
         
         main.add(buttonicon1);
+        buttonicon1.addActionListener(new ActionListener()
+        {
+          @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+          {
+        	  String filepath = "icon12.txt";
+        	  try {
+				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+				Process process = new ProcessBuilder(iconfile).start();
+				System.out.println("Debug launch program");
+			} catch (IOException e2) {
+				System.out.println("Debug launch program error");
+				e2.printStackTrace();
+			}
+          }
+        });
+        System.out.println("Debug Drag And Drop Icon active");
+        SwingUtilities.updateComponentTreeUI(main);
+	}
+	public void Icon13 () {
+		//this.setLayout(null);
+		 try {
+             UIManager.setLookAndFeel(
+                     UIManager.getSystemLookAndFeelClassName());
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+		
+		ImageIcon icon1 = new ImageIcon("icon13.png");
+        JButton buttonicon1 = new JButton(icon1);
+        buttonicon1.setBounds(0, 790, 60, 60);
+        buttonicon1.setBorder(null);
+        buttonicon1.setOpaque(false);
+        buttonicon1.setContentAreaFilled(false);
+        buttonicon1.setBorderPainted(false);
+        
+        main.add(buttonicon1);
+        buttonicon1.addActionListener(new ActionListener()
+        {
+          @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+          {
+        	  String filepath = "icon13.txt";
+        	  try {
+				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+				Process process = new ProcessBuilder(iconfile).start();
+				System.out.println("Debug launch program");
+			} catch (IOException e2) {
+				System.out.println("Debug launch program error");
+				e2.printStackTrace();
+			}
+          }
+        });
+        System.out.println("Debug Drag And Drop Icon active");
+        SwingUtilities.updateComponentTreeUI(main);
+	}
+	public void Icon14 () {
+		//this.setLayout(null);
+		 try {
+             UIManager.setLookAndFeel(
+                     UIManager.getSystemLookAndFeelClassName());
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+		
+		ImageIcon icon1 = new ImageIcon("icon14.png");
+        JButton buttonicon1 = new JButton(icon1);
+        buttonicon1.setBounds(0, 850, 60, 60);
+        buttonicon1.setBorder(null);
+        buttonicon1.setOpaque(false);
+        buttonicon1.setContentAreaFilled(false);
+        buttonicon1.setBorderPainted(false);
+        
+        main.add(buttonicon1);
+        buttonicon1.addActionListener(new ActionListener()
+        {
+          @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+          {
+        	  String filepath = "icon14.txt";
+        	  try {
+				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+				Process process = new ProcessBuilder(iconfile).start();
+				System.out.println("Debug launch program");
+			} catch (IOException e2) {
+				System.out.println("Debug launch program error");
+				e2.printStackTrace();
+			}
+          }
+        });
+        System.out.println("Debug Drag And Drop Icon active");
+        SwingUtilities.updateComponentTreeUI(main);
+	}
+	public void Icon15 () {
+		//this.setLayout(null);
+		 try {
+             UIManager.setLookAndFeel(
+                     UIManager.getSystemLookAndFeelClassName());
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+		
+		ImageIcon icon1 = new ImageIcon("icon15.png");
+        JButton buttonicon1 = new JButton(icon1);
+        buttonicon1.setBounds(0, 910, 60, 60);
+        buttonicon1.setBorder(null);
+        buttonicon1.setOpaque(false);
+        buttonicon1.setContentAreaFilled(false);
+        buttonicon1.setBorderPainted(false);
+        
+        main.add(buttonicon1);
+        buttonicon1.addActionListener(new ActionListener()
+        {
+          @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+          {
+        	  String filepath = "icon15.txt";
+        	  try {
+				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+				Process process = new ProcessBuilder(iconfile).start();
+				System.out.println("Debug launch program");
+			} catch (IOException e2) {
+				System.out.println("Debug launch program error");
+				e2.printStackTrace();
+			}
+          }
+        });
+        System.out.println("Debug Drag And Drop Icon active");
+        SwingUtilities.updateComponentTreeUI(main);
+	}
+	public void Icon16 () {
+		//this.setLayout(null);
+		 try {
+             UIManager.setLookAndFeel(
+                     UIManager.getSystemLookAndFeelClassName());
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+		
+		ImageIcon icon1 = new ImageIcon("icon16.png");
+        JButton buttonicon1 = new JButton(icon1);
+        buttonicon1.setBounds(0, 970, 60, 60);
+        buttonicon1.setBorder(null);
+        buttonicon1.setOpaque(false);
+        buttonicon1.setContentAreaFilled(false);
+        buttonicon1.setBorderPainted(false);
+        
+        main.add(buttonicon1);
+        buttonicon1.addActionListener(new ActionListener()
+        {
+          @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+          {
+        	  String filepath = "icon16.txt";
+        	  try {
+				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+				Process process = new ProcessBuilder(iconfile).start();
+				System.out.println("Debug launch program");
+			} catch (IOException e2) {
+				System.out.println("Debug launch program error");
+				e2.printStackTrace();
+			}
+          }
+        });
         System.out.println("Debug Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
