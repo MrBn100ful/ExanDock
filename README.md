@@ -4,7 +4,7 @@ A replace for the windows start menu in java.
 =====
 ##todo
 
-- [ ] Drag and drop icon.
+- [x] Drag and drop icon.
 - [ ] List program.
 - [x] Suport all screen.
 - [ ] See what program is runing.
