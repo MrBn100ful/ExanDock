@@ -28,7 +28,7 @@ import fr.MrBn100ful.ExanLauncher.Blurred.Dwmapi;
 
 @SuppressWarnings("serial")
 public class Frame extends JPanel implements ButtonAPIEventListener {
-	private STexturedButton start = new STexturedButton(ButtonAPI.getResource("list.png"));
+	private STexturedButton start = new STexturedButton(ButtonAPI.getResource("list2.png"));
 	private STexturedButton restart = new STexturedButton(ButtonAPI.getResource("restart.png"));
 	private STexturedButton internet = new STexturedButton(ButtonAPI.getResource("internet.png"));
 	private STexturedButton multimedia = new STexturedButton(ButtonAPI.getResource("multimedia.png"));
@@ -64,7 +64,7 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 	@Override
 	public void onEvent(ButtonAPIEvent e) {
 		if (e.getSource() == start) {
-			System.out.println("Debug start button press");
+			System.out.println("[Debug] :  start button press");
 
 			if (ProgMenuOpen == false) {
 				if (ProgMenuCreate == false) {
@@ -148,7 +148,7 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 		}
 
 		if (e.getSource() == stop) {
-			System.out.println("Debug stop button press");
+			System.out.println("[Debug] :  stop button press");
 			try {
 				shutdown.shutdown();
 			} catch (RuntimeException e1) {
@@ -160,7 +160,7 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 			}
 		}
 		if (e.getSource() == restart) {
-			System.out.println("Debug restart button press");
+			System.out.println("[Debug] :  restart button press");
 			try {
 				shutdown.restart();
 			} catch (RuntimeException e1) {

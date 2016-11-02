@@ -58,11 +58,11 @@ public class Main extends JFrame {
 	public Main(Component c) throws IOException {
 		
 		File iconinfo = new File("iconinfo.txt");
-		System.out.println("Debug program launch");
+		System.out.println("[Debug] :  program launch");
 		if(iconinfo.exists() && !iconinfo.isDirectory()) { 
 			FileReader iconinforead = new FileReader("iconinfo.txt");
 			int iconinfonumber = iconinforead.read();
-			System.out.println("Debug " + (iconinfonumber - 1) + " icon create");
+			System.out.println("[Debug] :  " + (iconinfonumber - 1) + " icon create");
 		}
 		
 		
@@ -81,7 +81,6 @@ public class Main extends JFrame {
 		main.setAlwaysOnTop(true);
 		main.setResizable(false);
 		main.setContentPane(frame = new Frame());
-		//main.setContentPane(DragAndDropIcon = new DragAndDropIcon());
 		
 		
 		main.setBackground(new Color(243, 243, 243, 150));
@@ -192,7 +191,7 @@ public class Main extends JFrame {
 		
 	}
 	public void Icon1 () {
-		//this.setLayout(null);
+		
 		 try {
              UIManager.setLookAndFeel(
                      UIManager.getSystemLookAndFeelClassName());
@@ -208,29 +207,37 @@ public class Main extends JFrame {
         buttonicon1.setOpaque(false);
         buttonicon1.setContentAreaFilled(false);
         buttonicon1.setBorderPainted(false);
-        
         main.add(buttonicon1);
         buttonicon1.addActionListener(new ActionListener()
         {
           @SuppressWarnings("unused")
 		public void actionPerformed(ActionEvent e)
           {
-        	  String filepath = "icon1.txt";
+        	 
+        	  File iconinfo = new File("icon1.txt");
         	  try {
-				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("Debug launch program");
+        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+        			String filepath = "icon1.txt";
+        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+     				Process process = new ProcessBuilder(iconfile).start();
+     				System.out.println("[Debug] :  launch program");
+        			
+        			}else {
+        				System.out.println("[Debug] :  Icon not created");
+        				
+        			}
+        		
 			} catch (IOException e2) {
-				System.out.println("Debug launch program error");
+				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
 			}
           }
         });
-        System.out.println("Debug Drag And Drop Icon active");
+        System.out.println("[Debug] :  Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
 	public void Icon2 () {
-		//this.setLayout(null);
+		
 		 try {
              UIManager.setLookAndFeel(
                      UIManager.getSystemLookAndFeelClassName());
@@ -256,18 +263,18 @@ public class Main extends JFrame {
         	  try {
 				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
 				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("Debug launch program");
+				System.out.println("[Debug] :  launch program");
 			} catch (IOException e2) {
-				System.out.println("Debug launch program error");
+				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
 			}
           }
         });
-        System.out.println("Debug Drag And Drop Icon active");
+        System.out.println("[Debug] :  Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
 	public void Icon3 () {
-		//this.setLayout(null);
+		
 		 try {
              UIManager.setLookAndFeel(
                      UIManager.getSystemLookAndFeelClassName());
@@ -293,18 +300,18 @@ public class Main extends JFrame {
         	  try {
 				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
 				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("Debug launch program");
+				System.out.println("[Debug] :  launch program");
 			} catch (IOException e2) {
-				System.out.println("Debug launch program error");
+				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
 			}
           }
         });
-        System.out.println("Debug Drag And Drop Icon active");
+        System.out.println("[Debug] :  Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
 	public void Icon4 () {
-		//this.setLayout(null);
+		
 		 try {
              UIManager.setLookAndFeel(
                      UIManager.getSystemLookAndFeelClassName());
@@ -330,18 +337,18 @@ public class Main extends JFrame {
         	  try {
 				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
 				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("Debug launch program");
+				System.out.println("[Debug] :  launch program");
 			} catch (IOException e2) {
-				System.out.println("Debug launch program error");
+				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
 			}
           }
         });
-        System.out.println("Debug Drag And Drop Icon active");
+        System.out.println("[Debug] :  Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
 	public void Icon5 () {
-		//this.setLayout(null);
+		
 		 try {
              UIManager.setLookAndFeel(
                      UIManager.getSystemLookAndFeelClassName());
@@ -367,18 +374,18 @@ public class Main extends JFrame {
         	  try {
 				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
 				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("Debug launch program");
+				System.out.println("[Debug] :  launch program");
 			} catch (IOException e2) {
-				System.out.println("Debug launch program error");
+				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
 			}
           }
         });
-        System.out.println("Debug Drag And Drop Icon active");
+        System.out.println("[Debug] :  Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
 	public void Icon6 () {
-		//this.setLayout(null);
+		
 		 try {
              UIManager.setLookAndFeel(
                      UIManager.getSystemLookAndFeelClassName());
@@ -404,18 +411,18 @@ public class Main extends JFrame {
         	  try {
 				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
 				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("Debug launch program");
+				System.out.println("[Debug] :  launch program");
 			} catch (IOException e2) {
-				System.out.println("Debug launch program error");
+				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
 			}
           }
         });
-        System.out.println("Debug Drag And Drop Icon active");
+        System.out.println("[Debug] :  Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
 	public void Icon7 () {
-		//this.setLayout(null);
+		
 		 try {
              UIManager.setLookAndFeel(
                      UIManager.getSystemLookAndFeelClassName());
@@ -441,18 +448,18 @@ public class Main extends JFrame {
         	  try {
 				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
 				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("Debug launch program");
+				System.out.println("[Debug] :  launch program");
 			} catch (IOException e2) {
-				System.out.println("Debug launch program error");
+				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
 			}
           }
         });
-        System.out.println("Debug Drag And Drop Icon active");
+        System.out.println("[Debug] :  Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
 	public void Icon8 () {
-		//this.setLayout(null);
+		
 		 try {
              UIManager.setLookAndFeel(
                      UIManager.getSystemLookAndFeelClassName());
@@ -478,18 +485,18 @@ public class Main extends JFrame {
         	  try {
 				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
 				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("Debug launch program");
+				System.out.println("[Debug] :  launch program");
 			} catch (IOException e2) {
-				System.out.println("Debug launch program error");
+				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
 			}
           }
         });
-        System.out.println("Debug Drag And Drop Icon active");
+        System.out.println("[Debug] :  Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
 	public void Icon9 () {
-		//this.setLayout(null);
+		
 		 try {
              UIManager.setLookAndFeel(
                      UIManager.getSystemLookAndFeelClassName());
@@ -515,18 +522,18 @@ public class Main extends JFrame {
         	  try {
 				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
 				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("Debug launch program");
+				System.out.println("[Debug] :  launch program");
 			} catch (IOException e2) {
-				System.out.println("Debug launch program error");
+				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
 			}
           }
         });
-        System.out.println("Debug Drag And Drop Icon active");
+        System.out.println("[Debug] :  Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
 	public void Icon10 () {
-		//this.setLayout(null);
+		
 		 try {
              UIManager.setLookAndFeel(
                      UIManager.getSystemLookAndFeelClassName());
@@ -552,18 +559,18 @@ public class Main extends JFrame {
         	  try {
 				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
 				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("Debug launch program");
+				System.out.println("[Debug] :  launch program");
 			} catch (IOException e2) {
-				System.out.println("Debug launch program error");
+				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
 			}
           }
         });
-        System.out.println("Debug Drag And Drop Icon active");
+        System.out.println("[Debug] :  Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
 	public void Icon11 () {
-		//this.setLayout(null);
+		
 		 try {
              UIManager.setLookAndFeel(
                      UIManager.getSystemLookAndFeelClassName());
@@ -589,18 +596,18 @@ public class Main extends JFrame {
         	  try {
 				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
 				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("Debug launch program");
+				System.out.println("[Debug] :  launch program");
 			} catch (IOException e2) {
-				System.out.println("Debug launch program error");
+				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
 			}
           }
         });
-        System.out.println("Debug Drag And Drop Icon active");
+        System.out.println("[Debug] :  Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
 	public void Icon12 () {
-		//this.setLayout(null);
+		
 		 try {
              UIManager.setLookAndFeel(
                      UIManager.getSystemLookAndFeelClassName());
@@ -626,18 +633,18 @@ public class Main extends JFrame {
         	  try {
 				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
 				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("Debug launch program");
+				System.out.println("[Debug] :  launch program");
 			} catch (IOException e2) {
-				System.out.println("Debug launch program error");
+				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
 			}
           }
         });
-        System.out.println("Debug Drag And Drop Icon active");
+        System.out.println("[Debug] :  Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
 	public void Icon13 () {
-		//this.setLayout(null);
+		
 		 try {
              UIManager.setLookAndFeel(
                      UIManager.getSystemLookAndFeelClassName());
@@ -663,18 +670,18 @@ public class Main extends JFrame {
         	  try {
 				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
 				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("Debug launch program");
+				System.out.println("[Debug] :  launch program");
 			} catch (IOException e2) {
-				System.out.println("Debug launch program error");
+				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
 			}
           }
         });
-        System.out.println("Debug Drag And Drop Icon active");
+        System.out.println("[Debug] :  Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
 	public void Icon14 () {
-		//this.setLayout(null);
+		
 		 try {
              UIManager.setLookAndFeel(
                      UIManager.getSystemLookAndFeelClassName());
@@ -700,18 +707,18 @@ public class Main extends JFrame {
         	  try {
 				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
 				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("Debug launch program");
+				System.out.println("[Debug] :  launch program");
 			} catch (IOException e2) {
-				System.out.println("Debug launch program error");
+				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
 			}
           }
         });
-        System.out.println("Debug Drag And Drop Icon active");
+        System.out.println("[Debug] :  Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
 	public void Icon15 () {
-		//this.setLayout(null);
+		
 		 try {
              UIManager.setLookAndFeel(
                      UIManager.getSystemLookAndFeelClassName());
@@ -737,18 +744,18 @@ public class Main extends JFrame {
         	  try {
 				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
 				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("Debug launch program");
+				System.out.println("[Debug] :  launch program");
 			} catch (IOException e2) {
-				System.out.println("Debug launch program error");
+				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
 			}
           }
         });
-        System.out.println("Debug Drag And Drop Icon active");
+        System.out.println("[Debug] :  Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
 	public void Icon16 () {
-		//this.setLayout(null);
+		
 		 try {
              UIManager.setLookAndFeel(
                      UIManager.getSystemLookAndFeelClassName());
@@ -774,14 +781,14 @@ public class Main extends JFrame {
         	  try {
 				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
 				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("Debug launch program");
+				System.out.println("[Debug] :  launch program");
 			} catch (IOException e2) {
-				System.out.println("Debug launch program error");
+				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
 			}
           }
         });
-        System.out.println("Debug Drag And Drop Icon active");
+        System.out.println("[Debug] :  Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
 	

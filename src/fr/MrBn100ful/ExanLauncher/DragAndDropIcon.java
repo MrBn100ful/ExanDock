@@ -38,7 +38,6 @@ import net.coobird.thumbnailator.Thumbnails;
 public class DragAndDropIcon extends JPanel implements DropTargetListener, ButtonAPIEventListener  {
 	
 	int iconnumber = 1;
-	//Main shutdown = new Main();
 	Shutdown shutdown = new Shutdown();
 	@SuppressWarnings({ "unchecked", "resource", "static-access" })
 	@Override
@@ -46,7 +45,7 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener, Butto
 		
 		
 		
-		System.out.println("Debug drag and drop");
+		System.out.println("[Debug] :  drag and drop");
         try {
            event.acceptDrop(DnDConstants.ACTION_COPY);
             List<File> droppedFiles = (List<File>)
@@ -99,13 +98,13 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener, Butto
 	    	        			iconinfowriter.close();
 	                			
 	                			
-	                			System.out.println("Debug txt create");
-	                			System.out.println("Debug image create");
+	                			System.out.println("[Debug] :  txt create");
+	                			System.out.println("[Debug] :  image create");
 	                			shutdown.restartApplication(null);
 	                			SwingUtilities.updateComponentTreeUI(this);
 	        					
 	        				}else {
-	        					System.out.println("Debug file is no a exe");
+	        					System.out.println("[Debug] :  file is no a exe");
 	        					
 	        				}
 	        				
@@ -152,12 +151,12 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener, Butto
 	    	        			iconinfowriter.close();
 	                			
 	                			
-	                			System.out.println("Debug txt create");
-	                			System.out.println("Debug image create");
+	                			System.out.println("[Debug] :  txt create");
+	                			System.out.println("[Debug] :  image create");
 	                			SwingUtilities.updateComponentTreeUI(this);
 	                			shutdown.restartApplication(null);
 	        				}else {
-	        					System.out.println("Debug file is no a exe");
+	        					System.out.println("[Debug] :  file is no a exe");
 	        					
 	        				}
 	        				
@@ -168,7 +167,7 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener, Butto
         			
         		} catch (IOException e) {
         			e.printStackTrace();
-        			System.out.println("Debug file error");
+        			System.out.println("[Debug] :  file error");
         		}
 
             }
