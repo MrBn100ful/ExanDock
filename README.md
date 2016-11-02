@@ -1,5 +1,5 @@
-# ExanLauncher 
-A replace for the windows start menu in java.
+# ExanLauncher WIP 
+A replacement of the windows start menu in java.
 
 =====
 ##todo
