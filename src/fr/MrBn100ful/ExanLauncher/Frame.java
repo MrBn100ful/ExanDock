@@ -14,6 +14,7 @@ import java.awt.GraphicsEnvironment;
 import java.io.IOException;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import com.sun.jna.Native;
@@ -36,12 +37,20 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 	private STexturedButton tools = new STexturedButton(ButtonAPI.getResource("tools.png"));
 	private STexturedButton other = new STexturedButton(ButtonAPI.getResource("other.png"));
 	private STexturedButton stop = new STexturedButton(ButtonAPI.getResource("stop.png"));
+	private STexturedButton info = new STexturedButton(ButtonAPI.getResource("info.png"));
 	
 	
 	
 	public boolean ProgMenuOpen = false;
 	public boolean ProgMenuCreate = false;
+	
+	public boolean InfoOpen = false;
+	public boolean InfoCreate = false;
+	
 	public JFrame programemenu = new JFrame();
+	
+	public JFrame infomenu = new JFrame();
+	
 	public JFrame programestyle = new JFrame();
 	Shutdown shutdown = new Shutdown();
 	GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
@@ -71,7 +80,7 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 					
 					programemenu.setTitle("ExanLauncher Dev Programe Menu");
 					programemenu.setSize(200, (height));
-					programemenu.setLocation((width - 260), -(height - 680));
+					programemenu.setLocation((width - 260), -(height - 690));
 					programemenu.setLayout(null);
 
 					restart.setBounds(0, (height - 85));
@@ -85,6 +94,12 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 					internet.setBounds(0, (height - 670));
 					internet.addEventListener(this);
 					programemenu.add(internet);
+					
+					
+					info.setBounds(75, (height - 685));
+					info.addEventListener(this);
+					programemenu.add(info);
+					
 
 					multimedia.setBounds(0, (height - 570));
 					multimedia.addEventListener(this);
@@ -109,7 +124,7 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 
 					programestyle.setTitle("ExanLauncher Dev Programe Style");
 					programestyle.setSize(2, height);
-					programestyle.setLocation((width - 260), -(height - 680));
+					programestyle.setLocation((width - 260), -(height - 690));
 					programestyle.setLayout(null);
 					programestyle.setAlwaysOnTop(true);
 					programestyle.setResizable(false);
@@ -171,7 +186,21 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 				e1.printStackTrace();
 			}
 		}
-
+		
+		if(e.getSource() == info)
+		{
+			System.out.println("[Debug] :  info button press");
+			JOptionPane.showMessageDialog(this, "                     Create by MrBn100ful"
+					+ "\n"
+					+ "                 Version : 0.0 Copper Navy"
+					+ "\n"
+					+ "                                  2016"
+					+ "\n"
+					+ "https://github.com/MrBn100ful/ExanLauncher", "About ExanLauncher",
+					JOptionPane.INFORMATION_MESSAGE);
+			
+			
+		}
 	}
 
 

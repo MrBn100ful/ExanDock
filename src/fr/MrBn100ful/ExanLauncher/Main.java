@@ -239,39 +239,48 @@ public class Main extends JFrame {
 	public void Icon2 () {
 		
 		 try {
-             UIManager.setLookAndFeel(
-                     UIManager.getSystemLookAndFeelClassName());
-         } catch (Exception e) {
-             e.printStackTrace();
-         }
+           UIManager.setLookAndFeel(
+                   UIManager.getSystemLookAndFeelClassName());
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
+		
 		
 		ImageIcon icon1 = new ImageIcon("icon2.png");
-        JButton buttonicon1 = new JButton(icon1);
-        buttonicon1.setBounds(0, 130, 60, 60);
-        buttonicon1.setBorder(null);
-        buttonicon1.setOpaque(false);
-        buttonicon1.setContentAreaFilled(false);
-        buttonicon1.setBorderPainted(false);
-        
-        main.add(buttonicon1);
-        buttonicon1.addActionListener(new ActionListener()
-        {
-          @SuppressWarnings("unused")
+      JButton buttonicon1 = new JButton(icon1);
+      buttonicon1.setBounds(0, 130, 60, 60);
+      buttonicon1.setBorder(null);
+      buttonicon1.setOpaque(false);
+      buttonicon1.setContentAreaFilled(false);
+      buttonicon1.setBorderPainted(false);
+      main.add(buttonicon1);
+      buttonicon1.addActionListener(new ActionListener()
+      {
+        @SuppressWarnings("unused")
 		public void actionPerformed(ActionEvent e)
-          {
-        	  String filepath = "icon2.txt";
-        	  try {
-				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("[Debug] :  launch program");
+        {
+      	 
+      	  File iconinfo = new File("icon2.txt");
+      	  try {
+      		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+      			String filepath = "icon2.txt";
+      			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+   				Process process = new ProcessBuilder(iconfile).start();
+   				System.out.println("[Debug] :  launch program");
+      			
+      			}else {
+      				System.out.println("[Debug] :  Icon not created");
+      				
+      			}
+      		
 			} catch (IOException e2) {
 				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
 			}
-          }
-        });
-        System.out.println("[Debug] :  Drag And Drop Icon active");
-        SwingUtilities.updateComponentTreeUI(main);
+        }
+      });
+      System.out.println("[Debug] :  Drag And Drop Icon active");
+      SwingUtilities.updateComponentTreeUI(main);
 	}
 	public void Icon3 () {
 		
