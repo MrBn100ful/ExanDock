@@ -1,3 +1,4 @@
+![ExanLauncher logo](https://puu.sh/s6gG9/1622eb4d0d.png)
 # ExanLauncher WIP 
 A replacement of the windows start menu in java.
 
@@ -15,5 +16,5 @@ A replacement of the windows start menu in java.
 ##A example of the launcher
 
 =====
-![ExanLauncher example](https://puu.sh/qmjnV/406f82a2c5.gif)
+![ExanLauncher example](https://puu.sh/s6gci/87324e002c.gif)
 
