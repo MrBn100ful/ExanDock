@@ -29,7 +29,7 @@ import fr.MrBn100ful.ExanLauncher.Blurred.Dwmapi;
 
 @SuppressWarnings("serial")
 public class Frame extends JPanel implements ButtonAPIEventListener {
-	private STexturedButton start = new STexturedButton(ButtonAPI.getResource("list2.png"));
+	private STexturedButton icon = new STexturedButton(ButtonAPI.getResource("icon.png"));
 	private STexturedButton restart = new STexturedButton(ButtonAPI.getResource("restart.png"));
 	private STexturedButton internet = new STexturedButton(ButtonAPI.getResource("internet.png"));
 	private STexturedButton multimedia = new STexturedButton(ButtonAPI.getResource("multimedia.png"));
@@ -37,7 +37,8 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 	private STexturedButton tools = new STexturedButton(ButtonAPI.getResource("tools.png"));
 	private STexturedButton other = new STexturedButton(ButtonAPI.getResource("other.png"));
 	private STexturedButton stop = new STexturedButton(ButtonAPI.getResource("stop.png"));
-	private STexturedButton info = new STexturedButton(ButtonAPI.getResource("info.png"));
+	private STexturedButton about = new STexturedButton(ButtonAPI.getResource("about.png"));
+	private STexturedButton option = new STexturedButton(ButtonAPI.getResource("option.png"));
 	
 	
 	
@@ -62,9 +63,9 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 		programemenu.setUndecorated(true);
 		programestyle.setUndecorated(true);
 		this.setLayout(null);
-		start.setBounds(0, 0);
-		start.addEventListener(this);
-		this.add(start);
+		icon.setBounds(0, 0);
+		icon.addEventListener(this);
+		this.add(icon);
 		
 		
 
@@ -72,7 +73,7 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 
 	@Override
 	public void onEvent(ButtonAPIEvent e) {
-		if (e.getSource() == start) {
+		if (e.getSource() == icon) {
 			System.out.println("[Debug] :  start button press");
 
 			if (ProgMenuOpen == false) {
@@ -96,9 +97,9 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 					programemenu.add(internet);
 					
 					
-					info.setBounds(75, (height - 685));
-					info.addEventListener(this);
-					programemenu.add(info);
+					about.setBounds(105, (height - 685));
+					about.addEventListener(this);
+					programemenu.add(about);
 					
 
 					multimedia.setBounds(0, (height - 570));
@@ -116,6 +117,12 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 					other.setBounds(0, (height - 270));
 					other.addEventListener(this);
 					programemenu.add(other);
+					
+					
+					option.setBounds(30, (height - 685));
+					option.addEventListener(this);
+					programemenu.add(option);
+					
 
 					programemenu.setAlwaysOnTop(true);
 					programemenu.setResizable(false);
@@ -187,7 +194,7 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 			}
 		}
 		
-		if(e.getSource() == info)
+		if(e.getSource() == about)
 		{
 			System.out.println("[Debug] :  info button press");
 			JOptionPane.showMessageDialog(this, "                     Create by MrBn100ful"

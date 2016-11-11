@@ -148,7 +148,7 @@ public class Main extends JFrame {
 
 	public static void main(String[] args) throws IOException {
 		ButtonAPI.setSystemLookNFeel();
-		ButtonAPI.setResourcePath("/fr/MrBn100ful/ExanLauncher/Rescources");
+		ButtonAPI.setResourcePath("/fr/MrBn100ful/ExanLauncher/rescources");
 		instance = new Main(null);
 		
 	}
