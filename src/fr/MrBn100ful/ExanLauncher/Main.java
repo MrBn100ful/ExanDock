@@ -156,40 +156,29 @@ public class Main extends JFrame {
 		int hourint = LocalDateTime.now().getHour();
 		int minuteint = LocalDateTime.now().getMinute();
 		
-		if (((minuteint == 1)||(minuteint == 2)||(minuteint == 3)||(minuteint == 4)||(minuteint == 5)||(minuteint == 6)||(minuteint == 7)||(minuteint == 8)||(minuteint == 9))) {
-			if (((hourint == 1)||(hourint == 2)||(hourint == 3)||(hourint == 4)||(hourint == 5)||(hourint == 6)||(hourint == 7)||(hourint == 8)||(hourint == 9))){
+		if ((((minuteint == 1)||(minuteint == 2)||(minuteint == 3)||(minuteint == 4)||(minuteint == 5)||(minuteint == 6)||(minuteint == 7)||(minuteint == 8)||(minuteint == 9))) & (((hourint == 1)||(hourint == 2)||(hourint == 3)||(hourint == 4)||(hourint == 5)||(hourint == 6)||(hourint == 7)||(hourint == 8)||(hourint == 9)))) {
 				String hour = "0" + hourint;
 				String minute = " : "+ "0" + minuteint;
 				clock.setText(hour + minute);
+			
+			}else if (((hourint == 1)||(hourint == 2)||(hourint == 3)||(hourint == 4)||(hourint == 5)||(hourint == 6)||(hourint == 7)||(hourint == 8)||(hourint == 9))){
+				String hour = "0" + hourint;
+				String minute = " : "+ "" + minuteint;
+				clock.setText(hour + minute);
 				
-			}else{
+			}else if (((minuteint == 1)||(minuteint == 2)||(minuteint == 3)||(minuteint == 4)||(minuteint == 5)||(minuteint == 6)||(minuteint == 7)||(minuteint == 8)||(minuteint == 9))) {
 				String hour = "" + hourint;
 				String minute = " : "+ "0" + minuteint;
 				clock.setText(hour + minute);
+			}else{
+				String hour = "" + hourint;
+				String minute = " : "+ "" + minuteint;
+				clock.setText(hour + minute);
 				
 			}
-				
-			
-			String hour = "0" + hourint;
-			String minute = " : "+ "0" + minuteint;
-			clock.setText(hour + minute);
-			
-			
-			
-		}else if (((hourint == 1)||(hourint == 2)||(hourint == 3)||(hourint == 4)||(hourint == 5)||(hourint == 6)||(hourint == 7)||(hourint == 8)||(hourint == 9))){
-			String hour = "0" + hourint;
-			String minute = " : "+ "" + minuteint;
-			clock.setText(hour + minute);
-			
-		}else {
-			String hour = "" + hourint;
-			String minute = " : "+ minuteint;
-			clock.setText(hour + minute);
 			
 		}
 	
-		
-	}
 	public void Icon1 () {
 		
 		 try {
@@ -305,11 +294,20 @@ public class Main extends JFrame {
           @SuppressWarnings("unused")
 		public void actionPerformed(ActionEvent e)
           {
-        	  String filepath = "icon3.txt";
+        	 
+        	  File iconinfo = new File("icon3.txt");
         	  try {
-				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("[Debug] :  launch program");
+        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+        			String filepath = "icon3.txt";
+        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+     				Process process = new ProcessBuilder(iconfile).start();
+     				System.out.println("[Debug] :  launch program");
+        			
+        			}else {
+        				System.out.println("[Debug] :  Icon not created");
+        				
+        			}
+        		
 			} catch (IOException e2) {
 				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
@@ -342,11 +340,20 @@ public class Main extends JFrame {
           @SuppressWarnings("unused")
 		public void actionPerformed(ActionEvent e)
           {
-        	  String filepath = "icon4.txt";
+        	 
+        	  File iconinfo = new File("icon4.txt");
         	  try {
-				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("[Debug] :  launch program");
+        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+        			String filepath = "icon4.txt";
+        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+     				Process process = new ProcessBuilder(iconfile).start();
+     				System.out.println("[Debug] :  launch program");
+        			
+        			}else {
+        				System.out.println("[Debug] :  Icon not created");
+        				
+        			}
+        		
 			} catch (IOException e2) {
 				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
@@ -356,6 +363,7 @@ public class Main extends JFrame {
         System.out.println("[Debug] :  Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
+	
 	public void Icon5 () {
 		
 		 try {
@@ -379,11 +387,20 @@ public class Main extends JFrame {
           @SuppressWarnings("unused")
 		public void actionPerformed(ActionEvent e)
           {
-        	  String filepath = "icon5.txt";
+        	 
+        	  File iconinfo = new File("icon5.txt");
         	  try {
-				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("[Debug] :  launch program");
+        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+        			String filepath = "icon15.txt";
+        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+     				Process process = new ProcessBuilder(iconfile).start();
+     				System.out.println("[Debug] :  launch program");
+        			
+        			}else {
+        				System.out.println("[Debug] :  Icon not created");
+        				
+        			}
+        		
 			} catch (IOException e2) {
 				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
@@ -393,6 +410,7 @@ public class Main extends JFrame {
         System.out.println("[Debug] :  Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
+	
 	public void Icon6 () {
 		
 		 try {
@@ -416,11 +434,20 @@ public class Main extends JFrame {
           @SuppressWarnings("unused")
 		public void actionPerformed(ActionEvent e)
           {
-        	  String filepath = "icon6.txt";
+        	 
+        	  File iconinfo = new File("icon6.txt");
         	  try {
-				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("[Debug] :  launch program");
+        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+        			String filepath = "icon6.txt";
+        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+     				Process process = new ProcessBuilder(iconfile).start();
+     				System.out.println("[Debug] :  launch program");
+        			
+        			}else {
+        				System.out.println("[Debug] :  Icon not created");
+        				
+        			}
+        		
 			} catch (IOException e2) {
 				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
@@ -430,6 +457,7 @@ public class Main extends JFrame {
         System.out.println("[Debug] :  Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
+
 	public void Icon7 () {
 		
 		 try {
@@ -453,11 +481,20 @@ public class Main extends JFrame {
           @SuppressWarnings("unused")
 		public void actionPerformed(ActionEvent e)
           {
-        	  String filepath = "icon7.txt";
+        	 
+        	  File iconinfo = new File("icon7.txt");
         	  try {
-				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("[Debug] :  launch program");
+        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+        			String filepath = "icon7.txt";
+        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+     				Process process = new ProcessBuilder(iconfile).start();
+     				System.out.println("[Debug] :  launch program");
+        			
+        			}else {
+        				System.out.println("[Debug] :  Icon not created");
+        				
+        			}
+        		
 			} catch (IOException e2) {
 				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
@@ -467,6 +504,7 @@ public class Main extends JFrame {
         System.out.println("[Debug] :  Drag And Drop Icon active");
         SwingUtilities.updateComponentTreeUI(main);
 	}
+	
 	public void Icon8 () {
 		
 		 try {
@@ -490,11 +528,20 @@ public class Main extends JFrame {
           @SuppressWarnings("unused")
 		public void actionPerformed(ActionEvent e)
           {
-        	  String filepath = "icon8.txt";
+        	 
+        	  File iconinfo = new File("icon8.txt");
         	  try {
-				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("[Debug] :  launch program");
+        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+        			String filepath = "icon8.txt";
+        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+     				Process process = new ProcessBuilder(iconfile).start();
+     				System.out.println("[Debug] :  launch program");
+        			
+        			}else {
+        				System.out.println("[Debug] :  Icon not created");
+        				
+        			}
+        		
 			} catch (IOException e2) {
 				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
@@ -527,11 +574,20 @@ public class Main extends JFrame {
           @SuppressWarnings("unused")
 		public void actionPerformed(ActionEvent e)
           {
-        	  String filepath = "icon9.txt";
+        	 
+        	  File iconinfo = new File("icon9.txt");
         	  try {
-				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("[Debug] :  launch program");
+        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+        			String filepath = "icon9.txt";
+        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+     				Process process = new ProcessBuilder(iconfile).start();
+     				System.out.println("[Debug] :  launch program");
+        			
+        			}else {
+        				System.out.println("[Debug] :  Icon not created");
+        				
+        			}
+        		
 			} catch (IOException e2) {
 				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
@@ -564,11 +620,20 @@ public class Main extends JFrame {
           @SuppressWarnings("unused")
 		public void actionPerformed(ActionEvent e)
           {
-        	  String filepath = "icon10.txt";
+        	 
+        	  File iconinfo = new File("icon10.txt");
         	  try {
-				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("[Debug] :  launch program");
+        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+        			String filepath = "icon10.txt";
+        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+     				Process process = new ProcessBuilder(iconfile).start();
+     				System.out.println("[Debug] :  launch program");
+        			
+        			}else {
+        				System.out.println("[Debug] :  Icon not created");
+        				
+        			}
+        		
 			} catch (IOException e2) {
 				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
@@ -601,11 +666,20 @@ public class Main extends JFrame {
           @SuppressWarnings("unused")
 		public void actionPerformed(ActionEvent e)
           {
-        	  String filepath = "icon11.txt";
+        	 
+        	  File iconinfo = new File("icon11.txt");
         	  try {
-				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("[Debug] :  launch program");
+        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+        			String filepath = "icon11.txt";
+        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+     				Process process = new ProcessBuilder(iconfile).start();
+     				System.out.println("[Debug] :  launch program");
+        			
+        			}else {
+        				System.out.println("[Debug] :  Icon not created");
+        				
+        			}
+        		
 			} catch (IOException e2) {
 				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
@@ -638,11 +712,20 @@ public class Main extends JFrame {
           @SuppressWarnings("unused")
 		public void actionPerformed(ActionEvent e)
           {
-        	  String filepath = "icon12.txt";
+        	 
+        	  File iconinfo = new File("icon12.txt");
         	  try {
-				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("[Debug] :  launch program");
+        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+        			String filepath = "icon12.txt";
+        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+     				Process process = new ProcessBuilder(iconfile).start();
+     				System.out.println("[Debug] :  launch program");
+        			
+        			}else {
+        				System.out.println("[Debug] :  Icon not created");
+        				
+        			}
+        		
 			} catch (IOException e2) {
 				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
@@ -675,11 +758,20 @@ public class Main extends JFrame {
           @SuppressWarnings("unused")
 		public void actionPerformed(ActionEvent e)
           {
-        	  String filepath = "icon13.txt";
+        	 
+        	  File iconinfo = new File("icon2.txt");
         	  try {
-				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("[Debug] :  launch program");
+        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+        			String filepath = "icon2.txt";
+        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+     				Process process = new ProcessBuilder(iconfile).start();
+     				System.out.println("[Debug] :  launch program");
+        			
+        			}else {
+        				System.out.println("[Debug] :  Icon not created");
+        				
+        			}
+        		
 			} catch (IOException e2) {
 				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
@@ -712,11 +804,20 @@ public class Main extends JFrame {
           @SuppressWarnings("unused")
 		public void actionPerformed(ActionEvent e)
           {
-        	  String filepath = "icon14.txt";
+        	 
+        	  File iconinfo = new File("icon14.txt");
         	  try {
-				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("[Debug] :  launch program");
+        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+        			String filepath = "icon14.txt";
+        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+     				Process process = new ProcessBuilder(iconfile).start();
+     				System.out.println("[Debug] :  launch program");
+        			
+        			}else {
+        				System.out.println("[Debug] :  Icon not created");
+        				
+        			}
+        		
 			} catch (IOException e2) {
 				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
@@ -749,11 +850,20 @@ public class Main extends JFrame {
           @SuppressWarnings("unused")
 		public void actionPerformed(ActionEvent e)
           {
-        	  String filepath = "icon15.txt";
+        	 
+        	  File iconinfo = new File("icon15.txt");
         	  try {
-				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("[Debug] :  launch program");
+        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+        			String filepath = "icon15.txt";
+        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+     				Process process = new ProcessBuilder(iconfile).start();
+     				System.out.println("[Debug] :  launch program");
+        			
+        			}else {
+        				System.out.println("[Debug] :  Icon not created");
+        				
+        			}
+        		
 			} catch (IOException e2) {
 				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
@@ -786,11 +896,20 @@ public class Main extends JFrame {
           @SuppressWarnings("unused")
 		public void actionPerformed(ActionEvent e)
           {
-        	  String filepath = "icon16.txt";
+        	 
+        	  File iconinfo = new File("icon16.txt");
         	  try {
-				String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-				Process process = new ProcessBuilder(iconfile).start();
-				System.out.println("[Debug] :  launch program");
+        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+        			String filepath = "icon16.txt";
+        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+     				Process process = new ProcessBuilder(iconfile).start();
+     				System.out.println("[Debug] :  launch program");
+        			
+        			}else {
+        				System.out.println("[Debug] :  Icon not created");
+        				
+        			}
+        		
 			} catch (IOException e2) {
 				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
