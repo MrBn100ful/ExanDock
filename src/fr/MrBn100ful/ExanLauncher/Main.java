@@ -18,8 +18,10 @@ import java.awt.dnd.DropTarget;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
@@ -56,6 +58,10 @@ public class Main extends JFrame {
 
 	@SuppressWarnings("resource")
 	public Main(Component c) throws IOException {
+		File file = new File("debug.txt");
+		FileOutputStream fos = new FileOutputStream(file);
+		PrintStream ps = new PrintStream(fos);
+		System.setOut(ps);
 		
 		File iconinfo = new File("iconinfo.txt");
 		System.out.println("[Debug] :  program launch");
