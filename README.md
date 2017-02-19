@@ -6,10 +6,10 @@ A replacement of the windows start menu in java.
 ##todo
 
 - [x] Drag and drop icon.
-- [ ] List program.
+- [ ] Make a list of the instaled program.
 - [x] Suport all screen.
 - [ ] See what program is runing.
-- [ ] Make it wort is linux mac and windows.
+- [ ] Make it work with linux and mac.
 - [ ] Make the program nice.
 
 
