@@ -1,5 +1,7 @@
 package fr.MrBn100ful.ExanLauncher;
 
+import java.awt.Button;
+
 /**
  *  Here is the program menu and the event.
  *  
@@ -9,13 +11,20 @@ package fr.MrBn100ful.ExanLauncher;
 
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.UIManager;
 
 import com.sun.jna.Native;
 import com.sun.jna.platform.win32.WinDef.HWND;
@@ -40,10 +49,17 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 	private STexturedButton about = new STexturedButton(ButtonAPI.getResource("about.png"));
 	private STexturedButton option = new STexturedButton(ButtonAPI.getResource("option.png"));
 	
+	private STexturedButton delicon1 = new STexturedButton(ButtonAPI.getResource("delico.png"));
+
+	
+	
 	
 	
 	public boolean ProgMenuOpen = false;
 	public boolean ProgMenuCreate = false;
+	
+	public boolean optionMenuOpen = false;
+	public boolean optionMenuCreate = false;
 	
 	public boolean InfoOpen = false;
 	public boolean InfoCreate = false;
@@ -52,7 +68,11 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 	
 	public JFrame infomenu = new JFrame();
 	
+	public JFrame optionmenu = new JFrame();
+	
 	public JFrame programestyle = new JFrame();
+	
+	public JTextArea iconnumber;
 	Shutdown shutdown = new Shutdown();
 	GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
 	int width = gd.getDisplayMode().getWidth();
@@ -71,6 +91,7 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 
 	}
 
+	@SuppressWarnings("static-access")
 	@Override
 	public void onEvent(ButtonAPIEvent e) {
 		if (e.getSource() == icon) {
@@ -205,6 +226,65 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 					+ "\n"
 					+ "https://github.com/MrBn100ful/ExanLauncher", "About ExanLauncher",
 					JOptionPane.INFORMATION_MESSAGE);
+			
+			
+		}
+		if(e.getSource() == option)
+		{
+			System.out.println("[Debug] :  option button press");
+			
+			if (optionMenuOpen == false) {
+				if (optionMenuCreate == false) {
+					
+					optionmenu.setTitle("ExanLauncher Dev Programe Menu");
+					optionmenu.setSize(200, 400);
+
+					optionmenu.setResizable(true);
+					
+					
+					optionmenu.setVisible(true);
+					optionMenuOpen = true;
+					optionMenuCreate = false;
+
+					
+					
+					delicon1.setBounds(30, (30));
+					delicon1.addEventListener(this);
+					optionmenu.add(delicon1);
+					
+					iconnumber = new JTextArea();
+					iconnumber.setBounds(0, (height - 28), 60, height);
+					iconnumber.setFont(UIManager.getFont("Label.font").deriveFont(Font.BOLD, 16f));
+					optionmenu.add(iconnumber);
+					
+			
+						if (e.getSource() == delicon1) {
+							String var = iconnumber.getText();
+							int y = Integer.parseInt(var);
+							
+							if (y == 1 ||y == 2 ||y == 3 ||y == 4 ||y == 5 ||y == 6 ||y == 7 ||y == 8 ||y == 9 ||y == 10 ||y == 11 ||y == 12 ||y == 13 ||y == 14 ||y == 15){
+								File file = new File("icon" + var + ".txt");
+								file.delete();
+								
+								File file2 = new File("icon" + var + ".png");
+								file2.delete();
+								
+							}
+						}
+					
+				} else {
+					
+					optionmenu.setVisible(true);
+
+					optionMenuOpen = true;
+				}
+
+			} else if (ProgMenuOpen == true) {
+				optionmenu.setVisible(false);
+
+				optionMenuOpen = false;
+
+			}
 			
 			
 		}
