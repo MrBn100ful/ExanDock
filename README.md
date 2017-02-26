@@ -10,7 +10,7 @@ A replacement of the windows start menu in java.
 - [x] Suport all screen.
 - [ ] See what program is runing.
 - [ ] Make it work with linux and mac.
-- [ ] Make the program nice.
+- [ ] Make the look program nice.
 
 
 ##A example of the launcher
