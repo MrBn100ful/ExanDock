@@ -52,6 +52,7 @@ public class Main extends JFrame {
 	public JLabel dropicon;
 	public JFrame style = new JFrame();
 	public JFrame main = new JFrame();
+
 	@SuppressWarnings("unused")
 	private DragAndDropIcon DragAndDropIcon;
 
@@ -134,6 +135,8 @@ public class Main extends JFrame {
 		pBlurBehind.fEnable = true;
 		pBlurBehind.fTransitionOnMaximized = false;
 		Dwmapi.INSTANCE.DwmEnableBlurBehindWindow(hwnd, pBlurBehind);
+		
+
 		Icon1();
 		Icon2();
 		Icon3();
@@ -151,6 +154,7 @@ public class Main extends JFrame {
 		Icon15();
 		Icon16();
 	}
+
 
 	public static void main(String[] args) throws IOException {
 		ButtonAPI.setSystemLookNFeel();
@@ -188,50 +192,96 @@ public class Main extends JFrame {
 	public void Icon1 () {
 		
 		 try {
-             UIManager.setLookAndFeel(
-                     UIManager.getSystemLookAndFeelClassName());
-         } catch (Exception e) {
-             e.printStackTrace();
-         }
+           UIManager.setLookAndFeel(
+                   UIManager.getSystemLookAndFeelClassName());
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
 		
 		
 		ImageIcon icon1 = new ImageIcon("icon1.png");
-        JButton buttonicon1 = new JButton(icon1);
-        buttonicon1.setBounds(0, 70, 60, 60);
-        buttonicon1.setBorder(null);
-        buttonicon1.setOpaque(false);
-        buttonicon1.setContentAreaFilled(false);
-        buttonicon1.setBorderPainted(false);
-        main.add(buttonicon1);
-        buttonicon1.addActionListener(new ActionListener()
-        {
-          @SuppressWarnings("unused")
+      JButton buttonicon1 = new JButton(icon1);
+      buttonicon1.setBounds(0, 70, 60, 60);
+      buttonicon1.setBorder(null);
+      buttonicon1.setOpaque(false);
+      buttonicon1.setContentAreaFilled(false);
+      buttonicon1.setBorderPainted(false);
+      main.add(buttonicon1);
+      buttonicon1.addActionListener(new ActionListener()
+      {
+        @SuppressWarnings("unused")
 		public void actionPerformed(ActionEvent e)
-          {
-        	 
-        	  File iconinfo = new File("icon1.txt");
-        	  try {
-        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-        			String filepath = "icon1.txt";
-        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-     				Process process = new ProcessBuilder(iconfile).start();
-     				System.out.println("[Debug] :  launch program");
-        			
-        			}else {
-        				System.out.println("[Debug] :  Icon not created");
-        				
-        			}
-        		
+        {
+      	 
+      	  File iconinfo = new File("icon1.txt");
+      	  try {
+      		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+      			String filepath = "icon1.txt";
+      			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+   				Process process = new ProcessBuilder(iconfile).start();
+   				System.out.println("[Debug] :  launch program");
+      			
+      			}else {
+      				System.out.println("[Debug] :  Icon not created");
+      				
+      			}
+      		
 			} catch (IOException e2) {
 				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
 			}
-          }
-        });
-        System.out.println("[Debug] :  Drag And Drop Icon active");
-        SwingUtilities.updateComponentTreeUI(main);
+        }
+      });
+      System.out.println("[Debug] :  Drag And Drop Icon active");
+      SwingUtilities.updateComponentTreeUI(main);
 	}
 	public void Icon2 () {
+		
+		 try {
+         UIManager.setLookAndFeel(
+                 UIManager.getSystemLookAndFeelClassName());
+     } catch (Exception e) {
+         e.printStackTrace();
+     }
+		
+		
+		ImageIcon icon1 = new ImageIcon("icon2.png");
+    JButton buttonicon1 = new JButton(icon1);
+    buttonicon1.setBounds(0, 130, 60, 60);
+    buttonicon1.setBorder(null);
+    buttonicon1.setOpaque(false);
+    buttonicon1.setContentAreaFilled(false);
+    buttonicon1.setBorderPainted(false);
+    main.add(buttonicon1);
+    buttonicon1.addActionListener(new ActionListener()
+    {
+      @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+      {
+    	 
+    	  File iconinfo = new File("icon2.txt");
+    	  try {
+    		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+    			String filepath = "icon2.txt";
+    			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+ 				Process process = new ProcessBuilder(iconfile).start();
+ 				System.out.println("[Debug] :  launch program");
+    			
+    			}else {
+    				System.out.println("[Debug] :  Icon not created");
+    				
+    			}
+    		
+			} catch (IOException e2) {
+				System.out.println("[Debug] :  launch program error");
+				e2.printStackTrace();
+			}
+      }
+    });
+    System.out.println("[Debug] :  Drag And Drop Icon active");
+    SwingUtilities.updateComponentTreeUI(main);
+	}
+	public void Icon3 () {
 		
 		 try {
            UIManager.setLookAndFeel(
@@ -240,14 +290,478 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		
-		ImageIcon icon1 = new ImageIcon("icon2.png");
+		ImageIcon icon1 = new ImageIcon("icon3.png");
       JButton buttonicon1 = new JButton(icon1);
-      buttonicon1.setBounds(0, 130, 60, 60);
+      buttonicon1.setBounds(0, 190, 60, 60);
       buttonicon1.setBorder(null);
       buttonicon1.setOpaque(false);
       buttonicon1.setContentAreaFilled(false);
       buttonicon1.setBorderPainted(false);
+      
+      main.add(buttonicon1);
+      buttonicon1.addActionListener(new ActionListener()
+      {
+        @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+        {
+      	 
+      	  File iconinfo = new File("icon3.txt");
+      	  try {
+      		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+      			String filepath = "icon3.txt";
+      			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+   				Process process = new ProcessBuilder(iconfile).start();
+   				System.out.println("[Debug] :  launch program");
+      			
+      			}else {
+      				System.out.println("[Debug] :  Icon not created");
+      				
+      			}
+      		
+			} catch (IOException e2) {
+				System.out.println("[Debug] :  launch program error");
+				e2.printStackTrace();
+			}
+        }
+      });
+      System.out.println("[Debug] :  Drag And Drop Icon active");
+      SwingUtilities.updateComponentTreeUI(main);
+	}
+	public void Icon4 () {
+		
+		 try {
+           UIManager.setLookAndFeel(
+                   UIManager.getSystemLookAndFeelClassName());
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
+		
+		ImageIcon icon1 = new ImageIcon("icon4.png");
+      JButton buttonicon1 = new JButton(icon1);
+      buttonicon1.setBounds(0, 250, 60, 60);
+      buttonicon1.setBorder(null);
+      buttonicon1.setOpaque(false);
+      buttonicon1.setContentAreaFilled(false);
+      buttonicon1.setBorderPainted(false);
+      
+      main.add(buttonicon1);
+      buttonicon1.addActionListener(new ActionListener()
+      {
+        @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+        {
+      	 
+      	  File iconinfo = new File("icon4.txt");
+      	  try {
+      		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+      			String filepath = "icon4.txt";
+      			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+   				Process process = new ProcessBuilder(iconfile).start();
+   				System.out.println("[Debug] :  launch program");
+      			
+      			}else {
+      				System.out.println("[Debug] :  Icon not created");
+      				
+      			}
+      		
+			} catch (IOException e2) {
+				System.out.println("[Debug] :  launch program error");
+				e2.printStackTrace();
+			}
+        }
+      });
+      System.out.println("[Debug] :  Drag And Drop Icon active");
+      SwingUtilities.updateComponentTreeUI(main);
+	}
+	
+	public void Icon5 () {
+		
+		 try {
+           UIManager.setLookAndFeel(
+                   UIManager.getSystemLookAndFeelClassName());
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
+		
+		ImageIcon icon1 = new ImageIcon("icon5.png");
+      JButton buttonicon1 = new JButton(icon1);
+      buttonicon1.setBounds(0, 310, 60, 60);
+      buttonicon1.setBorder(null);
+      buttonicon1.setOpaque(false);
+      buttonicon1.setContentAreaFilled(false);
+      buttonicon1.setBorderPainted(false);
+      
+      main.add(buttonicon1);
+      buttonicon1.addActionListener(new ActionListener()
+      {
+        @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+        {
+      	 
+      	  File iconinfo = new File("icon5.txt");
+      	  try {
+      		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+      			String filepath = "icon15.txt";
+      			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+   				Process process = new ProcessBuilder(iconfile).start();
+   				System.out.println("[Debug] :  launch program");
+      			
+      			}else {
+      				System.out.println("[Debug] :  Icon not created");
+      				
+      			}
+      		
+			} catch (IOException e2) {
+				System.out.println("[Debug] :  launch program error");
+				e2.printStackTrace();
+			}
+        }
+      });
+      System.out.println("[Debug] :  Drag And Drop Icon active");
+      SwingUtilities.updateComponentTreeUI(main);
+	}
+	
+	public void Icon6 () {
+		
+		 try {
+           UIManager.setLookAndFeel(
+                   UIManager.getSystemLookAndFeelClassName());
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
+		
+		ImageIcon icon1 = new ImageIcon("icon6.png");
+      JButton buttonicon1 = new JButton(icon1);
+      buttonicon1.setBounds(0, 370, 60, 60);
+      buttonicon1.setBorder(null);
+      buttonicon1.setOpaque(false);
+      buttonicon1.setContentAreaFilled(false);
+      buttonicon1.setBorderPainted(false);
+      
+      main.add(buttonicon1);
+      buttonicon1.addActionListener(new ActionListener()
+      {
+        @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+        {
+      	 
+      	  File iconinfo = new File("icon6.txt");
+      	  try {
+      		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+      			String filepath = "icon6.txt";
+      			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+   				Process process = new ProcessBuilder(iconfile).start();
+   				System.out.println("[Debug] :  launch program");
+      			
+      			}else {
+      				System.out.println("[Debug] :  Icon not created");
+      				
+      			}
+      		
+			} catch (IOException e2) {
+				System.out.println("[Debug] :  launch program error");
+				e2.printStackTrace();
+			}
+        }
+      });
+      System.out.println("[Debug] :  Drag And Drop Icon active");
+      SwingUtilities.updateComponentTreeUI(main);
+	}
+
+	public void Icon7 () {
+		
+		 try {
+           UIManager.setLookAndFeel(
+                   UIManager.getSystemLookAndFeelClassName());
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
+		
+		ImageIcon icon1 = new ImageIcon("icon7.png");
+      JButton buttonicon1 = new JButton(icon1);
+      buttonicon1.setBounds(0, 430, 60, 60);
+      buttonicon1.setBorder(null);
+      buttonicon1.setOpaque(false);
+      buttonicon1.setContentAreaFilled(false);
+      buttonicon1.setBorderPainted(false);
+      
+      main.add(buttonicon1);
+      buttonicon1.addActionListener(new ActionListener()
+      {
+        @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+        {
+      	 
+      	  File iconinfo = new File("icon7.txt");
+      	  try {
+      		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+      			String filepath = "icon7.txt";
+      			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+   				Process process = new ProcessBuilder(iconfile).start();
+   				System.out.println("[Debug] :  launch program");
+      			
+      			}else {
+      				System.out.println("[Debug] :  Icon not created");
+      				
+      			}
+      		
+			} catch (IOException e2) {
+				System.out.println("[Debug] :  launch program error");
+				e2.printStackTrace();
+			}
+        }
+      });
+      System.out.println("[Debug] :  Drag And Drop Icon active");
+      SwingUtilities.updateComponentTreeUI(main);
+	}
+	
+	public void Icon8 () {
+		
+		 try {
+           UIManager.setLookAndFeel(
+                   UIManager.getSystemLookAndFeelClassName());
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
+		
+		ImageIcon icon1 = new ImageIcon("icon8.png");
+      JButton buttonicon1 = new JButton(icon1);
+      buttonicon1.setBounds(0, 490, 60, 60);
+      buttonicon1.setBorder(null);
+      buttonicon1.setOpaque(false);
+      buttonicon1.setContentAreaFilled(false);
+      buttonicon1.setBorderPainted(false);
+      
+      main.add(buttonicon1);
+      buttonicon1.addActionListener(new ActionListener()
+      {
+        @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+        {
+      	 
+      	  File iconinfo = new File("icon8.txt");
+      	  try {
+      		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+      			String filepath = "icon8.txt";
+      			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+   				Process process = new ProcessBuilder(iconfile).start();
+   				System.out.println("[Debug] :  launch program");
+      			
+      			}else {
+      				System.out.println("[Debug] :  Icon not created");
+      				
+      			}
+      		
+			} catch (IOException e2) {
+				System.out.println("[Debug] :  launch program error");
+				e2.printStackTrace();
+			}
+        }
+      });
+      System.out.println("[Debug] :  Drag And Drop Icon active");
+      SwingUtilities.updateComponentTreeUI(main);
+	}
+	public void Icon9 () {
+		
+		 try {
+           UIManager.setLookAndFeel(
+                   UIManager.getSystemLookAndFeelClassName());
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
+		
+		ImageIcon icon1 = new ImageIcon("icon9.png");
+      JButton buttonicon1 = new JButton(icon1);
+      buttonicon1.setBounds(0, 550, 60, 60);
+      buttonicon1.setBorder(null);
+      buttonicon1.setOpaque(false);
+      buttonicon1.setContentAreaFilled(false);
+      buttonicon1.setBorderPainted(false);
+      
+      main.add(buttonicon1);
+      buttonicon1.addActionListener(new ActionListener()
+      {
+        @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+        {
+      	 
+      	  File iconinfo = new File("icon9.txt");
+      	  try {
+      		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+      			String filepath = "icon9.txt";
+      			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+   				Process process = new ProcessBuilder(iconfile).start();
+   				System.out.println("[Debug] :  launch program");
+      			
+      			}else {
+      				System.out.println("[Debug] :  Icon not created");
+      				
+      			}
+      		
+			} catch (IOException e2) {
+				System.out.println("[Debug] :  launch program error");
+				e2.printStackTrace();
+			}
+        }
+      });
+      System.out.println("[Debug] :  Drag And Drop Icon active");
+      SwingUtilities.updateComponentTreeUI(main);
+	}
+	public void Icon10 () {
+		
+		 try {
+           UIManager.setLookAndFeel(
+                   UIManager.getSystemLookAndFeelClassName());
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
+		
+		ImageIcon icon1 = new ImageIcon("icon10.png");
+      JButton buttonicon1 = new JButton(icon1);
+      buttonicon1.setBounds(0, 610, 60, 60);
+      buttonicon1.setBorder(null);
+      buttonicon1.setOpaque(false);
+      buttonicon1.setContentAreaFilled(false);
+      buttonicon1.setBorderPainted(false);
+      
+      main.add(buttonicon1);
+      buttonicon1.addActionListener(new ActionListener()
+      {
+        @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+        {
+      	 
+      	  File iconinfo = new File("icon10.txt");
+      	  try {
+      		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+      			String filepath = "icon10.txt";
+      			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+   				Process process = new ProcessBuilder(iconfile).start();
+   				System.out.println("[Debug] :  launch program");
+      			
+      			}else {
+      				System.out.println("[Debug] :  Icon not created");
+      				
+      			}
+      		
+			} catch (IOException e2) {
+				System.out.println("[Debug] :  launch program error");
+				e2.printStackTrace();
+			}
+        }
+      });
+      System.out.println("[Debug] :  Drag And Drop Icon active");
+      SwingUtilities.updateComponentTreeUI(main);
+	}
+	public void Icon11 () {
+		
+		 try {
+           UIManager.setLookAndFeel(
+                   UIManager.getSystemLookAndFeelClassName());
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
+		
+		ImageIcon icon1 = new ImageIcon("icon11.png");
+      JButton buttonicon1 = new JButton(icon1);
+      buttonicon1.setBounds(0, 670, 60, 60);
+      buttonicon1.setBorder(null);
+      buttonicon1.setOpaque(false);
+      buttonicon1.setContentAreaFilled(false);
+      buttonicon1.setBorderPainted(false);
+      
+      main.add(buttonicon1);
+      buttonicon1.addActionListener(new ActionListener()
+      {
+        @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+        {
+      	 
+      	  File iconinfo = new File("icon11.txt");
+      	  try {
+      		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+      			String filepath = "icon11.txt";
+      			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+   				Process process = new ProcessBuilder(iconfile).start();
+   				System.out.println("[Debug] :  launch program");
+      			
+      			}else {
+      				System.out.println("[Debug] :  Icon not created");
+      				
+      			}
+      		
+			} catch (IOException e2) {
+				System.out.println("[Debug] :  launch program error");
+				e2.printStackTrace();
+			}
+        }
+      });
+      System.out.println("[Debug] :  Drag And Drop Icon active");
+      SwingUtilities.updateComponentTreeUI(main);
+	}
+	public void Icon12 () {
+		
+		 try {
+           UIManager.setLookAndFeel(
+                   UIManager.getSystemLookAndFeelClassName());
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
+		
+		ImageIcon icon1 = new ImageIcon("icon12.png");
+      JButton buttonicon1 = new JButton(icon1);
+      buttonicon1.setBounds(0, 730, 60, 60);
+      buttonicon1.setBorder(null);
+      buttonicon1.setOpaque(false);
+      buttonicon1.setContentAreaFilled(false);
+      buttonicon1.setBorderPainted(false);
+      
+      main.add(buttonicon1);
+      buttonicon1.addActionListener(new ActionListener()
+      {
+        @SuppressWarnings("unused")
+		public void actionPerformed(ActionEvent e)
+        {
+      	 
+      	  File iconinfo = new File("icon12.txt");
+      	  try {
+      		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+      			String filepath = "icon12.txt";
+      			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+   				Process process = new ProcessBuilder(iconfile).start();
+   				System.out.println("[Debug] :  launch program");
+      			
+      			}else {
+      				System.out.println("[Debug] :  Icon not created");
+      				
+      			}
+      		
+			} catch (IOException e2) {
+				System.out.println("[Debug] :  launch program error");
+				e2.printStackTrace();
+			}
+        }
+      });
+      System.out.println("[Debug] :  Drag And Drop Icon active");
+      SwingUtilities.updateComponentTreeUI(main);
+	}
+	public void Icon13 () {
+		
+		 try {
+           UIManager.setLookAndFeel(
+                   UIManager.getSystemLookAndFeelClassName());
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
+		
+		ImageIcon icon1 = new ImageIcon("icon13.png");
+      JButton buttonicon1 = new JButton(icon1);
+      buttonicon1.setBounds(0, 790, 60, 60);
+      buttonicon1.setBorder(null);
+      buttonicon1.setOpaque(false);
+      buttonicon1.setContentAreaFilled(false);
+      buttonicon1.setBorderPainted(false);
+      
       main.add(buttonicon1);
       buttonicon1.addActionListener(new ActionListener()
       {
@@ -277,654 +791,143 @@ public class Main extends JFrame {
       System.out.println("[Debug] :  Drag And Drop Icon active");
       SwingUtilities.updateComponentTreeUI(main);
 	}
-	public void Icon3 () {
-		
-		 try {
-             UIManager.setLookAndFeel(
-                     UIManager.getSystemLookAndFeelClassName());
-         } catch (Exception e) {
-             e.printStackTrace();
-         }
-		
-		ImageIcon icon1 = new ImageIcon("icon3.png");
-        JButton buttonicon1 = new JButton(icon1);
-        buttonicon1.setBounds(0, 190, 60, 60);
-        buttonicon1.setBorder(null);
-        buttonicon1.setOpaque(false);
-        buttonicon1.setContentAreaFilled(false);
-        buttonicon1.setBorderPainted(false);
-        
-        main.add(buttonicon1);
-        buttonicon1.addActionListener(new ActionListener()
-        {
-          @SuppressWarnings("unused")
-		public void actionPerformed(ActionEvent e)
-          {
-        	 
-        	  File iconinfo = new File("icon3.txt");
-        	  try {
-        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-        			String filepath = "icon3.txt";
-        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-     				Process process = new ProcessBuilder(iconfile).start();
-     				System.out.println("[Debug] :  launch program");
-        			
-        			}else {
-        				System.out.println("[Debug] :  Icon not created");
-        				
-        			}
-        		
-			} catch (IOException e2) {
-				System.out.println("[Debug] :  launch program error");
-				e2.printStackTrace();
-			}
-          }
-        });
-        System.out.println("[Debug] :  Drag And Drop Icon active");
-        SwingUtilities.updateComponentTreeUI(main);
-	}
-	public void Icon4 () {
-		
-		 try {
-             UIManager.setLookAndFeel(
-                     UIManager.getSystemLookAndFeelClassName());
-         } catch (Exception e) {
-             e.printStackTrace();
-         }
-		
-		ImageIcon icon1 = new ImageIcon("icon4.png");
-        JButton buttonicon1 = new JButton(icon1);
-        buttonicon1.setBounds(0, 250, 60, 60);
-        buttonicon1.setBorder(null);
-        buttonicon1.setOpaque(false);
-        buttonicon1.setContentAreaFilled(false);
-        buttonicon1.setBorderPainted(false);
-        
-        main.add(buttonicon1);
-        buttonicon1.addActionListener(new ActionListener()
-        {
-          @SuppressWarnings("unused")
-		public void actionPerformed(ActionEvent e)
-          {
-        	 
-        	  File iconinfo = new File("icon4.txt");
-        	  try {
-        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-        			String filepath = "icon4.txt";
-        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-     				Process process = new ProcessBuilder(iconfile).start();
-     				System.out.println("[Debug] :  launch program");
-        			
-        			}else {
-        				System.out.println("[Debug] :  Icon not created");
-        				
-        			}
-        		
-			} catch (IOException e2) {
-				System.out.println("[Debug] :  launch program error");
-				e2.printStackTrace();
-			}
-          }
-        });
-        System.out.println("[Debug] :  Drag And Drop Icon active");
-        SwingUtilities.updateComponentTreeUI(main);
-	}
-	
-	public void Icon5 () {
-		
-		 try {
-             UIManager.setLookAndFeel(
-                     UIManager.getSystemLookAndFeelClassName());
-         } catch (Exception e) {
-             e.printStackTrace();
-         }
-		
-		ImageIcon icon1 = new ImageIcon("icon5.png");
-        JButton buttonicon1 = new JButton(icon1);
-        buttonicon1.setBounds(0, 310, 60, 60);
-        buttonicon1.setBorder(null);
-        buttonicon1.setOpaque(false);
-        buttonicon1.setContentAreaFilled(false);
-        buttonicon1.setBorderPainted(false);
-        
-        main.add(buttonicon1);
-        buttonicon1.addActionListener(new ActionListener()
-        {
-          @SuppressWarnings("unused")
-		public void actionPerformed(ActionEvent e)
-          {
-        	 
-        	  File iconinfo = new File("icon5.txt");
-        	  try {
-        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-        			String filepath = "icon15.txt";
-        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-     				Process process = new ProcessBuilder(iconfile).start();
-     				System.out.println("[Debug] :  launch program");
-        			
-        			}else {
-        				System.out.println("[Debug] :  Icon not created");
-        				
-        			}
-        		
-			} catch (IOException e2) {
-				System.out.println("[Debug] :  launch program error");
-				e2.printStackTrace();
-			}
-          }
-        });
-        System.out.println("[Debug] :  Drag And Drop Icon active");
-        SwingUtilities.updateComponentTreeUI(main);
-	}
-	
-	public void Icon6 () {
-		
-		 try {
-             UIManager.setLookAndFeel(
-                     UIManager.getSystemLookAndFeelClassName());
-         } catch (Exception e) {
-             e.printStackTrace();
-         }
-		
-		ImageIcon icon1 = new ImageIcon("icon6.png");
-        JButton buttonicon1 = new JButton(icon1);
-        buttonicon1.setBounds(0, 370, 60, 60);
-        buttonicon1.setBorder(null);
-        buttonicon1.setOpaque(false);
-        buttonicon1.setContentAreaFilled(false);
-        buttonicon1.setBorderPainted(false);
-        
-        main.add(buttonicon1);
-        buttonicon1.addActionListener(new ActionListener()
-        {
-          @SuppressWarnings("unused")
-		public void actionPerformed(ActionEvent e)
-          {
-        	 
-        	  File iconinfo = new File("icon6.txt");
-        	  try {
-        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-        			String filepath = "icon6.txt";
-        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-     				Process process = new ProcessBuilder(iconfile).start();
-     				System.out.println("[Debug] :  launch program");
-        			
-        			}else {
-        				System.out.println("[Debug] :  Icon not created");
-        				
-        			}
-        		
-			} catch (IOException e2) {
-				System.out.println("[Debug] :  launch program error");
-				e2.printStackTrace();
-			}
-          }
-        });
-        System.out.println("[Debug] :  Drag And Drop Icon active");
-        SwingUtilities.updateComponentTreeUI(main);
-	}
-
-	public void Icon7 () {
-		
-		 try {
-             UIManager.setLookAndFeel(
-                     UIManager.getSystemLookAndFeelClassName());
-         } catch (Exception e) {
-             e.printStackTrace();
-         }
-		
-		ImageIcon icon1 = new ImageIcon("icon7.png");
-        JButton buttonicon1 = new JButton(icon1);
-        buttonicon1.setBounds(0, 430, 60, 60);
-        buttonicon1.setBorder(null);
-        buttonicon1.setOpaque(false);
-        buttonicon1.setContentAreaFilled(false);
-        buttonicon1.setBorderPainted(false);
-        
-        main.add(buttonicon1);
-        buttonicon1.addActionListener(new ActionListener()
-        {
-          @SuppressWarnings("unused")
-		public void actionPerformed(ActionEvent e)
-          {
-        	 
-        	  File iconinfo = new File("icon7.txt");
-        	  try {
-        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-        			String filepath = "icon7.txt";
-        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-     				Process process = new ProcessBuilder(iconfile).start();
-     				System.out.println("[Debug] :  launch program");
-        			
-        			}else {
-        				System.out.println("[Debug] :  Icon not created");
-        				
-        			}
-        		
-			} catch (IOException e2) {
-				System.out.println("[Debug] :  launch program error");
-				e2.printStackTrace();
-			}
-          }
-        });
-        System.out.println("[Debug] :  Drag And Drop Icon active");
-        SwingUtilities.updateComponentTreeUI(main);
-	}
-	
-	public void Icon8 () {
-		
-		 try {
-             UIManager.setLookAndFeel(
-                     UIManager.getSystemLookAndFeelClassName());
-         } catch (Exception e) {
-             e.printStackTrace();
-         }
-		
-		ImageIcon icon1 = new ImageIcon("icon8.png");
-        JButton buttonicon1 = new JButton(icon1);
-        buttonicon1.setBounds(0, 490, 60, 60);
-        buttonicon1.setBorder(null);
-        buttonicon1.setOpaque(false);
-        buttonicon1.setContentAreaFilled(false);
-        buttonicon1.setBorderPainted(false);
-        
-        main.add(buttonicon1);
-        buttonicon1.addActionListener(new ActionListener()
-        {
-          @SuppressWarnings("unused")
-		public void actionPerformed(ActionEvent e)
-          {
-        	 
-        	  File iconinfo = new File("icon8.txt");
-        	  try {
-        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-        			String filepath = "icon8.txt";
-        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-     				Process process = new ProcessBuilder(iconfile).start();
-     				System.out.println("[Debug] :  launch program");
-        			
-        			}else {
-        				System.out.println("[Debug] :  Icon not created");
-        				
-        			}
-        		
-			} catch (IOException e2) {
-				System.out.println("[Debug] :  launch program error");
-				e2.printStackTrace();
-			}
-          }
-        });
-        System.out.println("[Debug] :  Drag And Drop Icon active");
-        SwingUtilities.updateComponentTreeUI(main);
-	}
-	public void Icon9 () {
-		
-		 try {
-             UIManager.setLookAndFeel(
-                     UIManager.getSystemLookAndFeelClassName());
-         } catch (Exception e) {
-             e.printStackTrace();
-         }
-		
-		ImageIcon icon1 = new ImageIcon("icon9.png");
-        JButton buttonicon1 = new JButton(icon1);
-        buttonicon1.setBounds(0, 550, 60, 60);
-        buttonicon1.setBorder(null);
-        buttonicon1.setOpaque(false);
-        buttonicon1.setContentAreaFilled(false);
-        buttonicon1.setBorderPainted(false);
-        
-        main.add(buttonicon1);
-        buttonicon1.addActionListener(new ActionListener()
-        {
-          @SuppressWarnings("unused")
-		public void actionPerformed(ActionEvent e)
-          {
-        	 
-        	  File iconinfo = new File("icon9.txt");
-        	  try {
-        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-        			String filepath = "icon9.txt";
-        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-     				Process process = new ProcessBuilder(iconfile).start();
-     				System.out.println("[Debug] :  launch program");
-        			
-        			}else {
-        				System.out.println("[Debug] :  Icon not created");
-        				
-        			}
-        		
-			} catch (IOException e2) {
-				System.out.println("[Debug] :  launch program error");
-				e2.printStackTrace();
-			}
-          }
-        });
-        System.out.println("[Debug] :  Drag And Drop Icon active");
-        SwingUtilities.updateComponentTreeUI(main);
-	}
-	public void Icon10 () {
-		
-		 try {
-             UIManager.setLookAndFeel(
-                     UIManager.getSystemLookAndFeelClassName());
-         } catch (Exception e) {
-             e.printStackTrace();
-         }
-		
-		ImageIcon icon1 = new ImageIcon("icon10.png");
-        JButton buttonicon1 = new JButton(icon1);
-        buttonicon1.setBounds(0, 610, 60, 60);
-        buttonicon1.setBorder(null);
-        buttonicon1.setOpaque(false);
-        buttonicon1.setContentAreaFilled(false);
-        buttonicon1.setBorderPainted(false);
-        
-        main.add(buttonicon1);
-        buttonicon1.addActionListener(new ActionListener()
-        {
-          @SuppressWarnings("unused")
-		public void actionPerformed(ActionEvent e)
-          {
-        	 
-        	  File iconinfo = new File("icon10.txt");
-        	  try {
-        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-        			String filepath = "icon10.txt";
-        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-     				Process process = new ProcessBuilder(iconfile).start();
-     				System.out.println("[Debug] :  launch program");
-        			
-        			}else {
-        				System.out.println("[Debug] :  Icon not created");
-        				
-        			}
-        		
-			} catch (IOException e2) {
-				System.out.println("[Debug] :  launch program error");
-				e2.printStackTrace();
-			}
-          }
-        });
-        System.out.println("[Debug] :  Drag And Drop Icon active");
-        SwingUtilities.updateComponentTreeUI(main);
-	}
-	public void Icon11 () {
-		
-		 try {
-             UIManager.setLookAndFeel(
-                     UIManager.getSystemLookAndFeelClassName());
-         } catch (Exception e) {
-             e.printStackTrace();
-         }
-		
-		ImageIcon icon1 = new ImageIcon("icon11.png");
-        JButton buttonicon1 = new JButton(icon1);
-        buttonicon1.setBounds(0, 670, 60, 60);
-        buttonicon1.setBorder(null);
-        buttonicon1.setOpaque(false);
-        buttonicon1.setContentAreaFilled(false);
-        buttonicon1.setBorderPainted(false);
-        
-        main.add(buttonicon1);
-        buttonicon1.addActionListener(new ActionListener()
-        {
-          @SuppressWarnings("unused")
-		public void actionPerformed(ActionEvent e)
-          {
-        	 
-        	  File iconinfo = new File("icon11.txt");
-        	  try {
-        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-        			String filepath = "icon11.txt";
-        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-     				Process process = new ProcessBuilder(iconfile).start();
-     				System.out.println("[Debug] :  launch program");
-        			
-        			}else {
-        				System.out.println("[Debug] :  Icon not created");
-        				
-        			}
-        		
-			} catch (IOException e2) {
-				System.out.println("[Debug] :  launch program error");
-				e2.printStackTrace();
-			}
-          }
-        });
-        System.out.println("[Debug] :  Drag And Drop Icon active");
-        SwingUtilities.updateComponentTreeUI(main);
-	}
-	public void Icon12 () {
-		
-		 try {
-             UIManager.setLookAndFeel(
-                     UIManager.getSystemLookAndFeelClassName());
-         } catch (Exception e) {
-             e.printStackTrace();
-         }
-		
-		ImageIcon icon1 = new ImageIcon("icon12.png");
-        JButton buttonicon1 = new JButton(icon1);
-        buttonicon1.setBounds(0, 730, 60, 60);
-        buttonicon1.setBorder(null);
-        buttonicon1.setOpaque(false);
-        buttonicon1.setContentAreaFilled(false);
-        buttonicon1.setBorderPainted(false);
-        
-        main.add(buttonicon1);
-        buttonicon1.addActionListener(new ActionListener()
-        {
-          @SuppressWarnings("unused")
-		public void actionPerformed(ActionEvent e)
-          {
-        	 
-        	  File iconinfo = new File("icon12.txt");
-        	  try {
-        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-        			String filepath = "icon12.txt";
-        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-     				Process process = new ProcessBuilder(iconfile).start();
-     				System.out.println("[Debug] :  launch program");
-        			
-        			}else {
-        				System.out.println("[Debug] :  Icon not created");
-        				
-        			}
-        		
-			} catch (IOException e2) {
-				System.out.println("[Debug] :  launch program error");
-				e2.printStackTrace();
-			}
-          }
-        });
-        System.out.println("[Debug] :  Drag And Drop Icon active");
-        SwingUtilities.updateComponentTreeUI(main);
-	}
-	public void Icon13 () {
-		
-		 try {
-             UIManager.setLookAndFeel(
-                     UIManager.getSystemLookAndFeelClassName());
-         } catch (Exception e) {
-             e.printStackTrace();
-         }
-		
-		ImageIcon icon1 = new ImageIcon("icon13.png");
-        JButton buttonicon1 = new JButton(icon1);
-        buttonicon1.setBounds(0, 790, 60, 60);
-        buttonicon1.setBorder(null);
-        buttonicon1.setOpaque(false);
-        buttonicon1.setContentAreaFilled(false);
-        buttonicon1.setBorderPainted(false);
-        
-        main.add(buttonicon1);
-        buttonicon1.addActionListener(new ActionListener()
-        {
-          @SuppressWarnings("unused")
-		public void actionPerformed(ActionEvent e)
-          {
-        	 
-        	  File iconinfo = new File("icon2.txt");
-        	  try {
-        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-        			String filepath = "icon2.txt";
-        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-     				Process process = new ProcessBuilder(iconfile).start();
-     				System.out.println("[Debug] :  launch program");
-        			
-        			}else {
-        				System.out.println("[Debug] :  Icon not created");
-        				
-        			}
-        		
-			} catch (IOException e2) {
-				System.out.println("[Debug] :  launch program error");
-				e2.printStackTrace();
-			}
-          }
-        });
-        System.out.println("[Debug] :  Drag And Drop Icon active");
-        SwingUtilities.updateComponentTreeUI(main);
-	}
 	public void Icon14 () {
 		
 		 try {
-             UIManager.setLookAndFeel(
-                     UIManager.getSystemLookAndFeelClassName());
-         } catch (Exception e) {
-             e.printStackTrace();
-         }
+           UIManager.setLookAndFeel(
+                   UIManager.getSystemLookAndFeelClassName());
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
 		
 		ImageIcon icon1 = new ImageIcon("icon14.png");
-        JButton buttonicon1 = new JButton(icon1);
-        buttonicon1.setBounds(0, 850, 60, 60);
-        buttonicon1.setBorder(null);
-        buttonicon1.setOpaque(false);
-        buttonicon1.setContentAreaFilled(false);
-        buttonicon1.setBorderPainted(false);
-        
-        main.add(buttonicon1);
-        buttonicon1.addActionListener(new ActionListener()
-        {
-          @SuppressWarnings("unused")
+      JButton buttonicon1 = new JButton(icon1);
+      buttonicon1.setBounds(0, 850, 60, 60);
+      buttonicon1.setBorder(null);
+      buttonicon1.setOpaque(false);
+      buttonicon1.setContentAreaFilled(false);
+      buttonicon1.setBorderPainted(false);
+      
+      main.add(buttonicon1);
+      buttonicon1.addActionListener(new ActionListener()
+      {
+        @SuppressWarnings("unused")
 		public void actionPerformed(ActionEvent e)
-          {
-        	 
-        	  File iconinfo = new File("icon14.txt");
-        	  try {
-        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-        			String filepath = "icon14.txt";
-        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-     				Process process = new ProcessBuilder(iconfile).start();
-     				System.out.println("[Debug] :  launch program");
-        			
-        			}else {
-        				System.out.println("[Debug] :  Icon not created");
-        				
-        			}
-        		
+        {
+      	 
+      	  File iconinfo = new File("icon14.txt");
+      	  try {
+      		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+      			String filepath = "icon14.txt";
+      			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+   				Process process = new ProcessBuilder(iconfile).start();
+   				System.out.println("[Debug] :  launch program");
+      			
+      			}else {
+      				System.out.println("[Debug] :  Icon not created");
+      				
+      			}
+      		
 			} catch (IOException e2) {
 				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
 			}
-          }
-        });
-        System.out.println("[Debug] :  Drag And Drop Icon active");
-        SwingUtilities.updateComponentTreeUI(main);
+        }
+      });
+      System.out.println("[Debug] :  Drag And Drop Icon active");
+      SwingUtilities.updateComponentTreeUI(main);
 	}
 	public void Icon15 () {
 		
 		 try {
-             UIManager.setLookAndFeel(
-                     UIManager.getSystemLookAndFeelClassName());
-         } catch (Exception e) {
-             e.printStackTrace();
-         }
+           UIManager.setLookAndFeel(
+                   UIManager.getSystemLookAndFeelClassName());
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
 		
 		ImageIcon icon1 = new ImageIcon("icon15.png");
-        JButton buttonicon1 = new JButton(icon1);
-        buttonicon1.setBounds(0, 910, 60, 60);
-        buttonicon1.setBorder(null);
-        buttonicon1.setOpaque(false);
-        buttonicon1.setContentAreaFilled(false);
-        buttonicon1.setBorderPainted(false);
-        
-        main.add(buttonicon1);
-        buttonicon1.addActionListener(new ActionListener()
-        {
-          @SuppressWarnings("unused")
+      JButton buttonicon1 = new JButton(icon1);
+      buttonicon1.setBounds(0, 910, 60, 60);
+      buttonicon1.setBorder(null);
+      buttonicon1.setOpaque(false);
+      buttonicon1.setContentAreaFilled(false);
+      buttonicon1.setBorderPainted(false);
+      
+      main.add(buttonicon1);
+      buttonicon1.addActionListener(new ActionListener()
+      {
+        @SuppressWarnings("unused")
 		public void actionPerformed(ActionEvent e)
-          {
-        	 
-        	  File iconinfo = new File("icon15.txt");
-        	  try {
-        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-        			String filepath = "icon15.txt";
-        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-     				Process process = new ProcessBuilder(iconfile).start();
-     				System.out.println("[Debug] :  launch program");
-        			
-        			}else {
-        				System.out.println("[Debug] :  Icon not created");
-        				
-        			}
-        		
+        {
+      	 
+      	  File iconinfo = new File("icon15.txt");
+      	  try {
+      		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+      			String filepath = "icon15.txt";
+      			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+   				Process process = new ProcessBuilder(iconfile).start();
+   				System.out.println("[Debug] :  launch program");
+      			
+      			}else {
+      				System.out.println("[Debug] :  Icon not created");
+      				
+      			}
+      		
 			} catch (IOException e2) {
 				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
 			}
-          }
-        });
-        System.out.println("[Debug] :  Drag And Drop Icon active");
-        SwingUtilities.updateComponentTreeUI(main);
+        }
+      });
+      System.out.println("[Debug] :  Drag And Drop Icon active");
+      SwingUtilities.updateComponentTreeUI(main);
 	}
 	public void Icon16 () {
 		
 		 try {
-             UIManager.setLookAndFeel(
-                     UIManager.getSystemLookAndFeelClassName());
-         } catch (Exception e) {
-             e.printStackTrace();
-         }
+           UIManager.setLookAndFeel(
+                   UIManager.getSystemLookAndFeelClassName());
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
 		
 		ImageIcon icon1 = new ImageIcon("icon16.png");
-        JButton buttonicon1 = new JButton(icon1);
-        buttonicon1.setBounds(0, 970, 60, 60);
-        buttonicon1.setBorder(null);
-        buttonicon1.setOpaque(false);
-        buttonicon1.setContentAreaFilled(false);
-        buttonicon1.setBorderPainted(false);
-        
-        main.add(buttonicon1);
-        buttonicon1.addActionListener(new ActionListener()
-        {
-          @SuppressWarnings("unused")
+      JButton buttonicon1 = new JButton(icon1);
+      buttonicon1.setBounds(0, 970, 60, 60);
+      buttonicon1.setBorder(null);
+      buttonicon1.setOpaque(false);
+      buttonicon1.setContentAreaFilled(false);
+      buttonicon1.setBorderPainted(false);
+      
+      main.add(buttonicon1);
+      buttonicon1.addActionListener(new ActionListener()
+      {
+        @SuppressWarnings("unused")
 		public void actionPerformed(ActionEvent e)
-          {
-        	 
-        	  File iconinfo = new File("icon16.txt");
-        	  try {
-        		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-        			String filepath = "icon16.txt";
-        			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
-     				Process process = new ProcessBuilder(iconfile).start();
-     				System.out.println("[Debug] :  launch program");
-        			
-        			}else {
-        				System.out.println("[Debug] :  Icon not created");
-        				
-        			}
-        		
+        {
+      	 
+      	  File iconinfo = new File("icon16.txt");
+      	  try {
+      		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
+      			String filepath = "icon16.txt";
+      			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
+   				Process process = new ProcessBuilder(iconfile).start();
+   				System.out.println("[Debug] :  launch program");
+      			
+      			}else {
+      				System.out.println("[Debug] :  Icon not created");
+      				
+      			}
+      		
 			} catch (IOException e2) {
 				System.out.println("[Debug] :  launch program error");
 				e2.printStackTrace();
 			}
-          }
-        });
-        System.out.println("[Debug] :  Drag And Drop Icon active");
-        SwingUtilities.updateComponentTreeUI(main);
+        }
+      });
+      System.out.println("[Debug] :  Drag And Drop Icon active");
+      SwingUtilities.updateComponentTreeUI(main);
 	}
-	
 
 }
