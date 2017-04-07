@@ -17,7 +17,8 @@ import javax.swing.JFrame;
 
 public class Option {
 	
-	static JButton delallicon = new JButton("delete all icon");
+	static JButton delallicon = new JButton("Deletes all icons");
+	static JButton closeexanlauncher = new JButton("Close ExanLauncher");
 	
 	public static JFrame optionmenu = new JFrame();
 
@@ -27,27 +28,49 @@ public class Option {
 	public boolean optionMenuCreate = false;
 	
 	static Shutdown shutdown = new Shutdown();
+	private static boolean test = false;
 	
 	public static String[] Optionframe(){
+		
+		if  ( test != true ){
+			style1();
 			
-			optionmenu.setTitle("ExanLauncher Dev Programe Menu");
-			optionmenu.setSize(150, 150);
-
+			test = true;
+		}
+			
+		optionmenu.setTitle("Program Option");
+			
+			optionmenu.setSize(255, 115);
+			optionmenu.setLocation(1400, 180);
 			optionmenu.setResizable(false);
 			
-			
-			optionmenu.setVisible(true);;
+			optionmenu.setVisible(true);
 
 			
 			
-			delallicon.setBounds(30, (30), 90, 90);
+			delallicon.setBounds(0, 0, 120, 90);
+			closeexanlauncher.setBounds(120, 0, 130, 90);
+			
 			optionmenu.add(delallicon);
+			
+			
+			optionmenu.add(closeexanlauncher);
+			
+			closeexanlauncher.addActionListener(new ActionListener() { 
+				 
+				public void actionPerformed(ActionEvent e) { 
+						System.out.println("[Debug] :  stop button press");
+						System.exit(0);
+				  }
+			});
+			
+			
 			delallicon.addActionListener(new ActionListener() { 
 				  @SuppressWarnings("static-access")
 				public void actionPerformed(ActionEvent e) { 
 						System.out.println("[Debug] :  delicon button press");
 						
-						while (var < 15) {
+						while (var < 11) {
 							File file = new File("icon" + var + ".txt");
 							file.delete();
 							
@@ -59,20 +82,6 @@ public class Option {
 							
 							File filed = new File("iconinfo.txt");
 							filed.delete();
-							
-							
-							File files = new File("icon15.txt");
-							files.delete();
-							
-							File file2s = new File("icon15.png");
-							file2s.delete();
-							
-							
-							File filee = new File("icon16.txt");
-							filee.delete();
-							
-							File file2e = new File("icon16.png");
-							file2e.delete();
 							
 							FileWriter iconinforead;
 							try {
@@ -101,5 +110,8 @@ public class Option {
 				} );
 			return null;
 	}
-
+public static void style1 (){
+	optionmenu.setType(javax.swing.JFrame.Type.UTILITY);
+	
+}
 }

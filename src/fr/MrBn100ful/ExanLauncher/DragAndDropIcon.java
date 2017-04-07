@@ -63,7 +63,7 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener, Butto
 					if(iconinfo.exists() && !iconinfo.isDirectory()) { 
 						FileReader iconinforead = new FileReader("iconinfo.txt");
 						int iconinfonumber = iconinforead.read();
-						if (!(iconinfonumber > 16)){
+						if (!(iconinfonumber > 10)){
 	        				String iconpath = file.getPath();
 	        				if (iconpath.endsWith(".exe")){
 	        					
@@ -116,7 +116,7 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener, Butto
 	        			iconinfowriter.flush();
 	        			iconinfowriter.close();
 	        			int iconinfonumber = 1;
-						if (!(iconnumber > 16)){
+						if (!(iconnumber > 10)){
 	        				String iconpath = file.getPath();
 	        				if (iconpath.endsWith(".exe")){
 	        					
