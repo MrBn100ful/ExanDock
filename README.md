@@ -1,9 +1,8 @@
 ![ExanLauncher logo](https://puu.sh/s6gG9/1622eb4d0d.png)
-# ExanLauncher WIP 
+# ExanLauncher
 A crossplatform dock in java.
 
-=====
-##todo
+          todo
 
 - [x] Drag and drop icon.
 - [ ] Suport all screen.
