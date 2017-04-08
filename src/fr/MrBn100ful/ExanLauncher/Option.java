@@ -1,5 +1,14 @@
 package fr.MrBn100ful.ExanLauncher;
 
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+
+/**
+ *  Option class
+ *  
+ * @author MrBn100ful
+ * 
+ */
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -30,6 +39,11 @@ public class Option {
 	static Shutdown shutdown = new Shutdown();
 	private static boolean test = false;
 	
+	static GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+	
+	static int width = gd.getDisplayMode().getWidth();
+	static int height = gd.getDisplayMode().getHeight();
+	
 	public static String[] Optionframe(){
 		
 		if  ( test != true ){
@@ -38,10 +52,10 @@ public class Option {
 			test = true;
 		}
 			
-		optionmenu.setTitle("Program Option");
+		optionmenu.setTitle("Program Options");
 			
 			optionmenu.setSize(255, 115);
-			optionmenu.setLocation(1400, 180);
+			optionmenu.setLocation((width - 550),(height / 2) - 340);
 			optionmenu.setResizable(false);
 			
 			optionmenu.setVisible(true);
@@ -59,7 +73,7 @@ public class Option {
 			closeexanlauncher.addActionListener(new ActionListener() { 
 				 
 				public void actionPerformed(ActionEvent e) { 
-						System.out.println("[Debug] :  stop button press");
+						System.out.println("[Debug] :  Stop button pressed");
 						System.exit(0);
 				  }
 			});
@@ -68,7 +82,7 @@ public class Option {
 			delallicon.addActionListener(new ActionListener() { 
 				  @SuppressWarnings("static-access")
 				public void actionPerformed(ActionEvent e) { 
-						System.out.println("[Debug] :  delicon button press");
+						System.out.println("[Debug] :  Deletes all icons button pressed");
 						
 						while (var < 11) {
 							File file = new File("icon" + var + ".txt");
@@ -90,7 +104,7 @@ public class Option {
 								iconinforead.flush();
 								iconinforead.close();
 							} catch (IOException e1) {
-								System.out.println("[Debug] :  reste iconinfo.txt bug");
+								System.out.println("[Debug] :  Reset of iconinfo.txt bug");
 								e1.printStackTrace();
 							}
 

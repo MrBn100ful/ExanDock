@@ -23,7 +23,6 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.time.LocalDateTime;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -66,25 +65,22 @@ public class Main extends JFrame {
 		System.setOut(ps);
 		
 		File iconinfo = new File("iconinfo.txt");
-		System.out.println("[Debug] :  program launch");
+		System.out.println("[Debug] :  Program launched");
 		if(iconinfo.exists() && !iconinfo.isDirectory()) { 
 			FileReader iconinforead = new FileReader("iconinfo.txt");
 			int iconinfonumber = iconinforead.read();
-			System.out.println("[Debug] :  " + (iconinfonumber - 1) + " icon create");
+			System.out.println("[Debug] :  " + (iconinfonumber - 1) + " icon(s) created");
 		}
 		
-		
-		
-		
-		
+
 		GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
 		int width = gd.getDisplayMode().getWidth();
 		int height = gd.getDisplayMode().getHeight();
 		
-		main.setTitle("ExanLauncher Dev Main");
-		main.setSize(60, height - 400 );
+		main.setTitle("ExanLauncher");
+		main.setSize(60, 680 );
 		main.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		main.setLocation((width - 60), 200);
+		main.setLocation((width - 60), (height / 2) - 340);
 		main.setUndecorated(true);
 		main.setAlwaysOnTop(true);
 		main.setResizable(false);
@@ -98,32 +94,11 @@ public class Main extends JFrame {
 		main.add(dropicon);
 		DragAndDropIcon DropIcon = new DragAndDropIcon();
 		new DropTarget(dropicon, DropIcon);
-        
-		//clock = new JTextArea();
-		//clock.setBounds(0, (height - 28), 60, height);
-		//clock.setFont(UIManager.getFont("Label.font").deriveFont(Font.BOLD, 16f));
-		//clock.setForeground(new Color(55, 55, 55));
-		//clock.setLineWrap(true);
-		//clock.setEditable(false);
-		//clock.setOpaque(false);
-		//tickTock();
-		//main.add(clock);
 
-		//Timer timer = new Timer(1000, new ActionListener() {
-			//@Override
-			//public void actionPerformed(ActionEvent e) {
-				//tickTock();
-			//}
-		//});
-		//timer.setRepeats(true);
-		//timer.setCoalesce(true);
-		//timer.setInitialDelay(0);
-		//timer.start();
 		
-
-		style.setTitle("ExanLauncher Dev style");
-		style.setSize(2, height - 400);
-		style.setLocation((width - 60), 200);
+		style.setTitle("ExanLauncher");
+		style.setSize(2, 680);
+		style.setLocation((width - 60), (height / 2) - 340);
 		style.setUndecorated(true);
 		style.setAlwaysOnTop(true);
 		style.setResizable(false);
@@ -153,36 +128,10 @@ public class Main extends JFrame {
 
 	public static void main(String[] args) throws IOException {
 		ButtonAPI.setSystemLookNFeel();
-		ButtonAPI.setResourcePath("/fr/MrBn100ful/ExanLauncher/rescources");
+		ButtonAPI.setResourcePath("/fr/MrBn100ful/ExanLauncher/resources");
 		instance = new Main(null);
 		
 	}
-	public void tickTock() {
-		int hourint = LocalDateTime.now().getHour();
-		int minuteint = LocalDateTime.now().getMinute();
-		
-		if ((((minuteint == 1)||(minuteint == 2)||(minuteint == 3)||(minuteint == 4)||(minuteint == 5)||(minuteint == 6)||(minuteint == 7)||(minuteint == 8)||(minuteint == 9))) & (((hourint == 1)||(hourint == 2)||(hourint == 3)||(hourint == 4)||(hourint == 5)||(hourint == 6)||(hourint == 7)||(hourint == 8)||(hourint == 9)))) {
-				String hour = "0" + hourint;
-				String minute = " : "+ "0" + minuteint;
-				clock.setText(hour + minute);
-			
-			}else if (((hourint == 1)||(hourint == 2)||(hourint == 3)||(hourint == 4)||(hourint == 5)||(hourint == 6)||(hourint == 7)||(hourint == 8)||(hourint == 9))){
-				String hour = "0" + hourint;
-				String minute = " : "+ "" + minuteint;
-				clock.setText(hour + minute);
-				
-			}else if (((minuteint == 1)||(minuteint == 2)||(minuteint == 3)||(minuteint == 4)||(minuteint == 5)||(minuteint == 6)||(minuteint == 7)||(minuteint == 8)||(minuteint == 9))) {
-				String hour = "" + hourint;
-				String minute = " : "+ "0" + minuteint;
-				clock.setText(hour + minute);
-			}else{
-				String hour = "" + hourint;
-				String minute = " : "+ "" + minuteint;
-				clock.setText(hour + minute);
-				
-			}
-			
-		}
 	
 	public void Icon1 () {
 		
@@ -214,20 +163,20 @@ public class Main extends JFrame {
       			String filepath = "icon1.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
-   				System.out.println("[Debug] :  launch program");
+   				System.out.println("[Debug] :  Launch program");
       			
       			}else {
-      				System.out.println("[Debug] :  Icon not created");
+      				System.out.println("[Debug] :  Icon is not created");
       				
       			}
       		
 			} catch (IOException e2) {
-				System.out.println("[Debug] :  launch program error");
+				System.out.println("[Debug] :  Launch error");
 				e2.printStackTrace();
 			}
         }
       });
-      System.out.println("[Debug] :  Drag And Drop Icon active");
+      System.out.println("[Debug] :  Drag and drop icon activated");
       SwingUtilities.updateComponentTreeUI(main);
 	}
 	public void Icon2 () {
@@ -260,20 +209,20 @@ public class Main extends JFrame {
     			String filepath = "icon2.txt";
     			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
  				Process process = new ProcessBuilder(iconfile).start();
- 				System.out.println("[Debug] :  launch program");
+ 				System.out.println("[Debug] :  Launch program");
     			
     			}else {
-    				System.out.println("[Debug] :  Icon not created");
+    				System.out.println("[Debug] :  Icon is not created");
     				
     			}
     		
 			} catch (IOException e2) {
-				System.out.println("[Debug] :  launch program error");
+				System.out.println("[Debug] :  Launch error");
 				e2.printStackTrace();
 			}
       }
     });
-    System.out.println("[Debug] :  Drag And Drop Icon active");
+    System.out.println("[Debug] :  Drag and drop icon activated");
     SwingUtilities.updateComponentTreeUI(main);
 	}
 	public void Icon3 () {
@@ -306,20 +255,20 @@ public class Main extends JFrame {
       			String filepath = "icon3.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
-   				System.out.println("[Debug] :  launch program");
+   				System.out.println("[Debug] :  Launch program");
       			
       			}else {
-      				System.out.println("[Debug] :  Icon not created");
+      				System.out.println("[Debug] :  Icon is not created");
       				
       			}
       		
 			} catch (IOException e2) {
-				System.out.println("[Debug] :  launch program error");
+				System.out.println("[Debug] :  Launch error");
 				e2.printStackTrace();
 			}
         }
       });
-      System.out.println("[Debug] :  Drag And Drop Icon active");
+      System.out.println("[Debug] :  Drag and drop icon activated");
       SwingUtilities.updateComponentTreeUI(main);
 	}
 	public void Icon4 () {
@@ -352,20 +301,20 @@ public class Main extends JFrame {
       			String filepath = "icon4.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
-   				System.out.println("[Debug] :  launch program");
+   				System.out.println("[Debug] :  Launch program");
       			
       			}else {
-      				System.out.println("[Debug] :  Icon not created");
+      				System.out.println("[Debug] :  Icon is not created");
       				
       			}
       		
 			} catch (IOException e2) {
-				System.out.println("[Debug] :  launch program error");
+				System.out.println("[Debug] :  Launch error");
 				e2.printStackTrace();
 			}
         }
       });
-      System.out.println("[Debug] :  Drag And Drop Icon active");
+      System.out.println("[Debug] :  Drag and drop icon activated");
       SwingUtilities.updateComponentTreeUI(main);
 	}
 	
@@ -399,20 +348,20 @@ public class Main extends JFrame {
       			String filepath = "icon15.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
-   				System.out.println("[Debug] :  launch program");
+   				System.out.println("[Debug] :  Launch program");
       			
       			}else {
-      				System.out.println("[Debug] :  Icon not created");
+      				System.out.println("[Debug] :  Icon is not created");
       				
       			}
       		
 			} catch (IOException e2) {
-				System.out.println("[Debug] :  launch program error");
+				System.out.println("[Debug] :  Launch error");
 				e2.printStackTrace();
 			}
         }
       });
-      System.out.println("[Debug] :  Drag And Drop Icon active");
+      System.out.println("[Debug] :  Drag and drop icon activated");
       SwingUtilities.updateComponentTreeUI(main);
 	}
 	
@@ -446,20 +395,20 @@ public class Main extends JFrame {
       			String filepath = "icon6.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
-   				System.out.println("[Debug] :  launch program");
+   				System.out.println("[Debug] :  Launch program");
       			
       			}else {
-      				System.out.println("[Debug] :  Icon not created");
+      				System.out.println("[Debug] :  Icon is not created");
       				
       			}
       		
 			} catch (IOException e2) {
-				System.out.println("[Debug] :  launch program error");
+				System.out.println("[Debug] :  Launch error");
 				e2.printStackTrace();
 			}
         }
       });
-      System.out.println("[Debug] :  Drag And Drop Icon active");
+      System.out.println("[Debug] :  Drag and drop icon activated");
       SwingUtilities.updateComponentTreeUI(main);
 	}
 
@@ -493,20 +442,20 @@ public class Main extends JFrame {
       			String filepath = "icon7.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
-   				System.out.println("[Debug] :  launch program");
+   				System.out.println("[Debug] :  Launch program");
       			
       			}else {
-      				System.out.println("[Debug] :  Icon not created");
+      				System.out.println("[Debug] :  Icon is not created");
       				
       			}
       		
 			} catch (IOException e2) {
-				System.out.println("[Debug] :  launch program error");
+				System.out.println("[Debug] :  Launch error");
 				e2.printStackTrace();
 			}
         }
       });
-      System.out.println("[Debug] :  Drag And Drop Icon active");
+      System.out.println("[Debug] :  Drag and drop icon activated");
       SwingUtilities.updateComponentTreeUI(main);
 	}
 	
@@ -540,20 +489,20 @@ public class Main extends JFrame {
       			String filepath = "icon8.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
-   				System.out.println("[Debug] :  launch program");
+   				System.out.println("[Debug] :  Launch program");
       			
       			}else {
-      				System.out.println("[Debug] :  Icon not created");
+      				System.out.println("[Debug] :  Icon is not created");
       				
       			}
       		
 			} catch (IOException e2) {
-				System.out.println("[Debug] :  launch program error");
+				System.out.println("[Debug] :  Launch error");
 				e2.printStackTrace();
 			}
         }
       });
-      System.out.println("[Debug] :  Drag And Drop Icon active");
+      System.out.println("[Debug] :  Drag and drop icon activated");
       SwingUtilities.updateComponentTreeUI(main);
 	}
 	public void Icon9 () {
@@ -586,20 +535,20 @@ public class Main extends JFrame {
       			String filepath = "icon9.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
-   				System.out.println("[Debug] :  launch program");
+   				System.out.println("[Debug] :  Launch program");
       			
       			}else {
-      				System.out.println("[Debug] :  Icon not created");
+      				System.out.println("[Debug] :  Icon is not created");
       				
       			}
       		
 			} catch (IOException e2) {
-				System.out.println("[Debug] :  launch program error");
+				System.out.println("[Debug] :  Launch error");
 				e2.printStackTrace();
 			}
         }
       });
-      System.out.println("[Debug] :  Drag And Drop Icon active");
+      System.out.println("[Debug] :  Drag and drop icon activated");
       SwingUtilities.updateComponentTreeUI(main);
 	}
 	public void Icon10 () {
@@ -632,20 +581,20 @@ public class Main extends JFrame {
       			String filepath = "icon10.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
-   				System.out.println("[Debug] :  launch program");
+   				System.out.println("[Debug] :  Launch program");
       			
       			}else {
-      				System.out.println("[Debug] :  Icon not created");
+      				System.out.println("[Debug] :  Icon is not created");
       				
       			}
       		
 			} catch (IOException e2) {
-				System.out.println("[Debug] :  launch program error");
+				System.out.println("[Debug] :  Launch error");
 				e2.printStackTrace();
 			}
         }
       });
-      System.out.println("[Debug] :  Drag And Drop Icon active");
+      System.out.println("[Debug] :  Drag and drop icon activated");
       SwingUtilities.updateComponentTreeUI(main);
 	}
 

@@ -1,5 +1,11 @@
 package fr.MrBn100ful.ExanLauncher;
 
+/**
+ *  Shutdown class
+ *  
+ * @author MrBn100ful
+ * 
+ */
 
 import java.io.File;
 import java.io.IOException;
@@ -7,22 +13,6 @@ import java.lang.management.ManagementFactory;
 import java.util.List;
 
 public class Shutdown {
-	
-	public void shutdown() throws RuntimeException, IOException {
-		String shutdownCommand;
-		shutdownCommand = "shutdown.exe -s -t 0";
-		Runtime.getRuntime().exec(shutdownCommand);
-		System.out.println("[Debug] :  shutdown run");
-		System.exit(0);
-	}
-
-	public void restart() throws RuntimeException, IOException {
-		String shutdownCommand;
-		shutdownCommand = "shutdown.exe -r -t 0";
-		Runtime.getRuntime().exec(shutdownCommand);
-		System.out.println("[Debug] :  restart run");
-		System.exit(0);
-	}
 
 	public static final String SUN_JAVA_COMMAND = "sun.java.command";
 
@@ -63,7 +53,7 @@ public class Shutdown {
 	}
 	System.exit(0);
 	} catch (Exception e) {
-	throw new IOException("Error while trying to restart the application", e);
+	throw new IOException("[Debug] :  Error ", e);
 	}
 	}
 

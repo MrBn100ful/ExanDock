@@ -33,7 +33,7 @@ import fr.MrBn100ful.ExanLauncher.Option;;
 public class Frame extends JPanel implements ButtonAPIEventListener {
 	private STexturedButton icon = new STexturedButton(ButtonAPI.getResource("icon.png"));
 	private STexturedButton about = new STexturedButton(ButtonAPI.getResource("about.png"));
-	private STexturedButton option = new STexturedButton(ButtonAPI.getResource("option.png"));
+	private STexturedButton options = new STexturedButton(ButtonAPI.getResource("options.png"));
 	
 	
 
@@ -59,13 +59,21 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 	
 	public JTextArea iconnumber;
 	
-	
-	
+
 	Shutdown shutdown = new Shutdown();
 	GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
 	int width = gd.getDisplayMode().getWidth();
 	int height = gd.getDisplayMode().getHeight();
 
+	private float floatnumber = (float) 1.1555;
+	private float calc = width / floatnumber;
+	
+	
+	
+	int finalcalc = (int) calc ;
+	
+	
+	
 	public Frame() {
 		
 		programemenu.setUndecorated(true);
@@ -89,9 +97,9 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 					
 					
 
-					programemenu.setTitle("ExanLauncher Dev Programe Menu");
+					programemenu.setTitle("ExanLauncher Program menu");
 					programemenu.setSize(200, 60);
-					programemenu.setLocation((width - 260),(height - 880));
+					programemenu.setLocation((width - 260),(height / 2) - 340);
 					programemenu.setLayout(null);
 
 					
@@ -101,9 +109,9 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 
 					
 					
-					option.setBounds(20,20);
-					option.addEventListener(this);
-					programemenu.add(option);
+					options.setBounds(20,20);
+					options.addEventListener(this);
+					programemenu.add(options);
 					
 
 					programemenu.setAlwaysOnTop(true);
@@ -111,9 +119,9 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 					programemenu.setBackground(new Color(243, 243, 243, 150));
 					
 					
-					programestyle.setTitle("ExanLauncher Dev Programe Style");
+					programestyle.setTitle("ExanLauncher Program style");
 					programestyle.setSize(2, 60);
-					programestyle.setLocation((width - 260),(height - 880));
+					programestyle.setLocation((width - 260),(height / 2) - 340);
 					programestyle.setLayout(null);
 					programestyle.setAlwaysOnTop(true);
 					programestyle.setResizable(false);
@@ -154,7 +162,7 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 		
 		if(e.getSource() == about)
 		{
-			System.out.println("[Debug] :  info button press");
+			System.out.println("[Debug] :  Info button pressed");
 			JOptionPane.showMessageDialog(this, "                     Create by MrBn100ful"
 					+ "\n"
 					+ "                 Version : 1.0  Steel Blizzard"
@@ -165,9 +173,9 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 					JOptionPane.INFORMATION_MESSAGE);
 			
 		}
-		if(e.getSource() == option)
+		if(e.getSource() == options)
 		{
-			System.out.println("[Debug] :  option button press");
+			System.out.println("[Debug] :  Option button pressed");
 			@SuppressWarnings("unused")
 			String[] lists = Option.Optionframe();
 		}
