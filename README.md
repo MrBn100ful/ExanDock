@@ -5,7 +5,7 @@ A crossplatform dock in java.
           todo
 
 - [x] Drag and drop icon.
-- [ ] Suport all screen.
+- [x] Suports all screens.
 - [ ] Make it work with linux and mac.
 
 ![ExanLauncher example](https://puu.sh/vcto4/ce74919f9f.gif)
