@@ -13,6 +13,9 @@ package fr.MrBn100ful.ExanLauncher;
 import java.awt.Color;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -89,6 +92,17 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 
 	@Override
 	public void onEvent(ButtonAPIEvent e) {
+		
+		String configpath = "config.txt";
+		
+		String configfile = null;
+		try {
+			configfile = new String(Files.readAllBytes(Paths.get(configpath)));
+		} catch (IOException e1) {
+			System.out.println("[Debug] :  Error");
+			e1.printStackTrace();
+		}
+		
 		if (e.getSource() == icon) {
 			System.out.println("[Debug] :  start button press");
 
@@ -96,10 +110,20 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 				if (ProgMenuCreate == false) {
 					
 					
+					if (configfile.equals("r") ){
+						programemenu.setLocation((width - 260),(height / 2) - 340);
+						programestyle.setLocation((width - 260),(height / 2) - 340);
+					}else {
+						
+						programemenu.setLocation(60, (height / 2) - 340);
+						programestyle.setLocation(260, (height / 2) - 340);
+						
+					}
+					
 
 					programemenu.setTitle("ExanLauncher Program menu");
 					programemenu.setSize(200, 60);
-					programemenu.setLocation((width - 260),(height / 2) - 340);
+					
 					programemenu.setLayout(null);
 
 					
@@ -121,7 +145,7 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 					
 					programestyle.setTitle("ExanLauncher Program style");
 					programestyle.setSize(2, 60);
-					programestyle.setLocation((width - 260),(height / 2) - 340);
+					
 					programestyle.setLayout(null);
 					programestyle.setAlwaysOnTop(true);
 					programestyle.setResizable(false);

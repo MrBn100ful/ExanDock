@@ -19,6 +19,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.file.Files;
@@ -49,6 +50,7 @@ public class Main extends JFrame {
 	public JLabel dropicon;
 	public JFrame style = new JFrame();
 	public JFrame main = new JFrame();
+	
 
 	@SuppressWarnings("unused")
 	private DragAndDropIcon DragAndDropIcon;
@@ -56,6 +58,31 @@ public class Main extends JFrame {
 
 	@SuppressWarnings("resource")
 	public Main(Component c) throws IOException {
+		
+		
+		
+		File config = new File("config.txt");
+		
+		
+		
+		
+		
+		
+		
+		if(!config.exists() && !config.isDirectory()) { 
+			FileWriter iconinfowriter = new FileWriter(config);
+			
+			String configplace = "r";
+			iconinfowriter.write(configplace);
+			iconinfowriter.flush();
+			iconinfowriter.close();
+			
+		}
+		
+		String configpath = "config.txt";
+		
+		String configfile = new String(Files.readAllBytes(Paths.get(configpath)));
+
 		main.setType(javax.swing.JFrame.Type.UTILITY);
 		style.setType(javax.swing.JFrame.Type.UTILITY);
 		
@@ -63,6 +90,8 @@ public class Main extends JFrame {
 		FileOutputStream fos = new FileOutputStream(file);
 		PrintStream ps = new PrintStream(fos);
 		System.setOut(ps);
+		
+
 		
 		File iconinfo = new File("iconinfo.txt");
 		System.out.println("[Debug] :  Program launched");
@@ -80,7 +109,18 @@ public class Main extends JFrame {
 		main.setTitle("ExanLauncher");
 		main.setSize(60, 680 );
 		main.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		main.setLocation((width - 60), (height / 2) - 340);
+		
+		if (configfile.equals("r")){
+			
+			main.setLocation((width - 60), (height / 2) - 340);
+			style.setLocation((width - 60), (height / 2) - 340);
+		}else {
+			
+			main.setLocation(0, (height / 2) - 340);
+			style.setLocation(60, (height / 2) - 340);
+			
+		}
+		
 		main.setUndecorated(true);
 		main.setAlwaysOnTop(true);
 		main.setResizable(false);
@@ -98,7 +138,7 @@ public class Main extends JFrame {
 		
 		style.setTitle("ExanLauncher");
 		style.setSize(2, 680);
-		style.setLocation((width - 60), (height / 2) - 340);
+		
 		style.setUndecorated(true);
 		style.setAlwaysOnTop(true);
 		style.setResizable(false);

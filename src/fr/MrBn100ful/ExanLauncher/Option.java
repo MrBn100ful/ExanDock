@@ -15,6 +15,8 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -28,6 +30,9 @@ public class Option {
 	
 	static JButton delallicon = new JButton("Deletes all icons");
 	static JButton closeexanlauncher = new JButton("Close ExanLauncher");
+	
+	static JButton left = new JButton("Put ExanLauncher on the left");
+	static JButton right = new JButton("Put ExanLauncher on the right");
 	
 	public static JFrame optionmenu = new JFrame();
 
@@ -54,20 +59,44 @@ public class Option {
 			
 		optionmenu.setTitle("Program Options");
 			
-			optionmenu.setSize(255, 115);
-			optionmenu.setLocation((width - 550),(height / 2) - 340);
+			optionmenu.setSize(255, 215);
+			String configpath = "config.txt";
+			
+			String configfile = null;
+			try {
+				configfile = new String(Files.readAllBytes(Paths.get(configpath)));
+			} catch (IOException e2) {
+
+				e2.printStackTrace();
+			}
+			
+			if (configfile.equals("r") ){
+				optionmenu.setLocation((width - 550),(height / 2) - 340);
+			}else {
+				
+				optionmenu.setLocation(290,(height / 2) - 340);
+				
+			}
+			
 			optionmenu.setResizable(false);
 			
 			optionmenu.setVisible(true);
+			
+			optionmenu.getContentPane().setLayout(null);
 
 			
 			
 			delallicon.setBounds(0, 0, 120, 90);
-			closeexanlauncher.setBounds(120, 0, 130, 90);
+			closeexanlauncher.setBounds(120, 0, 129, 90);
+			
+			left.setBounds(0, 90, 250, 50);
+			right.setBounds(0, 140, 250, 50);
+			
+			
+			optionmenu.add(left);
+			optionmenu.add(right);
 			
 			optionmenu.add(delallicon);
-			
-			
 			optionmenu.add(closeexanlauncher);
 			
 			closeexanlauncher.addActionListener(new ActionListener() { 
@@ -75,6 +104,54 @@ public class Option {
 				public void actionPerformed(ActionEvent e) { 
 						System.out.println("[Debug] :  Stop button pressed");
 						System.exit(0);
+				  }
+			});
+			
+			left.addActionListener(new ActionListener() { 
+				 
+				@SuppressWarnings("static-access")
+				public void actionPerformed(ActionEvent e) { 
+						System.out.println("[Debug] :  Left button pressed");
+						File config = new File("config.txt");
+						FileWriter iconinfowriter = null;
+						String configplace = "l";
+						try {
+							iconinfowriter = new FileWriter(config);
+							iconinfowriter.write(configplace);
+							iconinfowriter.flush();
+							iconinfowriter.close();
+							shutdown.restartApplication(null);
+						} catch (IOException e1) {
+							System.out.println("[Debug] :  Error");
+							e1.printStackTrace();
+						}
+						
+						
+						
+				  }
+			});
+			
+			right.addActionListener(new ActionListener() { 
+				 
+				@SuppressWarnings("static-access")
+				public void actionPerformed(ActionEvent e) { 
+						System.out.println("[Debug] :  Right button pressed");
+						File config = new File("config.txt");
+						FileWriter iconinfowriter = null;
+						String configplace = "r";
+						try {
+							iconinfowriter = new FileWriter(config);
+							iconinfowriter.write(configplace);
+							iconinfowriter.flush();
+							iconinfowriter.close();
+							shutdown.restartApplication(null);
+						} catch (IOException e1) {
+							System.out.println("[Debug] :  Error");
+							e1.printStackTrace();
+						}
+						
+						
+						
 				  }
 			});
 			
