@@ -50,6 +50,7 @@ public class Main extends JFrame {
 	public JLabel dropicon;
 	public JFrame style = new JFrame();
 	public JFrame main = new JFrame();
+	public JButton hide = new JButton(". . . .");
 	
 
 	@SuppressWarnings("unused")
@@ -58,7 +59,6 @@ public class Main extends JFrame {
 
 	@SuppressWarnings("resource")
 	public Main(Component c) throws IOException {
-		
 		
 		
 		File config = new File("config.txt");
@@ -163,6 +163,61 @@ public class Main extends JFrame {
 		Icon8();
 		Icon9();
 		Icon10();
+		
+		hide.setBounds(0, 665, 60, 15);
+		hide.setContentAreaFilled(false);
+		hide.setBorderPainted(false);
+		hide.setFocusPainted(false);
+		
+		hide.setBorderPainted(false);
+		hide.setFocusPainted(false);
+		hide.setOpaque(false);
+		main.add(hide);
+		
+		hide.addActionListener(new ActionListener() { 
+			 
+			public void actionPerformed(ActionEvent e) { 
+				main.setVisible(false);
+				style.setVisible(false);
+				JFrame stophide = new JFrame();
+				
+				stophide.setSize(15, 30);
+				stophide.setResizable(false);
+				stophide.getContentPane().setLayout(null);
+				stophide.setUndecorated(true);
+				stophide.setType(javax.swing.JFrame.Type.UTILITY);
+				JButton stophideicon = new JButton("<");
+				if (configfile.equals("r")){
+					
+					stophide.setLocation((width - 15), (height / 2));
+				}else {
+					
+					stophide.setLocation(0, (height / 2) );
+					
+				}
+				stophide.setBackground(new Color(243, 243, 243, 150));
+				stophideicon.setBounds(0, 0, 15, 30);
+				stophideicon.setOpaque(false);
+				stophideicon.setContentAreaFilled(false);
+				stophideicon.setBorderPainted(false);
+				stophideicon.setFocusPainted(false);
+				stophide.add(stophideicon);
+				
+				stophide.setVisible(true);
+				
+				stophideicon.addActionListener(new ActionListener() { 
+					 
+					public void actionPerformed(ActionEvent e) { 
+						style.setVisible(true);
+						main.setVisible(true);
+						
+						stophide.setVisible(false);
+					  }
+				});
+				
+			  }
+		});
+		
 	}
 
 
@@ -190,6 +245,7 @@ public class Main extends JFrame {
       buttonicon1.setOpaque(false);
       buttonicon1.setContentAreaFilled(false);
       buttonicon1.setBorderPainted(false);
+      buttonicon1.setFocusPainted(false);
       main.add(buttonicon1);
       buttonicon1.addActionListener(new ActionListener()
       {
@@ -236,6 +292,8 @@ public class Main extends JFrame {
     buttonicon1.setOpaque(false);
     buttonicon1.setContentAreaFilled(false);
     buttonicon1.setBorderPainted(false);
+    buttonicon1.setFocusPainted(false);
+    
     main.add(buttonicon1);
     buttonicon1.addActionListener(new ActionListener()
     {
@@ -281,6 +339,7 @@ public class Main extends JFrame {
       buttonicon1.setOpaque(false);
       buttonicon1.setContentAreaFilled(false);
       buttonicon1.setBorderPainted(false);
+      buttonicon1.setFocusPainted(false);
       
       main.add(buttonicon1);
       buttonicon1.addActionListener(new ActionListener()
@@ -327,7 +386,7 @@ public class Main extends JFrame {
       buttonicon1.setOpaque(false);
       buttonicon1.setContentAreaFilled(false);
       buttonicon1.setBorderPainted(false);
-      
+      buttonicon1.setFocusPainted(false);
       main.add(buttonicon1);
       buttonicon1.addActionListener(new ActionListener()
       {
@@ -374,7 +433,7 @@ public class Main extends JFrame {
       buttonicon1.setOpaque(false);
       buttonicon1.setContentAreaFilled(false);
       buttonicon1.setBorderPainted(false);
-      
+      buttonicon1.setFocusPainted(false);
       main.add(buttonicon1);
       buttonicon1.addActionListener(new ActionListener()
       {
@@ -421,7 +480,7 @@ public class Main extends JFrame {
       buttonicon1.setOpaque(false);
       buttonicon1.setContentAreaFilled(false);
       buttonicon1.setBorderPainted(false);
-      
+      buttonicon1.setFocusPainted(false);
       main.add(buttonicon1);
       buttonicon1.addActionListener(new ActionListener()
       {
@@ -468,7 +527,7 @@ public class Main extends JFrame {
       buttonicon1.setOpaque(false);
       buttonicon1.setContentAreaFilled(false);
       buttonicon1.setBorderPainted(false);
-      
+      buttonicon1.setFocusPainted(false);
       main.add(buttonicon1);
       buttonicon1.addActionListener(new ActionListener()
       {
@@ -515,7 +574,7 @@ public class Main extends JFrame {
       buttonicon1.setOpaque(false);
       buttonicon1.setContentAreaFilled(false);
       buttonicon1.setBorderPainted(false);
-      
+      buttonicon1.setFocusPainted(false);
       main.add(buttonicon1);
       buttonicon1.addActionListener(new ActionListener()
       {
@@ -561,7 +620,7 @@ public class Main extends JFrame {
       buttonicon1.setOpaque(false);
       buttonicon1.setContentAreaFilled(false);
       buttonicon1.setBorderPainted(false);
-      
+      buttonicon1.setFocusPainted(false);
       main.add(buttonicon1);
       buttonicon1.addActionListener(new ActionListener()
       {
@@ -607,7 +666,7 @@ public class Main extends JFrame {
       buttonicon1.setOpaque(false);
       buttonicon1.setContentAreaFilled(false);
       buttonicon1.setBorderPainted(false);
-      
+      buttonicon1.setFocusPainted(false);
       main.add(buttonicon1);
       buttonicon1.addActionListener(new ActionListener()
       {

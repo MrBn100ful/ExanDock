@@ -1,5 +1,6 @@
 package fr.MrBn100ful.ExanLauncher;
 
+import java.awt.Color;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 
@@ -60,6 +61,7 @@ public class Option {
 		optionmenu.setTitle("Program Options");
 			
 			optionmenu.setSize(255, 215);
+			
 			String configpath = "config.txt";
 			
 			String configfile = null;
@@ -79,6 +81,17 @@ public class Option {
 			}
 			
 			optionmenu.setResizable(false);
+			
+			closeexanlauncher.setBackground(new Color(243, 243, 243, 150));
+			delallicon.setBackground(new Color(243, 243, 243, 150));
+			left.setBackground(new Color(243, 243, 243, 150));
+			right.setBackground(new Color(243, 243, 243, 150));
+			
+			closeexanlauncher.setFocusPainted(false);
+			delallicon.setFocusPainted(false);
+			left.setFocusPainted(false);
+			right.setFocusPainted(false);
+
 			
 			optionmenu.setVisible(true);
 			
