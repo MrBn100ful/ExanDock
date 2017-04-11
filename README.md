@@ -6,4 +6,5 @@ A crossplatform dock in java.
 
 - [x] Drag and drop icon.
 - [x] Suports all screens.
+- [x] AutoUpdate system.
 - [ ] Make it work with linux and mac.
