@@ -57,10 +57,10 @@ public class Main extends JFrame {
 	private DragAndDropIcon DragAndDropIcon;
 
 
-	@SuppressWarnings("resource")
+	@SuppressWarnings({ "resource", "unused" })
 	public Main(Component c) throws IOException {
 		
-		
+		String[] lists = AutoUpdate.AutoUpdate();
 		File config = new File("config.txt");
 		
 		

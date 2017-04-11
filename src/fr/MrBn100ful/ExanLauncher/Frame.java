@@ -189,7 +189,7 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 			System.out.println("[Debug] :  Info button pressed");
 			JOptionPane.showMessageDialog(this, "                      Create by MrBn100ful"
 					+ "\n"
-					+ "                 Version : 1.1.0  Steel Blizzard"
+					+ "                 Version : 1.2.0  Steel Blizzard"
 					+ "\n"
 					+ "                                2016-2017"
 					+ "\n"
