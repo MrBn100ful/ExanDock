@@ -61,18 +61,28 @@ public class Main extends JFrame {
 	public Main(Component c) throws IOException {
 		
 		String[] lists = AutoUpdate.AutoUpdate();
+		
 		File config = new File("config.txt");
 		
-		
-		
-		
-		
+		File color = new File("color.txt");
 		
 		
 		if(!config.exists() && !config.isDirectory()) { 
+			
 			FileWriter iconinfowriter = new FileWriter(config);
 			
-			String configplace = "r";
+			String configplace = "right";
+			iconinfowriter.write(configplace);
+			iconinfowriter.flush();
+			iconinfowriter.close();
+			
+		}
+		
+		if(!color.exists() && !color.isDirectory()) { 
+			
+			FileWriter iconinfowriter = new FileWriter(color);
+			
+			String configplace = "gray";
 			iconinfowriter.write(configplace);
 			iconinfowriter.flush();
 			iconinfowriter.close();
@@ -82,10 +92,11 @@ public class Main extends JFrame {
 		String configpath = "config.txt";
 		
 		String configfile = new String(Files.readAllBytes(Paths.get(configpath)));
-
-		main.setType(javax.swing.JFrame.Type.UTILITY);
-		style.setType(javax.swing.JFrame.Type.UTILITY);
 		
+		String colorpath = "color.txt";
+		
+		String colorfile = new String(Files.readAllBytes(Paths.get(colorpath)));
+
 		File file = new File("debug.txt");
 		FileOutputStream fos = new FileOutputStream(file);
 		PrintStream ps = new PrintStream(fos);
@@ -110,16 +121,22 @@ public class Main extends JFrame {
 		main.setSize(60, 680 );
 		main.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
-		if (configfile.equals("r")){
+		if (configfile.equals("right")){
 			
-			main.setLocation((width - 60), (height / 2) - 340);
 			style.setLocation((width - 60), (height / 2) - 340);
+			main.setLocation((width - 60), (height / 2) - 340);
+			
 		}else {
 			
-			main.setLocation(0, (height / 2) - 340);
 			style.setLocation(60, (height / 2) - 340);
+			main.setLocation(0, (height / 2) - 340);
+			
 			
 		}
+		
+		style.setType(javax.swing.JFrame.Type.UTILITY);
+		main.setType(javax.swing.JFrame.Type.UTILITY);
+		
 		
 		main.setUndecorated(true);
 		main.setAlwaysOnTop(true);
@@ -127,7 +144,52 @@ public class Main extends JFrame {
 		main.setContentPane(frame = new Frame());
 		
 		
-		main.setBackground(new Color(243, 243, 243, 150));
+		
+		
+		if (colorfile.equals("gray")){
+		
+			main.setBackground(new Color(243, 243, 243, 150));
+		
+		}else if (colorfile.equals("red")) {
+		
+			main.setBackground(new Color(246, 44, 44, 150));
+			hide.setForeground(Color.WHITE);
+			
+		}else if (colorfile.equals("green")) {
+			
+			main.setBackground(new Color(22, 205, 52, 150));
+			hide.setForeground(Color.WHITE);
+		
+		}else if (colorfile.equals("blue")) {
+			
+			main.setBackground(new Color(26, 138, 212, 150));
+			hide.setForeground(Color.WHITE);
+		
+		}else if (colorfile.equals("white")) {
+			
+			main.setBackground(new Color(255, 255, 255, 150));
+		
+		}else if (colorfile.equals("yellow")) {
+			
+			main.setBackground(new Color(255, 230, 0, 150));
+			hide.setForeground(Color.WHITE);
+		
+		}else if (colorfile.equals("pink")) {
+			
+			main.setBackground(new Color(235, 35, 195, 150));
+			hide.setForeground(Color.WHITE);
+		
+		}else if (colorfile.equals("purple")) {
+			
+			main.setBackground(new Color(95, 35, 235, 150));
+			hide.setForeground(Color.WHITE);
+		
+		}else if (colorfile.equals("orange")) {
+			
+			main.setBackground(new Color(235, 148, 35, 150));
+			hide.setForeground(Color.WHITE);
+		
+		}
 
 		dropicon = new JLabel();
 		dropicon.setBounds(0, 0, 60, height);
@@ -145,12 +207,18 @@ public class Main extends JFrame {
 		style.setBackground(new Color(243, 243, 243, 185));
 		style.setVisible(true);
 		main.setVisible(true);
-		HWND hwnd = new HWND(Native.getWindowPointer(main));
-		Dwmapi.DWM_BLURBEHIND pBlurBehind = new Dwmapi.DWM_BLURBEHIND();
-		pBlurBehind.dwFlags = Dwmapi.DWM_BB_ENABLE;
-		pBlurBehind.fEnable = true;
-		pBlurBehind.fTransitionOnMaximized = false;
-		Dwmapi.INSTANCE.DwmEnableBlurBehindWindow(hwnd, pBlurBehind);
+		String sysProps = System.getProperty("os.name");
+		
+		if (sysProps.equals("Windows 7")){
+			
+			HWND hwnd = new HWND(Native.getWindowPointer(main));
+			Dwmapi.DWM_BLURBEHIND pBlurBehind = new Dwmapi.DWM_BLURBEHIND();
+			pBlurBehind.dwFlags = Dwmapi.DWM_BB_ENABLE;
+			pBlurBehind.fEnable = true;
+			pBlurBehind.fTransitionOnMaximized = false;
+			Dwmapi.INSTANCE.DwmEnableBlurBehindWindow(hwnd, pBlurBehind);
+		}
+		
 		
 
 		Icon1();
@@ -187,7 +255,7 @@ public class Main extends JFrame {
 				stophide.setUndecorated(true);
 				stophide.setType(javax.swing.JFrame.Type.UTILITY);
 				JButton stophideicon = new JButton("<");
-				if (configfile.equals("r")){
+				if (configfile.equals("right")){
 					
 					stophide.setLocation((width - 15), (height / 2));
 				}else {
@@ -195,7 +263,53 @@ public class Main extends JFrame {
 					stophide.setLocation(0, (height / 2) );
 					
 				}
-				stophide.setBackground(new Color(243, 243, 243, 150));
+
+				
+				if (colorfile.equals("gray")){
+					
+					stophide.setBackground(new Color(243, 243, 243, 150));
+					
+				
+				}else if (colorfile.equals("red")) {
+				
+					stophide.setBackground(new Color(246, 44, 44, 150));
+					stophideicon.setForeground(Color.WHITE);
+					
+				}else if (colorfile.equals("green")) {
+					
+					stophide.setBackground(new Color(22, 205, 52, 150));
+					stophideicon.setForeground(Color.WHITE);
+				
+				}else if (colorfile.equals("blue")) {
+					
+					stophide.setBackground(new Color(26, 138, 212, 150));
+					stophideicon.setForeground(Color.WHITE);
+				
+				}else if (colorfile.equals("white")) {
+					
+					stophide.setBackground(new Color(255, 255, 255, 150));
+				
+				}else if (colorfile.equals("yellow")) {
+					
+					stophide.setBackground(new Color(255, 230, 0, 150));
+					stophideicon.setForeground(Color.WHITE);
+				
+				}else if (colorfile.equals("pink")) {
+					
+					stophide.setBackground(new Color(235, 35, 195, 150));
+					stophideicon.setForeground(Color.WHITE);
+				
+				}else if (colorfile.equals("purple")) {
+					
+					stophide.setBackground(new Color(95, 35, 235, 150));
+					stophideicon.setForeground(Color.WHITE);
+				
+				}else if (colorfile.equals("orange")) {
+					
+					stophide.setBackground(new Color(235, 148, 35, 150));
+					stophideicon.setForeground(Color.WHITE);
+				
+				}
 				stophideicon.setBounds(0, 0, 15, 30);
 				stophideicon.setOpaque(false);
 				stophideicon.setContentAreaFilled(false);

@@ -34,7 +34,7 @@ public class AutoUpdate {
 			e1.printStackTrace();
 		}
 		  
-		if (!results.equals("1.2.0"
+		if (!results.equals("1.3.0"
 				+ "\n")){
 			 try
 			    {

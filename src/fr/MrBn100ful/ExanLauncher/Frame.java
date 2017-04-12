@@ -38,26 +38,19 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 	private STexturedButton about = new STexturedButton(ButtonAPI.getResource("about.png"));
 	private STexturedButton options = new STexturedButton(ButtonAPI.getResource("options.png"));
 	
-	
+	private STexturedButton whiteicon = new STexturedButton(ButtonAPI.getResource("whiteicon.png"));
+	private STexturedButton whiteabout = new STexturedButton(ButtonAPI.getResource("whiteabout.png"));
+	private STexturedButton whiteoptions = new STexturedButton(ButtonAPI.getResource("whiteoptions.png"));
 
-	
-	
-	
-	
 	public boolean ProgMenuOpen = false;
 	public boolean ProgMenuCreate = false;
-	
-	
-	
 	public boolean InfoOpen = false;
 	public boolean InfoCreate = false;
 	
 	public JFrame programemenu = new JFrame();
 	
 	public JFrame infomenu = new JFrame();
-	
-	
-	
+
 	public JFrame programestyle = new JFrame();
 	
 	public JTextArea iconnumber;
@@ -79,19 +72,98 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 	
 	public Frame() {
 		
-		programemenu.setUndecorated(true);
+		String colorpath = "color.txt";
+		
+		String colorfile = null;
+		try {
+			colorfile = new String(Files.readAllBytes(Paths.get(colorpath)));
+		} catch (IOException e2) {
+			System.out.println("[Debug] :  Error");
+			e2.printStackTrace();
+		}
+		
+		if (colorfile.equals("gray")){
+			
+			this.add(icon);
+			icon.setBounds(0, 0);
+			icon.addEventListener(this);
+		
+		}else if (colorfile.equals("red")) {
+			
+			this.add(whiteicon);
+			whiteicon.setBounds(0, 0);
+			whiteicon.addEventListener(this);
+			
+			
+		}else if (colorfile.equals("green")) {
+			
+			this.add(whiteicon);
+			whiteicon.setBounds(0, 0);
+			whiteicon.addEventListener(this);
+		
+		}else if (colorfile.equals("blue")) {
+			
+			this.add(whiteicon);
+			whiteicon.setBounds(0, 0);
+			whiteicon.addEventListener(this);
+			
+		
+		}else if (colorfile.equals("white")) {
+			
+			this.add(icon);
+			icon.setBounds(0, 0);
+			icon.addEventListener(this);
+		}else if (colorfile.equals("yellow")) {
+			this.add(whiteicon);
+			whiteicon.setBounds(0, 0);
+			whiteicon.addEventListener(this);
+			
+		
+		}else if (colorfile.equals("pink")) {
+			
+			this.add(whiteicon);
+			whiteicon.setBounds(0, 0);
+			whiteicon.addEventListener(this);
+		
+		}else if (colorfile.equals("purple")) {
+			this.add(whiteicon);
+			whiteicon.setBounds(0, 0);
+			whiteicon.addEventListener(this);
+			
+		
+		}else if (colorfile.equals("orange")) {
+			
+			this.add(whiteicon);
+			whiteicon.setBounds(0, 0);
+			whiteicon.addEventListener(this);
+		
+		}
 		programestyle.setUndecorated(true);
+		programemenu.setUndecorated(true);
+		
 		this.setLayout(null);
-		icon.setBounds(0, 0);
-		icon.addEventListener(this);
-		this.add(icon);
-		programemenu.setType(javax.swing.JFrame.Type.UTILITY);
+		
+		
+		
 		programestyle.setType(javax.swing.JFrame.Type.UTILITY);
+		programemenu.setType(javax.swing.JFrame.Type.UTILITY);
+	
+	
 
 	}
 
 	@Override
 	public void onEvent(ButtonAPIEvent e) {
+		
+		String colorpath = "color.txt";
+		
+		String colorfile = null;
+		try {
+			colorfile = new String(Files.readAllBytes(Paths.get(colorpath)));
+		} catch (IOException e2) {
+			System.out.println("[Debug] :  Error");
+			e2.printStackTrace();
+		}
 		
 		String configpath = "config.txt";
 		
@@ -103,14 +175,14 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 			e1.printStackTrace();
 		}
 		
-		if (e.getSource() == icon) {
+		if ((e.getSource() == icon ) || (e.getSource() == whiteicon )) {
 			System.out.println("[Debug] :  start button press");
 
 			if (ProgMenuOpen == false) {
 				if (ProgMenuCreate == false) {
 					
 					
-					if (configfile.equals("r") ){
+					if (configfile.equals("right") ){
 						programemenu.setLocation((width - 260),(height / 2) - 340);
 						programestyle.setLocation((width - 260),(height / 2) - 340);
 					}else {
@@ -127,20 +199,131 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 					programemenu.setLayout(null);
 
 					
-					about.setBounds(125,20);
-					about.addEventListener(this);
-					programemenu.add(about);
-
 					
-					
-					options.setBounds(20,20);
-					options.addEventListener(this);
-					programemenu.add(options);
 					
 
 					programemenu.setAlwaysOnTop(true);
 					programemenu.setResizable(false);
-					programemenu.setBackground(new Color(243, 243, 243, 150));
+
+					
+					if (colorfile.equals("gray")){
+						
+						programemenu.setBackground(new Color(243, 243, 243, 150));
+						about.setBounds(125,20);
+						about.addEventListener(this);
+						programemenu.add(about);
+
+						
+						
+						options.setBounds(20,20);
+						options.addEventListener(this);
+						programemenu.add(options);
+					
+					}else if (colorfile.equals("red")) {
+					
+						programemenu.setBackground(new Color(246, 44, 44, 150));
+						whiteabout.setBounds(125,20);
+						whiteabout.addEventListener(this);
+						programemenu.add(whiteabout);
+
+						
+						
+						whiteoptions.setBounds(20,20);
+						whiteoptions.addEventListener(this);
+						programemenu.add(whiteoptions);
+						
+					}else if (colorfile.equals("green")) {
+						
+						programemenu.setBackground(new Color(22, 205, 52, 150));
+						whiteabout.setBounds(125,20);
+						whiteabout.addEventListener(this);
+						programemenu.add(whiteabout);
+
+						
+						
+						whiteoptions.setBounds(20,20);
+						whiteoptions.addEventListener(this);
+						programemenu.add(whiteoptions);
+					
+					}else if (colorfile.equals("blue")) {
+						
+						programemenu.setBackground(new Color(26, 138, 212, 150));
+						whiteabout.setBounds(125,20);
+						whiteabout.addEventListener(this);
+						programemenu.add(whiteabout);
+
+						
+						
+						whiteoptions.setBounds(20,20);
+						whiteoptions.addEventListener(this);
+						programemenu.add(whiteoptions);
+					
+					}else if (colorfile.equals("white")) {
+						
+						programemenu.setBackground(new Color(255, 255, 255, 150));
+						about.setBounds(125,20);
+						about.addEventListener(this);
+						programemenu.add(about);
+
+						
+						
+						options.setBounds(20,20);
+						options.addEventListener(this);
+						programemenu.add(options);
+					
+					}else if (colorfile.equals("yellow")) {
+						
+						programemenu.setBackground(new Color(255, 230, 0, 150));
+						whiteabout.setBounds(125,20);
+						whiteabout.addEventListener(this);
+						programemenu.add(whiteabout);
+
+						
+						
+						whiteoptions.setBounds(20,20);
+						whiteoptions.addEventListener(this);
+						programemenu.add(whiteoptions);
+					
+					}else if (colorfile.equals("pink")) {
+						
+						programemenu.setBackground(new Color(235, 35, 195, 150));
+						whiteabout.setBounds(125,20);
+						whiteabout.addEventListener(this);
+						programemenu.add(whiteabout);
+
+						
+						
+						whiteoptions.setBounds(20,20);
+						whiteoptions.addEventListener(this);
+						programemenu.add(whiteoptions);
+					
+					}else if (colorfile.equals("purple")) {
+						
+						programemenu.setBackground(new Color(95, 35, 235, 150));
+						whiteabout.setBounds(125,20);
+						whiteabout.addEventListener(this);
+						programemenu.add(whiteabout);
+
+						
+						
+						whiteoptions.setBounds(20,20);
+						whiteoptions.addEventListener(this);
+						programemenu.add(whiteoptions);
+					
+					}else if (colorfile.equals("orange")) {
+						
+						programemenu.setBackground(new Color(235, 148, 35, 150));
+						whiteabout.setBounds(125,20);
+						whiteabout.addEventListener(this);
+						programemenu.add(whiteabout);
+
+						
+						
+						whiteoptions.setBounds(20,20);
+						whiteoptions.addEventListener(this);
+						programemenu.add(whiteoptions);
+					
+					}
 					
 					
 					programestyle.setTitle("ExanLauncher Program style");
@@ -155,12 +338,17 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 					ProgMenuOpen = true;
 					ProgMenuCreate = false;
 
-					HWND hwnd = new HWND(Native.getWindowPointer(programemenu));
-					Dwmapi.DWM_BLURBEHIND pBlurBehind = new Dwmapi.DWM_BLURBEHIND();
-					pBlurBehind.dwFlags = Dwmapi.DWM_BB_ENABLE;
-					pBlurBehind.fEnable = true;
-					pBlurBehind.fTransitionOnMaximized = false;
-					Dwmapi.INSTANCE.DwmEnableBlurBehindWindow(hwnd, pBlurBehind);
+					String sysProps = System.getProperty("os.name");
+					
+					if (sysProps.equals("Windows 7")){
+						
+						HWND hwnd = new HWND(Native.getWindowPointer(programemenu));
+						Dwmapi.DWM_BLURBEHIND pBlurBehind = new Dwmapi.DWM_BLURBEHIND();
+						pBlurBehind.dwFlags = Dwmapi.DWM_BB_ENABLE;
+						pBlurBehind.fEnable = true;
+						pBlurBehind.fTransitionOnMaximized = false;
+						Dwmapi.INSTANCE.DwmEnableBlurBehindWindow(hwnd, pBlurBehind);
+					}
 
 				} else {
 					
@@ -174,8 +362,9 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 				}
 
 			} else if (ProgMenuOpen == true) {
-				programemenu.setVisible(false);
+			
 				programestyle.setVisible(false);
+				programemenu.setVisible(false);
 
 				ProgMenuOpen = false;
 
@@ -184,12 +373,12 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 		}
 
 		
-		if(e.getSource() == about)
+		if((e.getSource() == about) ||(e.getSource() == whiteabout))
 		{
 			System.out.println("[Debug] :  Info button pressed");
 			JOptionPane.showMessageDialog(this, "                      Create by MrBn100ful"
 					+ "\n"
-					+ "                 Version : 1.2.0  Steel Blizzard"
+					+ "                 Version : 1.3.0  Steel Blizzard"
 					+ "\n"
 					+ "                                2016-2017"
 					+ "\n"
@@ -197,7 +386,7 @@ public class Frame extends JPanel implements ButtonAPIEventListener {
 					JOptionPane.INFORMATION_MESSAGE);
 			
 		}
-		if(e.getSource() == options)
+		if((e.getSource() == options) || (e.getSource() == whiteoptions))
 		{
 			System.out.println("[Debug] :  Option button pressed");
 			@SuppressWarnings("unused")
