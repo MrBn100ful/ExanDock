@@ -62,6 +62,7 @@ public class Option {
 			test = true;
 		}
 			
+		colormenu.setType(javax.swing.JFrame.Type.UTILITY);
 		optionmenu.setTitle("Program Options");
 			
 			optionmenu.setSize(255, 265);
@@ -184,7 +185,7 @@ public class Option {
 						
 						
 						
-						colormenu.setType(javax.swing.JFrame.Type.UTILITY);
+						
 						
 						colormenu.setResizable(false);
 						

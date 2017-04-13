@@ -36,12 +36,10 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.filechooser.FileSystemView;
 
-import fr.MrBn100ful.ButtonAPI.event.ButtonAPIEvent;
-import fr.MrBn100ful.ButtonAPI.event.ButtonAPIEventListener;
 import net.coobird.thumbnailator.Thumbnails;
 
 @SuppressWarnings("serial")
-public class DragAndDropIcon extends JPanel implements DropTargetListener, ButtonAPIEventListener  {
+public class DragAndDropIcon extends JPanel implements DropTargetListener {
 	
 	int iconnumber = 1;
 	Shutdown shutdown = new Shutdown();
@@ -200,9 +198,6 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener, Butto
 	public void dropActionChanged(DropTargetDragEvent event) {
 	}
 
-	@Override
-	public void onEvent(ButtonAPIEvent event) {
-		
-	}
+
 
 }

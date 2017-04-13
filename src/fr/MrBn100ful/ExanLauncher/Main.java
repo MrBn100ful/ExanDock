@@ -36,7 +36,6 @@ import javax.swing.UIManager;
 import com.sun.jna.Native;
 import com.sun.jna.platform.win32.WinDef.HWND;
 
-import fr.MrBn100ful.ButtonAPI.ButtonAPI;
 import fr.MrBn100ful.ExanLauncher.Blurred.Dwmapi;
 
 
@@ -128,7 +127,7 @@ public class Main extends JFrame {
 			
 		}else {
 			
-			style.setLocation(60, (height / 2) - 340);
+			style.setLocation(58, (height / 2) - 340);
 			main.setLocation(0, (height / 2) - 340);
 			
 			
@@ -148,45 +147,45 @@ public class Main extends JFrame {
 		
 		if (colorfile.equals("gray")){
 		
-			main.setBackground(new Color(243, 243, 243, 150));
-		
+			main.setBackground(new Color(91, 91, 91, 200));
+			hide.setForeground(Color.WHITE);
 		}else if (colorfile.equals("red")) {
 		
-			main.setBackground(new Color(246, 44, 44, 150));
+			main.setBackground(new Color(246, 44, 44, 200));
 			hide.setForeground(Color.WHITE);
 			
 		}else if (colorfile.equals("green")) {
 			
-			main.setBackground(new Color(22, 205, 52, 150));
+			main.setBackground(new Color(22, 205, 52, 200));
 			hide.setForeground(Color.WHITE);
 		
 		}else if (colorfile.equals("blue")) {
 			
-			main.setBackground(new Color(26, 138, 212, 150));
+			main.setBackground(new Color(26, 138, 212, 200));
 			hide.setForeground(Color.WHITE);
 		
 		}else if (colorfile.equals("white")) {
 			
-			main.setBackground(new Color(255, 255, 255, 150));
+			main.setBackground(new Color(255, 255, 255, 200));
 		
 		}else if (colorfile.equals("yellow")) {
 			
-			main.setBackground(new Color(255, 230, 0, 150));
+			main.setBackground(new Color(255, 230, 0, 200));
 			hide.setForeground(Color.WHITE);
 		
 		}else if (colorfile.equals("pink")) {
 			
-			main.setBackground(new Color(235, 35, 195, 150));
+			main.setBackground(new Color(235, 35, 195, 200));
 			hide.setForeground(Color.WHITE);
 		
 		}else if (colorfile.equals("purple")) {
 			
-			main.setBackground(new Color(95, 35, 235, 150));
+			main.setBackground(new Color(95, 35, 235, 200));
 			hide.setForeground(Color.WHITE);
 		
 		}else if (colorfile.equals("orange")) {
 			
-			main.setBackground(new Color(235, 148, 35, 150));
+			main.setBackground(new Color(235, 148, 35, 200));
 			hide.setForeground(Color.WHITE);
 		
 		}
@@ -267,46 +266,46 @@ public class Main extends JFrame {
 				
 				if (colorfile.equals("gray")){
 					
-					stophide.setBackground(new Color(243, 243, 243, 150));
-					
+					stophide.setBackground(new Color(91, 91, 91, 200));
+					stophideicon.setForeground(Color.WHITE);
 				
 				}else if (colorfile.equals("red")) {
 				
-					stophide.setBackground(new Color(246, 44, 44, 150));
+					stophide.setBackground(new Color(246, 44, 44, 200));
 					stophideicon.setForeground(Color.WHITE);
 					
 				}else if (colorfile.equals("green")) {
 					
-					stophide.setBackground(new Color(22, 205, 52, 150));
+					stophide.setBackground(new Color(22, 205, 52, 200));
 					stophideicon.setForeground(Color.WHITE);
 				
 				}else if (colorfile.equals("blue")) {
 					
-					stophide.setBackground(new Color(26, 138, 212, 150));
+					stophide.setBackground(new Color(26, 138, 212, 200));
 					stophideicon.setForeground(Color.WHITE);
 				
 				}else if (colorfile.equals("white")) {
 					
-					stophide.setBackground(new Color(255, 255, 255, 150));
+					stophide.setBackground(new Color(255, 255, 255, 200));
 				
 				}else if (colorfile.equals("yellow")) {
 					
-					stophide.setBackground(new Color(255, 230, 0, 150));
+					stophide.setBackground(new Color(255, 230, 0, 200));
 					stophideicon.setForeground(Color.WHITE);
 				
 				}else if (colorfile.equals("pink")) {
 					
-					stophide.setBackground(new Color(235, 35, 195, 150));
+					stophide.setBackground(new Color(235, 35, 195, 200));
 					stophideicon.setForeground(Color.WHITE);
 				
 				}else if (colorfile.equals("purple")) {
 					
-					stophide.setBackground(new Color(95, 35, 235, 150));
+					stophide.setBackground(new Color(95, 35, 235, 200));
 					stophideicon.setForeground(Color.WHITE);
 				
 				}else if (colorfile.equals("orange")) {
 					
-					stophide.setBackground(new Color(235, 148, 35, 150));
+					stophide.setBackground(new Color(235, 148, 35, 200));
 					stophideicon.setForeground(Color.WHITE);
 				
 				}
@@ -336,8 +335,6 @@ public class Main extends JFrame {
 
 
 	public static void main(String[] args) throws IOException {
-		ButtonAPI.setSystemLookNFeel();
-		ButtonAPI.setResourcePath("/fr/MrBn100ful/ExanLauncher/resources");
 		instance = new Main(null);
 		
 	}
