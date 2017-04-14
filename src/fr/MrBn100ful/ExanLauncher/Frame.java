@@ -146,9 +146,7 @@ public class Frame extends JPanel  {
 		whiteoptions.setBorderPainted(false);
 		whiteoptions.setFocusPainted(false);
 		
-		
-		
-		String colorpath = "color.txt";
+		String colorpath = "/config/color.txt";
 		
 		String colorfile = null;
 		try {
@@ -164,63 +162,25 @@ public class Frame extends JPanel  {
 		whiteicon.setBounds(0, 0, 60, 60);
 		icon.setBounds(0, 0, 60, 60);
 		
-		if (colorfile.equals("gray")){
+		if ( (colorfile.equals("gray")) || (colorfile.equals("red")) || (colorfile.equals("green")) || (colorfile.equals("blue")) || (colorfile.equals("yellow")) || (colorfile.equals("pink")) || (colorfile.equals("purple")) || (colorfile.equals("orange"))){
 			
 			this.add(whiteicon);
-			
-		
-		}else if (colorfile.equals("red")) {
-			
-			this.add(whiteicon);
-
-
-		}else if (colorfile.equals("green")) {
-			
-			this.add(whiteicon);
-
-
-		}else if (colorfile.equals("blue")) {
-			
-			this.add(whiteicon);
-
 
 		}else if (colorfile.equals("white")) {
 			
 			this.add(icon);
-		
-
-		}else if (colorfile.equals("yellow")) {
-			this.add(whiteicon);
-
-
-		}else if (colorfile.equals("pink")) {
-			
-			this.add(whiteicon);
-
-
-		}else if (colorfile.equals("purple")) {
-			this.add(whiteicon);
-
-
-		}else if (colorfile.equals("orange")) {
-			
-			this.add(whiteicon);
-
-
 		}
 		programestyle.setUndecorated(true);
 		programemenu.setUndecorated(true);
 		
 		this.setLayout(null);
 		
-		
-		
 		programestyle.setType(javax.swing.JFrame.Type.UTILITY);
 		programemenu.setType(javax.swing.JFrame.Type.UTILITY);
 	
 	
 		
-		String configpath = "config.txt";
+		String configpath = "/config/config.txt";
 		
 		String configfile = null;
 		try {
@@ -342,15 +302,10 @@ public class Frame extends JPanel  {
 							
 						}
 						
-
 						programemenu.setTitle("ExanLauncher Program menu");
 						programemenu.setSize(200, 60);
 						
 						programemenu.setLayout(null);
-
-						
-						
-						
 
 						programemenu.setAlwaysOnTop(true);
 						programemenu.setResizable(false);
@@ -402,7 +357,6 @@ public class Frame extends JPanel  {
 					
 						
 						}
-						
 						
 						programestyle.setTitle("ExanLauncher Program style");
 						programestyle.setSize(2, 60);
@@ -459,7 +413,7 @@ public class Frame extends JPanel  {
 				System.out.println("[Debug] :  Info button pressed");
 				JOptionPane.showMessageDialog(programemenu, "                      Create by MrBn100ful"
 						+ "\n"
-						+ "                 Version : 1.3.1  Steel Blizzard"
+						+ "                 Version : 2.0.0  Silver Spark"
 						+ "\n"
 						+ "                                2016-2017"
 						+ "\n"
@@ -474,7 +428,7 @@ public class Frame extends JPanel  {
 				System.out.println("[Debug] :  Info button pressed");
 				JOptionPane.showMessageDialog(programemenu, "                      Create by MrBn100ful"
 						+ "\n"
-						+ "                 Version : 1.3.1  Steel Blizzard"
+						+ "                 Version : 2.0.0  Silver Spark"
 						+ "\n"
 						+ "                                2016-2017"
 						+ "\n"

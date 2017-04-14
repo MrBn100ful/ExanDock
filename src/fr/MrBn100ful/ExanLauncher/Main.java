@@ -61,9 +61,11 @@ public class Main extends JFrame {
 		
 		String[] lists = AutoUpdate.AutoUpdate();
 		
-		File config = new File("config.txt");
+		String[] lists2 = SetupFiles.setup();
 		
-		File color = new File("color.txt");
+		File config = new File("/config/config.txt");
+		
+		File color = new File("/config/color.txt");
 		
 		
 		if(!config.exists() && !config.isDirectory()) { 
@@ -88,25 +90,25 @@ public class Main extends JFrame {
 			
 		}
 		
-		String configpath = "config.txt";
+		String configpath = "/config/config.txt";
 		
 		String configfile = new String(Files.readAllBytes(Paths.get(configpath)));
 		
-		String colorpath = "color.txt";
+		String colorpath = "/config/color.txt";
 		
 		String colorfile = new String(Files.readAllBytes(Paths.get(colorpath)));
 
-		File file = new File("debug.txt");
+		File file = new File("/config/debug.txt");
 		FileOutputStream fos = new FileOutputStream(file);
 		PrintStream ps = new PrintStream(fos);
 		System.setOut(ps);
 		
 
 		
-		File iconinfo = new File("iconinfo.txt");
+		File iconinfo = new File("/icons/iconinfo.txt");
 		System.out.println("[Debug] :  Program launched");
 		if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-			FileReader iconinforead = new FileReader("iconinfo.txt");
+			FileReader iconinforead = new FileReader("/icons/iconinfo.txt");
 			int iconinfonumber = iconinforead.read();
 			System.out.println("[Debug] :  " + (iconinfonumber - 1) + " icon(s) created");
 		}
@@ -195,11 +197,8 @@ public class Main extends JFrame {
 		main.add(dropicon);
 		DragAndDropIcon DropIcon = new DragAndDropIcon();
 		new DropTarget(dropicon, DropIcon);
-
-		
 		style.setTitle("ExanLauncher");
 		style.setSize(2, 680);
-		
 		style.setUndecorated(true);
 		style.setAlwaysOnTop(true);
 		style.setResizable(false);
@@ -217,8 +216,6 @@ public class Main extends JFrame {
 			pBlurBehind.fTransitionOnMaximized = false;
 			Dwmapi.INSTANCE.DwmEnableBlurBehindWindow(hwnd, pBlurBehind);
 		}
-		
-		
 
 		Icon1();
 		Icon2();
@@ -263,7 +260,6 @@ public class Main extends JFrame {
 					
 				}
 
-				
 				if (colorfile.equals("gray")){
 					
 					stophide.setBackground(new Color(91, 91, 91, 200));
@@ -349,7 +345,7 @@ public class Main extends JFrame {
        }
 		
 		
-		ImageIcon icon1 = new ImageIcon("icon1.png");
+		ImageIcon icon1 = new ImageIcon("/icons/icon1/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 70, 60, 60);
       buttonicon1.setBorder(null);
@@ -364,10 +360,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("icon1.txt");
+      	  File iconinfo = new File("/icons/icon1/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "icon1.txt";
+      			String filepath = "/icons/icon1/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");
@@ -396,7 +392,7 @@ public class Main extends JFrame {
      }
 		
 		
-		ImageIcon icon1 = new ImageIcon("icon2.png");
+		ImageIcon icon1 = new ImageIcon("icons/icon2/icon.png");
     JButton buttonicon1 = new JButton(icon1);
     buttonicon1.setBounds(0, 130, 60, 60);
     buttonicon1.setBorder(null);
@@ -412,10 +408,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
       {
     	 
-    	  File iconinfo = new File("icon2.txt");
+    	  File iconinfo = new File("/icons/icon2/icon.txt");
     	  try {
     		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-    			String filepath = "icon2.txt";
+    			String filepath = "/icons/icon2/icon.txt";
     			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
  				Process process = new ProcessBuilder(iconfile).start();
  				System.out.println("[Debug] :  Launch program");
@@ -443,7 +439,7 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		ImageIcon icon1 = new ImageIcon("icon3.png");
+		ImageIcon icon1 = new ImageIcon("/icons/icon3/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 190, 60, 60);
       buttonicon1.setBorder(null);
@@ -459,10 +455,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("icon3.txt");
+      	  File iconinfo = new File("/icons/icon3/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "icon3.txt";
+      			String filepath = "/icons/icon3/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");
@@ -490,7 +486,7 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		ImageIcon icon1 = new ImageIcon("icon4.png");
+		ImageIcon icon1 = new ImageIcon("/icons/icon4/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 250, 60, 60);
       buttonicon1.setBorder(null);
@@ -505,10 +501,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("icon4.txt");
+      	  File iconinfo = new File("/icons/icon4/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "icon4.txt";
+      			String filepath = "/icons/icon4/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");
@@ -537,7 +533,7 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		ImageIcon icon1 = new ImageIcon("icon5.png");
+		ImageIcon icon1 = new ImageIcon("/icons/icon5/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 310, 60, 60);
       buttonicon1.setBorder(null);
@@ -552,10 +548,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("icon5.txt");
+      	  File iconinfo = new File("/icons/icon5/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "icon15.txt";
+      			String filepath = "/icons/icon5/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");
@@ -584,7 +580,7 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		ImageIcon icon1 = new ImageIcon("icon6.png");
+		ImageIcon icon1 = new ImageIcon("/icons/icon6/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 370, 60, 60);
       buttonicon1.setBorder(null);
@@ -599,10 +595,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("icon6.txt");
+      	  File iconinfo = new File("icons/icon6/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "icon6.txt";
+      			String filepath = "/icons/icon6/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");
@@ -631,7 +627,7 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		ImageIcon icon1 = new ImageIcon("icon7.png");
+		ImageIcon icon1 = new ImageIcon("/icons/icon7/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 430, 60, 60);
       buttonicon1.setBorder(null);
@@ -646,10 +642,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("icon7.txt");
+      	  File iconinfo = new File("/icons/icon7/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "icon7.txt";
+      			String filepath = "/icons/icon7/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");
@@ -678,7 +674,7 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		ImageIcon icon1 = new ImageIcon("icon8.png");
+		ImageIcon icon1 = new ImageIcon("icons/icon8/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 490, 60, 60);
       buttonicon1.setBorder(null);
@@ -693,10 +689,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("icon8.txt");
+      	  File iconinfo = new File("/icons/icon8/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "icon8.txt";
+      			String filepath = "/icons/icon8/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");
@@ -724,7 +720,7 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		ImageIcon icon1 = new ImageIcon("icon9.png");
+		ImageIcon icon1 = new ImageIcon("/icons/icon9/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 550, 60, 60);
       buttonicon1.setBorder(null);
@@ -739,10 +735,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("icon9.txt");
+      	  File iconinfo = new File("/icons/icon9/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "icon9.txt";
+      			String filepath = "/icons/icon9/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");
@@ -770,7 +766,7 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		ImageIcon icon1 = new ImageIcon("icon10.png");
+		ImageIcon icon1 = new ImageIcon("/icons/icon10/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 610, 60, 60);
       buttonicon1.setBorder(null);
@@ -785,10 +781,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("icon10.txt");
+      	  File iconinfo = new File("/icons/icon10/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "icon10.txt";
+      			String filepath = "/icons/icon10/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");

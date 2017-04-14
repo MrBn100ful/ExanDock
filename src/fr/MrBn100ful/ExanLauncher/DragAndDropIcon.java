@@ -62,10 +62,10 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener {
             	System.out.println(file);
         		try {
 
-        			File iconinfo = new File("iconinfo.txt");
+        			File iconinfo = new File("/icons/iconinfo.txt");
         			
 					if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-						FileReader iconinforead = new FileReader("iconinfo.txt");
+						FileReader iconinforead = new FileReader("/icons/iconinfo.txt");
 						int iconinfonumber = iconinforead.read();
 						if (!(iconinfonumber > 10)){
 	        				String iconpath = file.getPath();
@@ -73,7 +73,7 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener {
 	        					
 	        					
 	        					
-	        					File icon = new File("icon"+ iconinfonumber+".txt");
+	        					File icon = new File("/icons/icon"+ iconinfonumber+"/icon.txt");
 	                			FileWriter iconpathwriter = new FileWriter(icon);
 	                			
 	                			iconpathwriter.write(iconpath);
@@ -89,10 +89,10 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener {
 	                			
 	                			BufferedImage bi = (BufferedImage)image;
 	                			
-	                			File f = new File("icon"+ iconinfonumber + ".png");
+	                			File f = new File("/icons/icon"+ iconinfonumber + "/icon.png");
 	                			
 	                			ImageIO.write(bi, "png", f);
-	                			Thumbnails.of("icon"+iconinfonumber + ".png").size(30, 30).toFile("icon"+iconinfonumber + ".png");
+	                			Thumbnails.of("/icons/icon"+iconinfonumber + "/icon.png").size(30, 30).toFile("/icons/icon"+iconinfonumber + "/icon.png");
 	                			
 	                			iconinfonumber = iconinfonumber + 1;
 	                			
@@ -126,7 +126,7 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener {
 	        					
 	        					
 	        					
-	        					File icon = new File("icon"+ iconinfonumber+".txt");
+	        					File icon = new File("/icons/icon"+ iconinfonumber+"/icon.txt");
 	                			FileWriter iconpathwriter = new FileWriter(icon);
 	                			
 	                			iconpathwriter.write(iconpath);
@@ -142,10 +142,10 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener {
 	                			
 	                			BufferedImage bi = (BufferedImage)image;
 	                			
-	                			File f = new File("icon"+ iconinfonumber + ".png");
+	                			File f = new File("/icons/icon"+ iconinfonumber + "/icon.png");
 	                			
 	                			ImageIO.write(bi, "png", f);
-	                			Thumbnails.of("icon"+iconnumber + ".png").size(30, 30).toFile("icon"+iconinfonumber + ".png");
+	                			Thumbnails.of("/icons/icon"+ iconnumber + "/icon.png").size(30, 30).toFile("/icons/icon"+iconinfonumber + "/icon.png");
 	                			
 	                			iconinfonumber = iconinfonumber + 1;
 	                			System.out.println(iconinfonumber);
