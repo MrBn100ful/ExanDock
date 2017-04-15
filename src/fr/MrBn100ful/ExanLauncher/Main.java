@@ -63,9 +63,9 @@ public class Main extends JFrame {
 		
 		String[] lists2 = SetupFiles.setup();
 		
-		File config = new File("/config/config.txt");
+		File config = new File("/exanlauncher/config/config.txt");
 		
-		File color = new File("/config/color.txt");
+		File color = new File("/exanlauncher/config/color.txt");
 		
 		
 		if(!config.exists() && !config.isDirectory()) { 
@@ -90,25 +90,25 @@ public class Main extends JFrame {
 			
 		}
 		
-		String configpath = "/config/config.txt";
+		String configpath = "/exanlauncher/config/config.txt";
 		
 		String configfile = new String(Files.readAllBytes(Paths.get(configpath)));
 		
-		String colorpath = "/config/color.txt";
+		String colorpath = "/exanlauncher/config/color.txt";
 		
 		String colorfile = new String(Files.readAllBytes(Paths.get(colorpath)));
 
-		File file = new File("/config/debug.txt");
+		File file = new File("/exanlauncher/config/debug.txt");
 		FileOutputStream fos = new FileOutputStream(file);
 		PrintStream ps = new PrintStream(fos);
 		System.setOut(ps);
 		
 
 		
-		File iconinfo = new File("/icons/iconinfo.txt");
+		File iconinfo = new File("/exanlauncher/icons/iconinfo.txt");
 		System.out.println("[Debug] :  Program launched");
 		if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-			FileReader iconinforead = new FileReader("/icons/iconinfo.txt");
+			FileReader iconinforead = new FileReader("/exanlauncher/icons/iconinfo.txt");
 			int iconinfonumber = iconinforead.read();
 			System.out.println("[Debug] :  " + (iconinfonumber - 1) + " icon(s) created");
 		}
@@ -345,7 +345,7 @@ public class Main extends JFrame {
        }
 		
 		
-		ImageIcon icon1 = new ImageIcon("/icons/icon1/icon.png");
+		ImageIcon icon1 = new ImageIcon("/exanlauncher/icons/icon1/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 70, 60, 60);
       buttonicon1.setBorder(null);
@@ -360,10 +360,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("/icons/icon1/icon.txt");
+      	  File iconinfo = new File("/exanlauncher/icons/icon1/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "/icons/icon1/icon.txt";
+      			String filepath = "/exanlauncher/icons/icon1/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");
@@ -392,7 +392,7 @@ public class Main extends JFrame {
      }
 		
 		
-		ImageIcon icon1 = new ImageIcon("icons/icon2/icon.png");
+		ImageIcon icon1 = new ImageIcon("/exanlauncher/icons/icon2/icon.png");
     JButton buttonicon1 = new JButton(icon1);
     buttonicon1.setBounds(0, 130, 60, 60);
     buttonicon1.setBorder(null);
@@ -408,10 +408,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
       {
     	 
-    	  File iconinfo = new File("/icons/icon2/icon.txt");
+    	  File iconinfo = new File("/exanlauncher/icons/icon2/icon.txt");
     	  try {
     		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-    			String filepath = "/icons/icon2/icon.txt";
+    			String filepath = "/exanlauncher/icons/icon2/icon.txt";
     			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
  				Process process = new ProcessBuilder(iconfile).start();
  				System.out.println("[Debug] :  Launch program");
@@ -439,7 +439,7 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		ImageIcon icon1 = new ImageIcon("/icons/icon3/icon.png");
+		ImageIcon icon1 = new ImageIcon("/exanlauncher/icons/icon3/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 190, 60, 60);
       buttonicon1.setBorder(null);
@@ -455,10 +455,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("/icons/icon3/icon.txt");
+      	  File iconinfo = new File("/exanlauncher/icons/icon3/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "/icons/icon3/icon.txt";
+      			String filepath = "/exanlauncher/icons/icon3/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");
@@ -486,7 +486,7 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		ImageIcon icon1 = new ImageIcon("/icons/icon4/icon.png");
+		ImageIcon icon1 = new ImageIcon("/exanlauncher/icons/icon4/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 250, 60, 60);
       buttonicon1.setBorder(null);
@@ -501,10 +501,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("/icons/icon4/icon.txt");
+      	  File iconinfo = new File("/exanlauncher/icons/icon4/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "/icons/icon4/icon.txt";
+      			String filepath = "/exanlauncher/icons/icon4/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");
@@ -533,7 +533,7 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		ImageIcon icon1 = new ImageIcon("/icons/icon5/icon.png");
+		ImageIcon icon1 = new ImageIcon("/exanlauncher/icons/icon5/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 310, 60, 60);
       buttonicon1.setBorder(null);
@@ -548,10 +548,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("/icons/icon5/icon.txt");
+      	  File iconinfo = new File("/exanlauncher/icons/icon5/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "/icons/icon5/icon.txt";
+      			String filepath = "/exanlauncher/icons/icon5/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");
@@ -580,7 +580,7 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		ImageIcon icon1 = new ImageIcon("/icons/icon6/icon.png");
+		ImageIcon icon1 = new ImageIcon("/exanlauncher/icons/icon6/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 370, 60, 60);
       buttonicon1.setBorder(null);
@@ -595,10 +595,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("icons/icon6/icon.txt");
+      	  File iconinfo = new File("/exanlauncher/icons/icon6/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "/icons/icon6/icon.txt";
+      			String filepath = "/exanlauncher/icons/icon6/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");
@@ -627,7 +627,7 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		ImageIcon icon1 = new ImageIcon("/icons/icon7/icon.png");
+		ImageIcon icon1 = new ImageIcon("/exanlauncher/icons/icon7/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 430, 60, 60);
       buttonicon1.setBorder(null);
@@ -642,10 +642,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("/icons/icon7/icon.txt");
+      	  File iconinfo = new File("/exanlauncher/icons/icon7/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "/icons/icon7/icon.txt";
+      			String filepath = "/exanlauncher/icons/icon7/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");
@@ -674,7 +674,7 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		ImageIcon icon1 = new ImageIcon("icons/icon8/icon.png");
+		ImageIcon icon1 = new ImageIcon("/exanlauncher/icons/icon8/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 490, 60, 60);
       buttonicon1.setBorder(null);
@@ -689,10 +689,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("/icons/icon8/icon.txt");
+      	  File iconinfo = new File("/exanlauncher/icons/icon8/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "/icons/icon8/icon.txt";
+      			String filepath = "/exanlauncher/icons/icon8/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");
@@ -720,7 +720,7 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		ImageIcon icon1 = new ImageIcon("/icons/icon9/icon.png");
+		ImageIcon icon1 = new ImageIcon("/exanlauncher/icons/icon9/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 550, 60, 60);
       buttonicon1.setBorder(null);
@@ -735,10 +735,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("/icons/icon9/icon.txt");
+      	  File iconinfo = new File("/exanlauncher/icons/icon9/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "/icons/icon9/icon.txt";
+      			String filepath = "/exanlauncher/icons/icon9/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");
@@ -766,7 +766,7 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		ImageIcon icon1 = new ImageIcon("/icons/icon10/icon.png");
+		ImageIcon icon1 = new ImageIcon("/exanlauncher/icons/icon10/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 610, 60, 60);
       buttonicon1.setBorder(null);
@@ -781,10 +781,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("/icons/icon10/icon.txt");
+      	  File iconinfo = new File("/exanlauncher/icons/icon10/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "/icons/icon10/icon.txt";
+      			String filepath = "/exanlauncher/icons/icon10/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");

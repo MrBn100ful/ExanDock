@@ -72,7 +72,7 @@ public class Option {
 			
 			optionmenu.setSize(255, 265);
 			
-			String configpath = "/config/config.txt";
+			String configpath = "/exanlauncher/config/config.txt";
 			
 			String configfile = null;
 			try {
@@ -215,7 +215,7 @@ public class Option {
 							
 							@SuppressWarnings("static-access")
 							public void actionPerformed(ActionEvent e) { 
-								File config = new File("/config/color.txt");
+								File config = new File("/exanlauncher/config/color.txt");
 								FileWriter iconinfowriter = null;
 								String configplace = "gray";
 								try {
@@ -233,7 +233,7 @@ public class Option {
 						red.addActionListener(new ActionListener() { 
 							@SuppressWarnings("static-access")
 							public void actionPerformed(ActionEvent e) { 
-								File config = new File("/config/color.txt");
+								File config = new File("/exanlauncher/config/color.txt");
 								FileWriter iconinfowriter = null;
 								String configplace = "red";
 								try {
@@ -251,7 +251,7 @@ public class Option {
 						green.addActionListener(new ActionListener() { 
 							@SuppressWarnings("static-access")
 							public void actionPerformed(ActionEvent e) { 
-								File config = new File("/config/color.txt");
+								File config = new File("/exanlauncher/config/color.txt");
 								FileWriter iconinfowriter = null;
 								String configplace = "green";
 								try {
@@ -269,7 +269,7 @@ public class Option {
 						blue.addActionListener(new ActionListener() { 
 							@SuppressWarnings("static-access")
 							public void actionPerformed(ActionEvent e) { 
-								File config = new File("/config/color.txt");
+								File config = new File("/exanlauncher/config/color.txt");
 								FileWriter iconinfowriter = null;
 								String configplace = "blue";
 								try {
@@ -287,7 +287,7 @@ public class Option {
 						white.addActionListener(new ActionListener() { 
 							@SuppressWarnings("static-access")
 							public void actionPerformed(ActionEvent e) { 
-								File config = new File("/config/color.txt");
+								File config = new File("/exanlauncher/config/color.txt");
 								FileWriter iconinfowriter = null;
 								String configplace = "white";
 								try {
@@ -305,7 +305,7 @@ public class Option {
 						yellow.addActionListener(new ActionListener() { 
 							@SuppressWarnings("static-access")
 							public void actionPerformed(ActionEvent e) { 
-								File config = new File("/config/color.txt");
+								File config = new File("/exanlauncher/config/color.txt");
 								FileWriter iconinfowriter = null;
 								String configplace = "yellow";
 								try {
@@ -323,7 +323,7 @@ public class Option {
 						pink.addActionListener(new ActionListener() { 
 							@SuppressWarnings("static-access")
 							public void actionPerformed(ActionEvent e) { 
-								File config = new File("/config/color.txt");
+								File config = new File("/exanlauncher/config/color.txt");
 								FileWriter iconinfowriter = null;
 								String configplace = "pink";
 								try {
@@ -341,7 +341,7 @@ public class Option {
 						purple.addActionListener(new ActionListener() { 
 							@SuppressWarnings("static-access")
 							public void actionPerformed(ActionEvent e) { 
-								File config = new File("/config/color.txt");
+								File config = new File("/exanlauncher/config/color.txt");
 								FileWriter iconinfowriter = null;
 								String configplace = "purple";
 								try {
@@ -359,7 +359,7 @@ public class Option {
 						orange.addActionListener(new ActionListener() { 
 							@SuppressWarnings("static-access")
 							public void actionPerformed(ActionEvent e) { 
-								File config = new File("/config/color.txt");
+								File config = new File("/exanlauncher/config/color.txt");
 								FileWriter iconinfowriter = null;
 								String configplace = "orange";
 								try {
@@ -386,7 +386,7 @@ public class Option {
 				@SuppressWarnings("static-access")
 				public void actionPerformed(ActionEvent e) { 
 						System.out.println("[Debug] :  Left button pressed");
-						File config = new File("/config/config.txt");
+						File config = new File("/exanlauncher/config/config.txt");
 						FileWriter iconinfowriter = null;
 						String configplace = "left";
 						try {
@@ -410,7 +410,7 @@ public class Option {
 				@SuppressWarnings("static-access")
 				public void actionPerformed(ActionEvent e) { 
 						System.out.println("[Debug] :  Right button pressed");
-						File config = new File("/config/config.txt");
+						File config = new File("/exanlauncher/config/config.txt");
 						FileWriter iconinfowriter = null;
 						String configplace = "right";
 						try {
@@ -505,7 +505,7 @@ public class Option {
 							@SuppressWarnings("static-access")
 							public void actionPerformed(ActionEvent e) { 
 
-								File directory = new File("/icons/icon1/");
+								File directory = new File("/exanlauncher/icons/icon1/");
 
 								
 									try {
@@ -514,48 +514,52 @@ public class Option {
 
 										e2.printStackTrace();
 									}
-								
-								File dir = new File("/icons/icon2");
-				                File newName = new File("icons/icon1");
+								    try {
+										Thread.sleep(2000);
+									} catch (InterruptedException e2) {
+										e2.printStackTrace();
+									}
+								File dir = new File("/exanlauncher/icons/icon2");
+				                File newName = new File("/exanlauncher/icons/icon1");
 								dir.renameTo(newName);
 								
 								File dir3 = new File("/icons/icon3");
-				                File newName3 = new File("icons/icon2");
+				                File newName3 = new File("/exanlauncher/icons/icon2");
 				                dir3.renameTo(newName3);
 								
 								File dir4 = new File("/icons/icon4");
-				                File newName4 = new File("icons/icon3");
+				                File newName4 = new File("/exanlauncher/icons/icon3");
 				                dir4.renameTo(newName4);
 								
 								File dir5 = new File("/icons/icon5");
-				                File newName5 = new File("icons/icon4");
+				                File newName5 = new File("/exanlauncher/icons/icon4");
 				                dir5.renameTo(newName5);
 								
 								File dir6 = new File("/icons/icon6");
-				                File newName6 = new File("icons/icon5");
+				                File newName6 = new File("/exanlauncher/icons/icon5");
 				                dir6.renameTo(newName6);
 								
 								File dir7 = new File("/icons/icon7");
-				                File newName7 = new File("icons/icon6");
+				                File newName7 = new File("/exanlauncher/icons/icon6");
 				                dir7.renameTo(newName7);
 								
 								File dir8 = new File("/icons/icon8");
-				                File newName8 = new File("icons/icon7");
+				                File newName8 = new File("/exanlauncher/icons/icon7");
 				                dir8.renameTo(newName8);
 								
 								File dir9 = new File("/icons/icon9");
-				                File newName9 = new File("icons/icon8");
+				                File newName9 = new File("/exanlauncher/icons/icon8");
 				                dir9.renameTo(newName9);
 								
 								File dir10 = new File("/icons/icon10");
-				                File newName10 = new File("icons/icon9");
+				                File newName10 = new File("/exanlauncher/icons/icon9");
 				                dir10.renameTo(newName10);
 								
-				                new File("/icons/icon10/").mkdirs();
+				                new File("/exanlauncher/icons/icon10/").mkdirs();
 				                
-				                File config = new File("/config/iconinfo.txt");
+				                File config = new File("/exanlauncher/icons/iconinfo.txt");
 								FileWriter iconinfowriter = null;
-								String configplace = "9";
+								int configplace = 10;
 								try {
 									iconinfowriter = new FileWriter(config);
 									iconinfowriter.write(configplace);
@@ -575,7 +579,7 @@ public class Option {
 							 
 							@SuppressWarnings("static-access")
 							public void actionPerformed(ActionEvent e) { 
-								File directory = new File("/icons/icon2/");
+								File directory = new File("/exanlauncher/icons/icon2/");
 
 								try {
 									delete(directory);
@@ -583,44 +587,44 @@ public class Option {
 									e1.printStackTrace();
 								}
 								
-								File dir3 = new File("/icons/icon3");
-				                File newName3 = new File("icons/icon2");
+								File dir3 = new File("/exanlauncher/icons/icon3");
+				                File newName3 = new File("/exanlauncher/icons/icon2");
 				                dir3.renameTo(newName3);
 								
-								File dir4 = new File("/icons/icon4");
-				                File newName4 = new File("icons/icon3");
+								File dir4 = new File("/exanlauncher/icons/icon4");
+				                File newName4 = new File("/exanlauncher/icons/icon3");
 				                dir4.renameTo(newName4);
 								
-								File dir5 = new File("/icons/icon5");
-				                File newName5 = new File("icons/icon4");
+								File dir5 = new File("/exanlauncher/icons/icon5");
+				                File newName5 = new File("/exanlauncher/icons/icon4");
 				                dir5.renameTo(newName5);
 								
-								File dir6 = new File("/icons/icon6");
-				                File newName6 = new File("icons/icon5");
+								File dir6 = new File("/exanlauncher/icons/icon6");
+				                File newName6 = new File("/exanlauncher/cons/icon5");
 				                dir6.renameTo(newName6);
 								
-								File dir7 = new File("/icons/icon7");
-				                File newName7 = new File("icons/icon6");
+								File dir7 = new File("/exanlauncher/icons/icon7");
+				                File newName7 = new File("/exanlauncher/icons/icon6");
 				                dir7.renameTo(newName7);
 								
-								File dir8 = new File("/icons/icon8");
-				                File newName8 = new File("icons/icon7");
+								File dir8 = new File("/exanlauncher/icons/icon8");
+				                File newName8 = new File("/exanlauncher/icons/icon7");
 				                dir8.renameTo(newName8);
 								
-								File dir9 = new File("/icons/icon9");
-				                File newName9 = new File("icons/icon8");
+								File dir9 = new File("/exanlauncher/icons/icon9");
+				                File newName9 = new File("/exanlauncher/icons/icon8");
 				                dir9.renameTo(newName9);
 								
-								File dir10 = new File("/icons/icon10");
-				                File newName10 = new File("icons/icon9");
+								File dir10 = new File("/exanlauncher/icons/icon10");
+				                File newName10 = new File("/exanlauncher/icons/icon9");
 				                dir10.renameTo(newName10);
 								
 				                
-				                new File("/icons/icon10/").mkdirs();
+				                new File("/exanlauncher/icons/icon10/").mkdirs();
 				                
-				                File config = new File("/config/iconinfo.txt");
+				                File config = new File("/exanlauncher/icons/iconinfo.txt");
 								FileWriter iconinfowriter = null;
-								String configplace = "9";
+								int configplace = 10;
 								try {
 									iconinfowriter = new FileWriter(config);
 									iconinfowriter.write(configplace);
@@ -638,7 +642,7 @@ public class Option {
 							 
 							@SuppressWarnings("static-access")
 							public void actionPerformed(ActionEvent e) { 
-								File directory = new File("/icons/icon3/");
+								File directory = new File("/exanlauncher/icons/icon3/");
 
 								try {
 									delete(directory);
@@ -646,39 +650,39 @@ public class Option {
 									e1.printStackTrace();
 								}
 								
-								File dir4 = new File("/icons/icon4");
-				                File newName4 = new File("icons/icon3");
+								File dir4 = new File("/exanlauncher/icons/icon4");
+				                File newName4 = new File("/exanlauncher/icons/icon3");
 				                dir4.renameTo(newName4);
 								
-								File dir5 = new File("/icons/icon5");
-				                File newName5 = new File("icons/icon4");
+								File dir5 = new File("/exanlauncher/icons/icon5");
+				                File newName5 = new File("/exanlauncher/icons/icon4");
 				                dir5.renameTo(newName5);
 								
-								File dir6 = new File("/icons/icon6");
-				                File newName6 = new File("icons/icon5");
+								File dir6 = new File("/exanlauncher/icons/icon6");
+				                File newName6 = new File("/exanlauncher/icons/icon5");
 				                dir6.renameTo(newName6);
 								
-								File dir7 = new File("/icons/icon7");
-				                File newName7 = new File("icons/icon6");
+								File dir7 = new File("/exanlauncher/icons/icon7");
+				                File newName7 = new File("/exanlauncher/icons/icon6");
 				                dir7.renameTo(newName7);
 								
-								File dir8 = new File("/icons/icon8");
-				                File newName8 = new File("icons/icon7");
+								File dir8 = new File("/exanlauncher/icons/icon8");
+				                File newName8 = new File("/exanlauncher/icons/icon7");
 				                dir8.renameTo(newName8);
 								
-								File dir9 = new File("/icons/icon9");
-				                File newName9 = new File("icons/icon8");
+								File dir9 = new File("/exanlauncher/icons/icon9");
+				                File newName9 = new File("/exanlauncher/icons/icon8");
 				                dir9.renameTo(newName9);
 								
-								File dir10 = new File("/icons/icon10");
-				                File newName10 = new File("icons/icon9");
+								File dir10 = new File("/exanlauncher/icons/icon10");
+				                File newName10 = new File("/exanlauncher/icons/icon9");
 				                dir10.renameTo(newName10);
 								
-				                new File("/icons/icon10/").mkdirs();
+				                new File("/exanlauncher/icons/icon10/").mkdirs();
 				                
-				                File config = new File("/config/iconinfo.txt");
+				                File config = new File("/exanlauncher/icons/iconinfo.txt");
 								FileWriter iconinfowriter = null;
-								String configplace = "9";
+								int configplace = 10;
 								try {
 									iconinfowriter = new FileWriter(config);
 									iconinfowriter.write(configplace);
@@ -696,7 +700,7 @@ public class Option {
 							 
 							@SuppressWarnings("static-access")
 							public void actionPerformed(ActionEvent e) { 
-								File directory = new File("/icons/icon4/");
+								File directory = new File("/exanlauncher/icons/icon4/");
 
 								try {
 									delete(directory);
@@ -704,35 +708,35 @@ public class Option {
 									e1.printStackTrace();
 								}
 								
-								File dir5 = new File("/icons/icon5");
-				                File newName5 = new File("icons/icon4");
+								File dir5 = new File("/exanlauncher/icons/icon5");
+				                File newName5 = new File("/exanlauncher/icons/icon4");
 				                dir5.renameTo(newName5);
 								
-								File dir6 = new File("/icons/icon6");
-				                File newName6 = new File("icons/icon5");
+								File dir6 = new File("/exanlauncher/icons/icon6");
+				                File newName6 = new File("/exanlauncher.icons/icon5");
 				                dir6.renameTo(newName6);
 								
-								File dir7 = new File("/icons/icon7");
-				                File newName7 = new File("icons/icon6");
+								File dir7 = new File("/exanlauncher/icons/icon7");
+				                File newName7 = new File("/exanlauncher/icons/icon6");
 				                dir7.renameTo(newName7);
 								
-								File dir8 = new File("/icons/icon8");
-				                File newName8 = new File("icons/icon7");
+								File dir8 = new File("/exanlauncher/icons/icon8");
+				                File newName8 = new File("/exanlauncher/icons/icon7");
 				                dir8.renameTo(newName8);
 								
-								File dir9 = new File("/icons/icon9");
-				                File newName9 = new File("icons/icon8");
+								File dir9 = new File("/exanlauncher/icons/icon9");
+				                File newName9 = new File("/exanlauncher/icons/icon8");
 				                dir9.renameTo(newName9);
 								
-								File dir10 = new File("/icons/icon10");
-				                File newName10 = new File("icons/icon9");
+								File dir10 = new File("/exanlauncher/icons/icon10");
+				                File newName10 = new File("/exanlauncher/icons/icon9");
 				                dir10.renameTo(newName10);
 								
-				                new File("/icons/icon10/").mkdirs();
+				                new File("/exanlauncher/icons/icon10/").mkdirs();
 				                
-				                File config = new File("/config/iconinfo.txt");
+				                File config = new File("/exanlauncher/icons/iconinfo.txt");
 								FileWriter iconinfowriter = null;
-								String configplace = "9";
+								int configplace = 10;
 								try {
 									iconinfowriter = new FileWriter(config);
 									iconinfowriter.write(configplace);
@@ -750,7 +754,7 @@ public class Option {
 							 
 							@SuppressWarnings("static-access")
 							public void actionPerformed(ActionEvent e) { 
-								File directory = new File("/icons/icon5/");
+								File directory = new File("/exanlauncher/icons/icon5/");
 
 								try {
 									delete(directory);
@@ -759,31 +763,31 @@ public class Option {
 								}
 
 								
-								File dir6 = new File("/icons/icon6");
-				                File newName6 = new File("icons/icon5");
+								File dir6 = new File("/exanlauncher/icons/icon6");
+				                File newName6 = new File("/exanlauncher/icons/icon5");
 				                dir6.renameTo(newName6);
 								
-								File dir7 = new File("/icons/icon7");
-				                File newName7 = new File("icons/icon6");
+								File dir7 = new File("/exanlauncher/icons/icon7");
+				                File newName7 = new File("/exanlauncher/icons/icon6");
 				                dir7.renameTo(newName7);
 								
-								File dir8 = new File("/icons/icon8");
-				                File newName8 = new File("icons/icon7");
+								File dir8 = new File("/exanlauncher/icons/icon8");
+				                File newName8 = new File("/exanlauncher/icons/icon7");
 				                dir8.renameTo(newName8);
 								
-								File dir9 = new File("/icons/icon9");
-				                File newName9 = new File("icons/icon8");
+								File dir9 = new File("/exanlauncher/icons/icon9");
+				                File newName9 = new File("/exanlauncher/icons/icon8");
 				                dir9.renameTo(newName9);
 								
-								File dir10 = new File("/icons/icon10");
-				                File newName10 = new File("icons/icon9");
+								File dir10 = new File("/exanlauncher/icons/icon10");
+				                File newName10 = new File("/exanlauncher/icons/icon9");
 				                dir10.renameTo(newName10);
 								
-				                new File("/icons/icon10/").mkdirs();
+				                new File("/exanlauncher/icons/icon10/").mkdirs();
 				                
-				                File config = new File("/config/iconinfo.txt");
+				                File config = new File("/exanlauncher/icons/iconinfo.txt");
 								FileWriter iconinfowriter = null;
-								String configplace = "9";
+								int configplace = 10;
 								try {
 									iconinfowriter = new FileWriter(config);
 									iconinfowriter.write(configplace);
@@ -809,27 +813,27 @@ public class Option {
 									e1.printStackTrace();
 								}
 								
-								File dir7 = new File("/icons/icon7");
-				                File newName7 = new File("icons/icon6");
+								File dir7 = new File("/exanlauncher/icons/icon7");
+				                File newName7 = new File("/exanlauncher/icons/icon6");
 				                dir7.renameTo(newName7);
 								
-								File dir8 = new File("/icons/icon8");
-				                File newName8 = new File("icons/icon7");
+								File dir8 = new File("/exanlauncher/icons/icon8");
+				                File newName8 = new File("/exanlauncher/icons/icon7");
 				                dir8.renameTo(newName8);
 								
-								File dir9 = new File("/icons/icon9");
-				                File newName9 = new File("icons/icon8");
+								File dir9 = new File("/exanlauncher/icons/icon9");
+				                File newName9 = new File("/exanlauncher/icons/icon8");
 				                dir9.renameTo(newName9);
 								
-								File dir10 = new File("/icons/icon10");
-				                File newName10 = new File("icons/icon9");
+								File dir10 = new File("/exanlauncher/icons/icon10");
+				                File newName10 = new File("/exanlauncher/icons/icon9");
 				                dir10.renameTo(newName10);
 								
-				                new File("/icons/icon10/").mkdirs();
+				                new File("/exanlauncher/icons/icon10/").mkdirs();
 				                
-				                File config = new File("/config/iconinfo.txt");
+				                File config = new File("/exanlauncher/icons/iconinfo.txt");
 								FileWriter iconinfowriter = null;
-								String configplace = "9";
+								int configplace = 10;
 								try {
 									iconinfowriter = new FileWriter(config);
 									iconinfowriter.write(configplace);
@@ -847,7 +851,7 @@ public class Option {
 							 
 							@SuppressWarnings("static-access")
 							public void actionPerformed(ActionEvent e) { 
-								File directory = new File("/icons/icon7/");
+								File directory = new File("/exanlauncher/icons/icon7/");
 
 								try {
 									delete(directory);
@@ -855,23 +859,23 @@ public class Option {
 									e1.printStackTrace();
 								}
 								
-								File dir8 = new File("/icons/icon8");
-				                File newName8 = new File("icons/icon7");
+								File dir8 = new File("/exanlauncher/icons/icon8");
+				                File newName8 = new File("/exanlauncher/icons/icon7");
 				                dir8.renameTo(newName8);
 								
-								File dir9 = new File("/icons/icon9");
-				                File newName9 = new File("icons/icon8");
+								File dir9 = new File("/exanlauncher/icons/icon9");
+				                File newName9 = new File("/exanlauncher/icons/icon8");
 				                dir9.renameTo(newName9);
 								
-								File dir10 = new File("/icons/icon10");
-				                File newName10 = new File("icons/icon9");
+								File dir10 = new File("/exanlauncher/icons/icon10");
+				                File newName10 = new File("/exanlauncher/icons/icon9");
 				                dir10.renameTo(newName10);
 								
-				                new File("/icons/icon10/").mkdirs();
+				                new File("/exanlauncher/icons/icon10/").mkdirs();
 				                
-				                File config = new File("/config/iconinfo.txt");
+				                File config = new File("/exanlauncher/icons/iconinfo.txt");
 								FileWriter iconinfowriter = null;
-								String configplace = "9";
+								int configplace = 10;
 								try {
 									iconinfowriter = new FileWriter(config);
 									iconinfowriter.write(configplace);
@@ -889,7 +893,7 @@ public class Option {
 							 
 							@SuppressWarnings("static-access")
 							public void actionPerformed(ActionEvent e) { 
-								File directory = new File("/icons/icon8/");
+								File directory = new File("/exanlauncher/icons/icon8/");
 
 								try {
 									delete(directory);
@@ -897,19 +901,19 @@ public class Option {
 									e1.printStackTrace();
 								}
 								
-								File dir9 = new File("/icons/icon9");
-				                File newName9 = new File("icons/icon8");
+								File dir9 = new File("/exanlauncher/icons/icon9");
+				                File newName9 = new File("/exanlauncher/icons/icon8");
 				                dir9.renameTo(newName9);
 								
-								File dir10 = new File("/icons/icon10");
-				                File newName10 = new File("icons/icon9");
+								File dir10 = new File("/exanlauncher/icons/icon10");
+				                File newName10 = new File("/exanlauncher/icons/icon9");
 				                dir10.renameTo(newName10);
 								
-				                new File("/icons/icon10/").mkdirs();
+				                new File("/exanlauncher/icons/icon10/").mkdirs();
 				                
-				                File config = new File("/config/iconinfo.txt");
+				                File config = new File("/exanlauncher/icons/iconinfo.txt");
 								FileWriter iconinfowriter = null;
-								String configplace = "9";
+								int configplace = 10;
 								try {
 									iconinfowriter = new FileWriter(config);
 									iconinfowriter.write(configplace);
@@ -927,7 +931,7 @@ public class Option {
 							 
 							@SuppressWarnings("static-access")
 							public void actionPerformed(ActionEvent e) { 
-								File directory = new File("/icons/icon9/");
+								File directory = new File("/exanlauncher/icons/icon9/");
 
 								try {
 									delete(directory);
@@ -935,15 +939,15 @@ public class Option {
 									e1.printStackTrace();
 								}
 								
-								File dir10 = new File("/icons/icon10");
-				                File newName10 = new File("icons/icon9");
+								File dir10 = new File("/exanlauncher/icons/icon10");
+				                File newName10 = new File("/exanlauncher/icons/icon9");
 				                dir10.renameTo(newName10);
 								
-				                new File("/icons/icon10/").mkdirs();
+				                new File("/exanlauncher/icons/icon10/").mkdirs();
 				                
-				                File config = new File("/config/iconinfo.txt");
+				                File config = new File("/exanlauncher/icons/iconinfo.txt");
 								FileWriter iconinfowriter = null;
-								String configplace = "9";
+								int configplace = 10;
 								try {
 									iconinfowriter = new FileWriter(config);
 									iconinfowriter.write(configplace);
@@ -961,7 +965,7 @@ public class Option {
 							 
 							@SuppressWarnings("static-access")
 							public void actionPerformed(ActionEvent e) { 
-								File directory = new File("/icons/icon10/");
+								File directory = new File("/exanlauncher/icons/icon10/");
 
 								try {
 									delete(directory);
@@ -969,11 +973,11 @@ public class Option {
 									e1.printStackTrace();
 								}
 								
-				                new File("/icons/icon10/").mkdirs();
+				                new File("/exanlauncher/icons/icon10/").mkdirs();
 				                
-				                File config = new File("/config/iconinfo.txt");
+				                File config = new File("/exanlauncher/icons/iconinfo.txt");
 								FileWriter iconinfowriter = null;
-								String configplace = "9";
+								int configplace = 10;
 								try {
 									iconinfowriter = new FileWriter(config);
 									iconinfowriter.write(configplace);
@@ -992,22 +996,23 @@ public class Option {
 							@SuppressWarnings("static-access")
 							public void actionPerformed(ActionEvent e) { 
 								while (var < 11) {
-									File file = new File("/icons/icon" + var + "/icon.txt");
+									File file = new File("/exanlauncher/icons/icon" + var + "/icon.txt");
 									file.delete();
 									
-									File file2 = new File("/icons/icon" + var + "/icon.png");
+									File file2 = new File("/exanlauncher/icons/icon" + var + "/icon.png");
 									file2.delete();
 									
-									File file2d = new File("/config/debug.txt");
+									File file2d = new File("/exanlauncher/config/debug.txt");
 									file2d.delete();
 									
-									File filed = new File("/icons/iconinfo.txt");
+									File filed = new File("/exanlauncher/icons/iconinfo.txt");
 									filed.delete();
 									
 									FileWriter iconinforead;
 									try {
-										iconinforead = new FileWriter("iconinfo.txt");
-										iconinforead.write("");
+										iconinforead = new FileWriter("/exanlauncher/icons/iconinfo.txt");
+										int configplace = 1;
+										iconinforead.write(configplace);
 										iconinforead.flush();
 										iconinforead.close();
 									} catch (IOException e1) {

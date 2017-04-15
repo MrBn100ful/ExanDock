@@ -27,14 +27,13 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 
 import javax.imageio.ImageIO;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
-import javax.swing.filechooser.FileSystemView;
 
 import net.coobird.thumbnailator.Thumbnails;
 
@@ -62,18 +61,40 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener {
             	System.out.println(file);
         		try {
 
-        			File iconinfo = new File("/icons/iconinfo.txt");
+        			File iconinfo = new File("/exanlauncher/icons/iconinfo.txt");
         			
 					if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-						FileReader iconinforead = new FileReader("/icons/iconinfo.txt");
+						
+						
+						String configpath = "/exanlauncher/icons/iconinfo.txt";
+						
+						String configfile = null;
+						try {
+							configfile = new String(Files.readAllBytes(Paths.get(configpath)));
+						} catch (IOException e2) {
+
+							e2.printStackTrace();
+						}
+						
+						if (configfile.isEmpty()){
+							
+							FileWriter iconinfowriter = new FileWriter(iconinfo);
+    	        			iconinfowriter.write(1);
+    	        			iconinfowriter.flush();
+    	        			iconinfowriter.close();
+							
+						}
+						
+						FileReader iconinforead = new FileReader("/exanlauncher/icons/iconinfo.txt");
 						int iconinfonumber = iconinforead.read();
+						
 						if (!(iconinfonumber > 10)){
 	        				String iconpath = file.getPath();
 	        				if (iconpath.endsWith(".exe")){
 	        					
 	        					
 	        					
-	        					File icon = new File("/icons/icon"+ iconinfonumber+"/icon.txt");
+	        					File icon = new File("/exanlauncher/icons/icon"+ iconinfonumber+"/icon.txt");
 	                			FileWriter iconpathwriter = new FileWriter(icon);
 	                			
 	                			iconpathwriter.write(iconpath);
@@ -83,16 +104,18 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener {
 	                			
 	                			
 	                			
-	                			Icon ico = FileSystemView.getFileSystemView().getSystemIcon(file);
+	                			//FileSystemView.getFileSystemView().getSystemIcon(file);
+	                			Image ico =  sun.awt.shell.ShellFolder.getShellFolder(file).getIcon(true);
+	                			
 
-	                			Image image = ((ImageIcon) ico).getImage();
+	  
 	                			
-	                			BufferedImage bi = (BufferedImage)image;
+	                			BufferedImage bi = (BufferedImage)ico;
 	                			
-	                			File f = new File("/icons/icon"+ iconinfonumber + "/icon.png");
+	                			File f = new File("/exanlauncher/icons/icon"+ iconinfonumber + "/icon.png");
 	                			
 	                			ImageIO.write(bi, "png", f);
-	                			Thumbnails.of("/icons/icon"+iconinfonumber + "/icon.png").size(30, 30).toFile("/icons/icon"+iconinfonumber + "/icon.png");
+	                			Thumbnails.of("/exanlauncher/icons/icon"+iconinfonumber + "/icon.png").size(30, 30).toFile("/exanlauncher/icons/icon"+iconinfonumber + "/icon.png");
 	                			
 	                			iconinfonumber = iconinfonumber + 1;
 	                			
@@ -115,6 +138,7 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener {
 	        			}
 					}else {
 						
+						
 						FileWriter iconinfowriter = new FileWriter(iconinfo);
 	        			iconinfowriter.write(iconnumber);
 	        			iconinfowriter.flush();
@@ -126,26 +150,22 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener {
 	        					
 	        					
 	        					
-	        					File icon = new File("/icons/icon"+ iconinfonumber+"/icon.txt");
+	        					File icon = new File("/exanlauncher/icons/icon"+ iconinfonumber+"/icon.txt");
 	                			FileWriter iconpathwriter = new FileWriter(icon);
 	                			
 	                			iconpathwriter.write(iconpath);
 	                			iconpathwriter.flush();
 	                			iconpathwriter.close();
 
-	                			
-	                			
-	                			
-	                			Icon ico = FileSystemView.getFileSystemView().getSystemIcon(file);
 
-	                			Image image = ((ImageIcon) ico).getImage();
+	                			Image ico =  sun.awt.shell.ShellFolder.getShellFolder(file).getIcon(true);
 	                			
-	                			BufferedImage bi = (BufferedImage)image;
+	                			BufferedImage bi = (BufferedImage)ico;
 	                			
-	                			File f = new File("/icons/icon"+ iconinfonumber + "/icon.png");
+	                			File f = new File("/exanlauncher/icons/icon"+ iconinfonumber + "/icon.png");
 	                			
 	                			ImageIO.write(bi, "png", f);
-	                			Thumbnails.of("/icons/icon"+ iconnumber + "/icon.png").size(30, 30).toFile("/icons/icon"+iconinfonumber + "/icon.png");
+	                			Thumbnails.of("/exanlauncher/icons/icon"+ iconnumber + "/icon.png").size(30, 30).toFile("/exanlauncher/icons/icon"+iconinfonumber + "/icon.png");
 	                			
 	                			iconinfonumber = iconinfonumber + 1;
 	                			System.out.println(iconinfonumber);

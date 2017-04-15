@@ -146,7 +146,7 @@ public class Frame extends JPanel  {
 		whiteoptions.setBorderPainted(false);
 		whiteoptions.setFocusPainted(false);
 		
-		String colorpath = "/config/color.txt";
+		String colorpath = "/exanlauncher/config/color.txt";
 		
 		String colorfile = null;
 		try {
@@ -180,7 +180,7 @@ public class Frame extends JPanel  {
 	
 	
 		
-		String configpath = "/config/config.txt";
+		String configpath = "/exanlauncher/config/config.txt";
 		
 		String configfile = null;
 		try {

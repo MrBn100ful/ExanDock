@@ -6,24 +6,21 @@ public class SetupFiles {
 
 	public static String[] setup(){
 		
-	File configdirectory = new File("/config/");
-    if (! configdirectory.exists()){
-    	configdirectory.mkdir();
-    }
     
-    File iconsdirectory = new File("/icons/");
+    File iconsdirectory = new File("/exanlauncher/");
     
     if (!iconsdirectory.exists()){
-    	new File("/icons/icon1/").mkdirs();
-    	new File("/icons/icon2/").mkdirs();
-    	new File("/icons/icon3/").mkdirs();
-    	new File("/icons/icon4/").mkdirs();
-    	new File("/icons/icon5/").mkdirs();
-    	new File("/icons/icon6/").mkdirs();
-    	new File("/icons/icon7/").mkdirs();
-    	new File("/icons/icon8/").mkdirs();
-    	new File("/icons/icon9/").mkdirs();
-    	new File("/icons/icon10/").mkdirs();
+    	new File("/exanlauncher/config/").mkdirs();
+    	new File("/exanlauncher/icons/icon1/").mkdirs();
+    	new File("/exanlauncher/icons/icon2/").mkdirs();
+    	new File("/exanlauncher/icons/icon3/").mkdirs();
+    	new File("/exanlauncher/icons/icon4/").mkdirs();
+    	new File("/exanlauncher/icons/icon5/").mkdirs();
+    	new File("/exanlauncher/icons/icon6/").mkdirs();
+    	new File("/exanlauncher/icons/icon7/").mkdirs();
+    	new File("/exanlauncher/icons/icon8/").mkdirs();
+    	new File("/exanlauncher/icons/icon9/").mkdirs();
+    	new File("/exanlauncher/icons/icon10/").mkdirs();
     	
     	}
 	return null;
