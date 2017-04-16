@@ -101,7 +101,7 @@ public class Main extends JFrame {
 		File file = new File("/exanlauncher/config/debug.txt");
 		FileOutputStream fos = new FileOutputStream(file);
 		PrintStream ps = new PrintStream(fos);
-		System.setOut(ps);
+		//System.setOut(ps);
 		
 
 		

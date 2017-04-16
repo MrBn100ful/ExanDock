@@ -21,6 +21,7 @@ public class AutoUpdate {
 
 	static Shutdown shutdown = new Shutdown();
 
+
 	@SuppressWarnings("static-access")
 	public static String[] AutoUpdate() throws IOException {
 		

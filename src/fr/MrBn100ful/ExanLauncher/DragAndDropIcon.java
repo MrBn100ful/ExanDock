@@ -170,7 +170,8 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener {
 	                			iconinfonumber = iconinfonumber + 1;
 	                			System.out.println(iconinfonumber);
 	                			
-	    	        			iconinfowriter.write(iconinfonumber);
+	    	        				iconinfowriter.write(iconinfonumber);
+	    	        		  
 	    	        			iconinfowriter.flush();
 	    	        			iconinfowriter.close();
 	                			
