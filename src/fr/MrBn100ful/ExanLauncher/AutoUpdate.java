@@ -11,6 +11,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLDecoder;
 
+import javax.swing.JOptionPane;
 
 import fr.MrBn100ful.ExanLauncher.Test;
 
@@ -35,9 +36,27 @@ public class AutoUpdate {
 			e1.printStackTrace();
 		}
 		  
-		if (!results.equals("1.3.1"
+		if (!results.equals("2.0.0"
 				+ "\n")){
-			 try
+			
+			
+			String urlchangelog = ("https://mrbn100ful.github.io/exanlauncher/changelog.txt");
+			 String resultschangelog = null;
+			try {
+				resultschangelog = doHttpUrlConnectionAction(urlchangelog);
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+
+			int n = JOptionPane.showConfirmDialog(  
+					null,
+		                "Do you want to Update ?" + "\n" + "ChangeLog" + "\n" + resultschangelog ,
+		                "ExanLauncher Update",
+		                JOptionPane.YES_NO_OPTION);
+
+		      if(n == JOptionPane.YES_OPTION){
+		    	 
+		  		try
 			    {
 			         URL urldownload = new URL("https://mrbn100ful.github.io/exanlauncher/exanlauncher.jar");
 			         String path = Test.class.getProtectionDomain().getCodeSource().getLocation().getPath();
@@ -51,7 +70,9 @@ public class AutoUpdate {
 			    {
 			        e.printStackTrace();
 			    }
-			
+
+		      }		
+
 		}
 		
 		return null;
@@ -73,6 +94,7 @@ public class AutoUpdate {
 	    in.close();
 	    System.out.println("file was downloaded");
 	}
+	
 	private static String doHttpUrlConnectionAction(String desiredUrl)
 			  throws Exception
 			  {

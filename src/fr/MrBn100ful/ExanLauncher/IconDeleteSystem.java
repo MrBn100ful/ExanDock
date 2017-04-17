@@ -29,13 +29,23 @@ public class IconDeleteSystem {
 	
 	public static int var = 1;
 	
-	public static int iconinfonumber;
+	public static int iconinfonumber = 10;;
 	
 	public static int iconset = 0 ;
 	
+	public static boolean firsttime = false;
+	
 	@SuppressWarnings("unused")
 	public static String[] icondel(){
-		style2();
+		
+		
+		if (firsttime == false){
+			
+			style2();
+			
+			firsttime = true;
+		}
+		
 		
 		System.out.println("[Debug] :  Deletes icons button pressed");
 		
@@ -81,10 +91,12 @@ public class IconDeleteSystem {
 		FileReader iconinforead;
 		
 		try {
+			
 			iconinforead = new FileReader("/exanlauncher/icons/iconinfo.txt");
-			int iconinfonumber = iconinforead.read();
+			iconinfonumber = iconinforead.read();
 		
 		} catch (FileNotFoundException e3) {
+			
 			e3.printStackTrace();
 		
 		} catch (IOException e1) {
@@ -97,15 +109,7 @@ public class IconDeleteSystem {
 			
 			iconset = iconinfonumber - 1;
 		}
-		
-		
-		
-		
-		System.out.println(iconset);
-		
-		
-		
-		
+				
 		icon1.setBounds(0, 0, 250, 50);
 		icon2.setBounds(0, 50, 250, 50);
 		icon3.setBounds(0, 100, 250, 50);
@@ -162,11 +166,7 @@ public class IconDeleteSystem {
 
 						e2.printStackTrace();
 					}
-				    try {
-						Thread.sleep(2000);
-					} catch (InterruptedException e2) {
-						e2.printStackTrace();
-					}
+
 				File dir = new File("/exanlauncher/icons/icon2");
                 File newName = new File("/exanlauncher/icons/icon1");
 				dir.renameTo(newName);
@@ -234,11 +234,7 @@ public class IconDeleteSystem {
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
-				try {
-					Thread.sleep(2000);
-				} catch (InterruptedException e2) {
-					e2.printStackTrace();
-				}
+
 				File dir3 = new File("/exanlauncher/icons/icon3");
                 File newName3 = new File("/exanlauncher/icons/icon2");
                 dir3.renameTo(newName3);
@@ -664,7 +660,7 @@ public class IconDeleteSystem {
 					try {
 						iconinforead = new FileWriter("/exanlauncher/icons/iconinfo.txt");
 						int configplace = 1;
-						iconinforead.write(iconset);
+						iconinforead.write(configplace);
 						iconinforead.flush();
 						iconinforead.close();
 					} catch (IOException e1) {
