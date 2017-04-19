@@ -1,4 +1,4 @@
-package fr.MrBn100ful.ExanLauncher;
+package fr.MrBn100ful.ExanDock;
 
 
 
@@ -29,8 +29,9 @@ import javax.swing.JTextArea;
 import com.sun.jna.Native;
 import com.sun.jna.platform.win32.WinDef.HWND;
 
-import fr.MrBn100ful.ExanLauncher.Blurred.Dwmapi;
-import fr.MrBn100ful.ExanLauncher.Option;;
+import fr.MrBn100ful.ExanDock.Option;
+import fr.MrBn100ful.ExanDock.Blurred.Dwmapi;
+import fr.MrBn100ful.ExanDock.Shutdown;;
 
 @SuppressWarnings("serial")
 public class Frame extends JPanel  {
@@ -146,7 +147,7 @@ public class Frame extends JPanel  {
 		whiteoptions.setBorderPainted(false);
 		whiteoptions.setFocusPainted(false);
 		
-		String colorpath = "/exanlauncher/config/color.txt";
+		String colorpath = "/exandock/config/color.txt";
 		
 		String colorfile = null;
 		try {
@@ -180,7 +181,7 @@ public class Frame extends JPanel  {
 	
 	
 		
-		String configpath = "/exanlauncher/config/config.txt";
+		String configpath = "/exandock/config/config.txt";
 		
 		String configfile = null;
 		try {
@@ -207,14 +208,25 @@ public class Frame extends JPanel  {
 						if (configfilesafe.equals("right") ){
 							programemenu.setLocation((width - 260),(height / 2) - 340);
 							programestyle.setLocation((width - 260),(height / 2) - 340);
-						}else {
+						}else if (configfilesafe.equals("left")){
 							
 							programemenu.setLocation(60, (height / 2) - 340);
 							programestyle.setLocation(258, (height / 2) - 340);
 							
+						}else if (configfilesafe.equals("up")){
+						
+							programestyle.setLocation( ((width / 2) - 340) , 0) ;
+							programemenu.setLocation( ((width / 2) - 340) , 0) ;
+						
+						}else if (configfilesafe.equals("down")){
+						
+							programestyle.setLocation( ((width / 2) - 340) , height - 60) ;
+							programemenu.setLocation( ((width / 2) - 340) , height - 60) ;
+						
+						
 						}
 						
-						programemenu.setTitle("ExanLauncher Program menu");
+						programemenu.setTitle("exandock Program menu");
 						programemenu.setSize(200, 60);
 						
 						programemenu.setLayout(null);
@@ -234,7 +246,7 @@ public class Frame extends JPanel  {
 						}
 						
 						
-						programestyle.setTitle("ExanLauncher Program style");
+						programestyle.setTitle("exandock Program style");
 						programestyle.setSize(2, 60);
 						
 						programestyle.setLayout(null);
@@ -295,14 +307,25 @@ public class Frame extends JPanel  {
 						if (configfilesafe.equals("right") ){
 							programemenu.setLocation((width - 260),(height / 2) - 340);
 							programestyle.setLocation((width - 260),(height / 2) - 340);
-						}else {
+						}else if (configfilesafe.equals("left")){
 							
 							programemenu.setLocation(60, (height / 2) - 340);
 							programestyle.setLocation(258, (height / 2) - 340);
 							
+						}else if (configfilesafe.equals("up")){
+						
+							programestyle.setLocation( ((width / 2) - 340) , 60) ;
+							programemenu.setLocation( ((width / 2) - 340) , 60) ;
+						
+						}else if (configfilesafe.equals("down")){
+						
+							programestyle.setLocation( ((width / 2) - 340) , height - 120) ;
+							programemenu.setLocation( ((width / 2) - 340) , height - 120) ;
+						
+						
 						}
 						
-						programemenu.setTitle("ExanLauncher Program menu");
+						programemenu.setTitle("exandock Program menu");
 						programemenu.setSize(200, 60);
 						
 						programemenu.setLayout(null);
@@ -358,7 +381,7 @@ public class Frame extends JPanel  {
 						
 						}
 						
-						programestyle.setTitle("ExanLauncher Program style");
+						programestyle.setTitle("ExanDock Program style");
 						programestyle.setSize(2, 60);
 						
 						programestyle.setLayout(null);
@@ -413,11 +436,11 @@ public class Frame extends JPanel  {
 				System.out.println("[Debug] :  Info button pressed");
 				JOptionPane.showMessageDialog(programemenu, "                      Create by MrBn100ful"
 						+ "\n"
-						+ "                 Version : 2.0.0  Silver Spark"
+						+ "                 Version : 2.1.0  Silver Spark"
 						+ "\n"
 						+ "                                2016-2017"
 						+ "\n"
-						+ "https://github.com/MrBn100ful/ExanLauncher", "About ExanLauncher",
+						+ "https://github.com/MrBn100ful/exandock", "About ExanDock",
 						JOptionPane.INFORMATION_MESSAGE);
 			  }
 		});
@@ -428,11 +451,11 @@ public class Frame extends JPanel  {
 				System.out.println("[Debug] :  Info button pressed");
 				JOptionPane.showMessageDialog(programemenu, "                      Create by MrBn100ful"
 						+ "\n"
-						+ "                 Version : 2.0.0  Silver Spark"
+						+ "                 Version : 2.1.0  Silver Spark"
 						+ "\n"
 						+ "                                2016-2017"
 						+ "\n"
-						+ "https://github.com/MrBn100ful/ExanLauncher", "About ExanLauncher",
+						+ "https://github.com/MrBn100ful/exandock", "About ExanDock",
 						JOptionPane.INFORMATION_MESSAGE);
 			  }
 		});

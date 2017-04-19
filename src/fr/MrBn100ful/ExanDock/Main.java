@@ -1,4 +1,4 @@
-package fr.MrBn100ful.ExanLauncher;
+package fr.MrBn100ful.ExanDock;
 /**
  *  Main of the program.
  *  
@@ -36,7 +36,10 @@ import javax.swing.UIManager;
 import com.sun.jna.Native;
 import com.sun.jna.platform.win32.WinDef.HWND;
 
-import fr.MrBn100ful.ExanLauncher.Blurred.Dwmapi;
+import fr.MrBn100ful.ExanDock.Blurred.Dwmapi;
+import fr.MrBn100ful.ExanDock.DragAndDropIcon;
+import fr.MrBn100ful.ExanDock.Frame;
+import fr.MrBn100ful.ExanDock.Main;
 
 
 @SuppressWarnings("serial")
@@ -63,9 +66,9 @@ public class Main extends JFrame {
 		
 		String[] lists2 = SetupFiles.setup();
 		
-		File config = new File("/exanlauncher/config/config.txt");
+		File config = new File("/exandock/config/config.txt");
 		
-		File color = new File("/exanlauncher/config/color.txt");
+		File color = new File("/exandock/config/color.txt");
 		
 		
 		if(!config.exists() && !config.isDirectory()) { 
@@ -90,25 +93,25 @@ public class Main extends JFrame {
 			
 		}
 		
-		String configpath = "/exanlauncher/config/config.txt";
+		String configpath = "/exandock/config/config.txt";
 		
 		String configfile = new String(Files.readAllBytes(Paths.get(configpath)));
 		
-		String colorpath = "/exanlauncher/config/color.txt";
+		String colorpath = "/exandock/config/color.txt";
 		
 		String colorfile = new String(Files.readAllBytes(Paths.get(colorpath)));
 
-		File file = new File("/exanlauncher/config/debug.txt");
+		File file = new File("/exandock/config/debug.txt");
 		FileOutputStream fos = new FileOutputStream(file);
 		PrintStream ps = new PrintStream(fos);
-		System.setOut(ps);
+		//System.setOut(ps);
 		
 
 		
-		File iconinfo = new File("/exanlauncher/icons/iconinfo.txt");
+		File iconinfo = new File("/exandock/icons/iconinfo.txt");
 		System.out.println("[Debug] :  Program launched");
 		if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-			FileReader iconinforead = new FileReader("/exanlauncher/icons/iconinfo.txt");
+			FileReader iconinforead = new FileReader("/exandock/icons/iconinfo.txt");
 			int iconinfonumber = iconinforead.read();
 			System.out.println("[Debug] :  " + (iconinfonumber - 1) + " icon(s) created");
 		}
@@ -118,19 +121,43 @@ public class Main extends JFrame {
 		int width = gd.getDisplayMode().getWidth();
 		int height = gd.getDisplayMode().getHeight();
 		
-		main.setTitle("ExanLauncher");
-		main.setSize(60, 680 );
+		main.setTitle("exandock");
+		
 		main.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		dropicon = new JLabel();
 		
 		if (configfile.equals("right")){
 			
 			style.setLocation((width - 60), (height / 2) - 340);
 			main.setLocation((width - 60), (height / 2) - 340);
+			main.setSize(60, 680 );
+			style.setSize(2, 680);
+			dropicon.setBounds(0, 0, 60, height);
 			
-		}else {
+		}else if (configfile.equals("left")){
 			
 			style.setLocation(58, (height / 2) - 340);
 			main.setLocation(0, (height / 2) - 340);
+			main.setSize(60, 680 );
+			style.setSize(2, 680);
+			dropicon.setBounds(0, 0, 60, height);
+			
+		}else if (configfile.equals("up")){
+			
+			style.setLocation( ((width / 2) - 340) , 0) ;
+			main.setLocation( ((width / 2) - 340) , 0) ;
+			main.setSize( 680,60 );
+			style.setSize(680, 2 );
+			dropicon.setBounds(0, 0, height , 60 );
+			
+		}else if (configfile.equals("down")){
+			
+			style.setLocation( ((width / 2) - 340) , height - 60) ;
+			main.setLocation( ((width / 2) - 340) , height - 60) ;
+			main.setSize( 680,60 );
+			style.setSize(680, 2 );
+			dropicon.setBounds(0, 0, height , 60 );
 			
 			
 		}
@@ -192,13 +219,12 @@ public class Main extends JFrame {
 		
 		}
 
-		dropicon = new JLabel();
-		dropicon.setBounds(0, 0, 60, height);
+		
 		main.add(dropicon);
 		DragAndDropIcon DropIcon = new DragAndDropIcon();
 		new DropTarget(dropicon, DropIcon);
-		style.setTitle("ExanLauncher");
-		style.setSize(2, 680);
+		style.setTitle("exandock");
+		
 		style.setUndecorated(true);
 		style.setAlwaysOnTop(true);
 		style.setResizable(false);
@@ -229,6 +255,19 @@ public class Main extends JFrame {
 		Icon10();
 		
 		hide.setBounds(0, 665, 60, 15);
+		
+		
+		if (configfile.equals("up")){
+			
+			hide.setBounds(665 , 0, 15, 60);
+			
+		}else if (configfile.equals("down")){
+			
+			hide.setBounds(665 , 0, 15, 60);
+
+		}
+		
+		
 		hide.setContentAreaFilled(false);
 		hide.setBorderPainted(false);
 		hide.setFocusPainted(false);
@@ -251,15 +290,17 @@ public class Main extends JFrame {
 				stophide.setUndecorated(true);
 				stophide.setType(javax.swing.JFrame.Type.UTILITY);
 				JButton stophideicon = new JButton("<");
-				if (configfile.equals("right")){
-					
-					stophide.setLocation((width - 15), (height / 2));
-				}else {
-					
-					stophide.setLocation(0, (height / 2) );
-					
-				}
 
+				if (configfile.equals("right")){
+					stophide.setLocation((width - 15), (height / 2));
+				}else if (configfile.equals("left")){
+					stophide.setLocation(0, (height / 2) );					
+				}else if (configfile.equals("up")){
+					stophide.setLocation( ((width / 2)) , 0) ;
+				}else if (configfile.equals("down")){
+					stophide.setLocation( ((width / 2) ) , height - 25) ;
+				}
+				
 				if (colorfile.equals("gray")){
 					
 					stophide.setBackground(new Color(91, 91, 91, 200));
@@ -345,9 +386,25 @@ public class Main extends JFrame {
        }
 		
 		
-		ImageIcon icon1 = new ImageIcon("/exanlauncher/icons/icon1/icon.png");
+		ImageIcon icon1 = new ImageIcon("/exandock/icons/icon1/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 70, 60, 60);
+
+      	String configpath = "/exandock/config/config.txt";
+		
+      	String configfile = null;
+		try {
+		configfile = new String(Files.readAllBytes(Paths.get(configpath)));
+		} catch (IOException e1) {
+		e1.printStackTrace();
+		}
+		
+		if (configfile.equals("up")){
+			  buttonicon1.setBounds(70, 0, 60, 60);
+		}else if (configfile.equals("down")){
+			  buttonicon1.setBounds(70, 0, 60, 60);
+		}
+      
       buttonicon1.setBorder(null);
       buttonicon1.setOpaque(false);
       buttonicon1.setContentAreaFilled(false);
@@ -360,10 +417,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("/exanlauncher/icons/icon1/icon.txt");
+      	  File iconinfo = new File("/exandock/icons/icon1/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "/exanlauncher/icons/icon1/icon.txt";
+      			String filepath = "/exandock/icons/icon1/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");
@@ -392,9 +449,25 @@ public class Main extends JFrame {
      }
 		
 		
-		ImageIcon icon1 = new ImageIcon("/exanlauncher/icons/icon2/icon.png");
+		ImageIcon icon1 = new ImageIcon("/exandock/icons/icon2/icon.png");
     JButton buttonicon1 = new JButton(icon1);
     buttonicon1.setBounds(0, 130, 60, 60);
+    
+  	String configpath = "/exandock/config/config.txt";
+	
+  	String configfile = null;
+	try {
+	configfile = new String(Files.readAllBytes(Paths.get(configpath)));
+	} catch (IOException e1) {
+	e1.printStackTrace();
+	}
+	
+	if (configfile.equals("up")){
+		  buttonicon1.setBounds(130, 0, 60, 60);
+	}else if (configfile.equals("down")){
+		  buttonicon1.setBounds(130, 0, 60, 60);
+	}
+	
     buttonicon1.setBorder(null);
     buttonicon1.setOpaque(false);
     buttonicon1.setContentAreaFilled(false);
@@ -408,10 +481,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
       {
     	 
-    	  File iconinfo = new File("/exanlauncher/icons/icon2/icon.txt");
+    	  File iconinfo = new File("/exandock/icons/icon2/icon.txt");
     	  try {
     		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-    			String filepath = "/exanlauncher/icons/icon2/icon.txt";
+    			String filepath = "/exandock/icons/icon2/icon.txt";
     			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
  				Process process = new ProcessBuilder(iconfile).start();
  				System.out.println("[Debug] :  Launch program");
@@ -439,9 +512,25 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		ImageIcon icon1 = new ImageIcon("/exanlauncher/icons/icon3/icon.png");
+		ImageIcon icon1 = new ImageIcon("/exandock/icons/icon3/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 190, 60, 60);
+      
+    	String configpath = "/exandock/config/config.txt";
+    	
+      	String configfile = null;
+    	try {
+    	configfile = new String(Files.readAllBytes(Paths.get(configpath)));
+    	} catch (IOException e1) {
+    	e1.printStackTrace();
+    	}
+    	
+    	if (configfile.equals("up")){
+    		  buttonicon1.setBounds(190, 0, 60, 60);
+    	}else if (configfile.equals("down")){
+    		  buttonicon1.setBounds(190, 0, 60, 60);
+    	}
+      
       buttonicon1.setBorder(null);
       buttonicon1.setOpaque(false);
       buttonicon1.setContentAreaFilled(false);
@@ -455,10 +544,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("/exanlauncher/icons/icon3/icon.txt");
+      	  File iconinfo = new File("/exandock/icons/icon3/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "/exanlauncher/icons/icon3/icon.txt";
+      			String filepath = "/exandock/icons/icon3/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");
@@ -486,9 +575,23 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		ImageIcon icon1 = new ImageIcon("/exanlauncher/icons/icon4/icon.png");
+		ImageIcon icon1 = new ImageIcon("/exandock/icons/icon4/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 250, 60, 60);
+    	String configpath = "/exandock/config/config.txt";
+    	
+      	String configfile = null;
+    	try {
+    	configfile = new String(Files.readAllBytes(Paths.get(configpath)));
+    	} catch (IOException e1) {
+    	e1.printStackTrace();
+    	}
+    	
+    	if (configfile.equals("up")){
+    		  buttonicon1.setBounds(250, 0, 60, 60);
+    	}else if (configfile.equals("down")){
+    		  buttonicon1.setBounds(250, 0, 60, 60);
+    	}
       buttonicon1.setBorder(null);
       buttonicon1.setOpaque(false);
       buttonicon1.setContentAreaFilled(false);
@@ -501,10 +604,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("/exanlauncher/icons/icon4/icon.txt");
+      	  File iconinfo = new File("/exandock/icons/icon4/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "/exanlauncher/icons/icon4/icon.txt";
+      			String filepath = "/exandock/icons/icon4/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");
@@ -533,9 +636,23 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		ImageIcon icon1 = new ImageIcon("/exanlauncher/icons/icon5/icon.png");
+		ImageIcon icon1 = new ImageIcon("/exandock/icons/icon5/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 310, 60, 60);
+    	String configpath = "/exandock/config/config.txt";
+    	
+      	String configfile = null;
+    	try {
+    	configfile = new String(Files.readAllBytes(Paths.get(configpath)));
+    	} catch (IOException e1) {
+    	e1.printStackTrace();
+    	}
+    	
+    	if (configfile.equals("up")){
+    		  buttonicon1.setBounds(310, 0, 60, 60);
+    	}else if (configfile.equals("down")){
+    		  buttonicon1.setBounds(310, 0, 60, 60);
+    	}
       buttonicon1.setBorder(null);
       buttonicon1.setOpaque(false);
       buttonicon1.setContentAreaFilled(false);
@@ -548,10 +665,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("/exanlauncher/icons/icon5/icon.txt");
+      	  File iconinfo = new File("/exandock/icons/icon5/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "/exanlauncher/icons/icon5/icon.txt";
+      			String filepath = "/exandock/icons/icon5/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");
@@ -580,9 +697,23 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		ImageIcon icon1 = new ImageIcon("/exanlauncher/icons/icon6/icon.png");
+		ImageIcon icon1 = new ImageIcon("/exandock/icons/icon6/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 370, 60, 60);
+    	String configpath = "/exandock/config/config.txt";
+    	
+      	String configfile = null;
+    	try {
+    	configfile = new String(Files.readAllBytes(Paths.get(configpath)));
+    	} catch (IOException e1) {
+    	e1.printStackTrace();
+    	}
+    	
+    	if (configfile.equals("up")){
+    		  buttonicon1.setBounds(370, 0, 60, 60);
+    	}else if (configfile.equals("down")){
+    		  buttonicon1.setBounds(370, 0, 60, 60);
+    	}
       buttonicon1.setBorder(null);
       buttonicon1.setOpaque(false);
       buttonicon1.setContentAreaFilled(false);
@@ -595,10 +726,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("/exanlauncher/icons/icon6/icon.txt");
+      	  File iconinfo = new File("/exandock/icons/icon6/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "/exanlauncher/icons/icon6/icon.txt";
+      			String filepath = "/exandock/icons/icon6/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");
@@ -627,9 +758,24 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		ImageIcon icon1 = new ImageIcon("/exanlauncher/icons/icon7/icon.png");
+		ImageIcon icon1 = new ImageIcon("/exandock/icons/icon7/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 430, 60, 60);
+      
+    	String configpath = "/exandock/config/config.txt";
+    	
+      	String configfile = null;
+    	try {
+    	configfile = new String(Files.readAllBytes(Paths.get(configpath)));
+    	} catch (IOException e1) {
+    	e1.printStackTrace();
+    	}
+    	
+    	if (configfile.equals("up")){
+    		  buttonicon1.setBounds(430, 0, 60, 60);
+    	}else if (configfile.equals("down")){
+    		  buttonicon1.setBounds(430, 0, 60, 60);
+    	}
       buttonicon1.setBorder(null);
       buttonicon1.setOpaque(false);
       buttonicon1.setContentAreaFilled(false);
@@ -642,10 +788,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("/exanlauncher/icons/icon7/icon.txt");
+      	  File iconinfo = new File("/exandock/icons/icon7/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "/exanlauncher/icons/icon7/icon.txt";
+      			String filepath = "/exandock/icons/icon7/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");
@@ -674,9 +820,23 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		ImageIcon icon1 = new ImageIcon("/exanlauncher/icons/icon8/icon.png");
+		ImageIcon icon1 = new ImageIcon("/exandock/icons/icon8/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 490, 60, 60);
+    	String configpath = "/exandock/config/config.txt";
+    	
+      	String configfile = null;
+    	try {
+    	configfile = new String(Files.readAllBytes(Paths.get(configpath)));
+    	} catch (IOException e1) {
+    	e1.printStackTrace();
+    	}
+    	
+    	if (configfile.equals("up")){
+    		  buttonicon1.setBounds(490, 0, 60, 60);
+    	}else if (configfile.equals("down")){
+    		  buttonicon1.setBounds(490, 0, 60, 60);
+    	}
       buttonicon1.setBorder(null);
       buttonicon1.setOpaque(false);
       buttonicon1.setContentAreaFilled(false);
@@ -689,10 +849,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("/exanlauncher/icons/icon8/icon.txt");
+      	  File iconinfo = new File("/exandock/icons/icon8/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "/exanlauncher/icons/icon8/icon.txt";
+      			String filepath = "/exandock/icons/icon8/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");
@@ -720,9 +880,23 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		ImageIcon icon1 = new ImageIcon("/exanlauncher/icons/icon9/icon.png");
+		ImageIcon icon1 = new ImageIcon("/exandock/icons/icon9/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 550, 60, 60);
+    	String configpath = "/exandock/config/config.txt";
+    	
+      	String configfile = null;
+    	try {
+    	configfile = new String(Files.readAllBytes(Paths.get(configpath)));
+    	} catch (IOException e1) {
+    	e1.printStackTrace();
+    	}
+    	
+    	if (configfile.equals("up")){
+    		  buttonicon1.setBounds(550, 0, 60, 60);
+    	}else if (configfile.equals("down")){
+    		  buttonicon1.setBounds(550, 0, 60, 60);
+    	}
       buttonicon1.setBorder(null);
       buttonicon1.setOpaque(false);
       buttonicon1.setContentAreaFilled(false);
@@ -735,10 +909,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("/exanlauncher/icons/icon9/icon.txt");
+      	  File iconinfo = new File("/exandock/icons/icon9/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "/exanlauncher/icons/icon9/icon.txt";
+      			String filepath = "/exandock/icons/icon9/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");
@@ -766,9 +940,23 @@ public class Main extends JFrame {
            e.printStackTrace();
        }
 		
-		ImageIcon icon1 = new ImageIcon("/exanlauncher/icons/icon10/icon.png");
+		ImageIcon icon1 = new ImageIcon("/exandock/icons/icon10/icon.png");
       JButton buttonicon1 = new JButton(icon1);
       buttonicon1.setBounds(0, 610, 60, 60);
+    	String configpath = "/exandock/config/config.txt";
+    	
+      	String configfile = null;
+    	try {
+    	configfile = new String(Files.readAllBytes(Paths.get(configpath)));
+    	} catch (IOException e1) {
+    	e1.printStackTrace();
+    	}
+    	
+    	if (configfile.equals("up")){
+    		  buttonicon1.setBounds(610, 0, 60, 60);
+    	}else if (configfile.equals("down")){
+    		  buttonicon1.setBounds(610, 0, 60, 60);
+    	}
       buttonicon1.setBorder(null);
       buttonicon1.setOpaque(false);
       buttonicon1.setContentAreaFilled(false);
@@ -781,10 +969,10 @@ public class Main extends JFrame {
 		public void actionPerformed(ActionEvent e)
         {
       	 
-      	  File iconinfo = new File("/exanlauncher/icons/icon10/icon.txt");
+      	  File iconinfo = new File("/exandock/icons/icon10/icon.txt");
       	  try {
       		 if(iconinfo.exists() && !iconinfo.isDirectory()) { 
-      			String filepath = "/exanlauncher/icons/icon10/icon.txt";
+      			String filepath = "/exandock/icons/icon10/icon.txt";
       			String iconfile = new String(Files.readAllBytes(Paths.get(filepath)));
    				Process process = new ProcessBuilder(iconfile).start();
    				System.out.println("[Debug] :  Launch program");

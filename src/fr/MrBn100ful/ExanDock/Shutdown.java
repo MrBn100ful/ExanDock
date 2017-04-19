@@ -1,4 +1,4 @@
-package fr.MrBn100ful.ExanLauncher;
+package fr.MrBn100ful.ExanDock;
 
 /**
  *  Shutdown class

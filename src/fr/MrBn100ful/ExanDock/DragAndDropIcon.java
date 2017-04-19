@@ -1,4 +1,4 @@
-package fr.MrBn100ful.ExanLauncher;
+package fr.MrBn100ful.ExanDock;
 
 /**
  *  Drag and drop class
@@ -35,6 +35,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
+import fr.MrBn100ful.ExanDock.Shutdown;
 import net.coobird.thumbnailator.Thumbnails;
 
 @SuppressWarnings("serial")
@@ -61,12 +62,12 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener {
             	System.out.println(file);
         		try {
 
-        			File iconinfo = new File("/exanlauncher/icons/iconinfo.txt");
+        			File iconinfo = new File("/exandock/icons/iconinfo.txt");
         			
 					if(iconinfo.exists() && !iconinfo.isDirectory()) { 
 						
 						
-						String configpath = "/exanlauncher/icons/iconinfo.txt";
+						String configpath = "/exandock/icons/iconinfo.txt";
 						
 						String configfile = null;
 						try {
@@ -85,7 +86,7 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener {
 							
 						}
 						
-						FileReader iconinforead = new FileReader("/exanlauncher/icons/iconinfo.txt");
+						FileReader iconinforead = new FileReader("/exandock/icons/iconinfo.txt");
 						int iconinfonumber = iconinforead.read();
 						
 						if (!(iconinfonumber > 10)){
@@ -94,28 +95,21 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener {
 	        					
 	        					
 	        					
-	        					File icon = new File("/exanlauncher/icons/icon"+ iconinfonumber+"/icon.txt");
+	        					File icon = new File("/exandock/icons/icon"+ iconinfonumber+"/icon.txt");
 	                			FileWriter iconpathwriter = new FileWriter(icon);
 	                			
 	                			iconpathwriter.write(iconpath);
 	                			iconpathwriter.flush();
 	                			iconpathwriter.close();
 
-	                			
-	                			
-	                			
-	                			//FileSystemView.getFileSystemView().getSystemIcon(file);
 	                			Image ico =  sun.awt.shell.ShellFolder.getShellFolder(file).getIcon(true);
-	                			
-
-	  
 	                			
 	                			BufferedImage bi = (BufferedImage)ico;
 	                			
-	                			File f = new File("/exanlauncher/icons/icon"+ iconinfonumber + "/icon.png");
+	                			File f = new File("/exandock/icons/icon"+ iconinfonumber + "/icon.png");
 	                			
 	                			ImageIO.write(bi, "png", f);
-	                			Thumbnails.of("/exanlauncher/icons/icon"+iconinfonumber + "/icon.png").size(30, 30).toFile("/exanlauncher/icons/icon"+iconinfonumber + "/icon.png");
+	                			Thumbnails.of("/exandock/icons/icon"+iconinfonumber + "/icon.png").size(30, 30).toFile("/exandock/icons/icon"+iconinfonumber + "/icon.png");
 	                			
 	                			iconinfonumber = iconinfonumber + 1;
 	                			
@@ -150,7 +144,7 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener {
 	        					
 	        					
 	        					
-	        					File icon = new File("/exanlauncher/icons/icon"+ iconinfonumber+"/icon.txt");
+	        					File icon = new File("/exandock/icons/icon"+ iconinfonumber+"/icon.txt");
 	                			FileWriter iconpathwriter = new FileWriter(icon);
 	                			
 	                			iconpathwriter.write(iconpath);
@@ -162,15 +156,16 @@ public class DragAndDropIcon extends JPanel implements DropTargetListener {
 	                			
 	                			BufferedImage bi = (BufferedImage)ico;
 	                			
-	                			File f = new File("/exanlauncher/icons/icon"+ iconinfonumber + "/icon.png");
+	                			File f = new File("/exandock/icons/icon"+ iconinfonumber + "/icon.png");
 	                			
 	                			ImageIO.write(bi, "png", f);
-	                			Thumbnails.of("/exanlauncher/icons/icon"+ iconnumber + "/icon.png").size(30, 30).toFile("/exanlauncher/icons/icon"+iconinfonumber + "/icon.png");
+	                			Thumbnails.of("/exandock/icons/icon"+ iconnumber + "/icon.png").size(30, 30).toFile("/exandock/icons/icon"+iconinfonumber + "/icon.png");
 	                			
 	                			iconinfonumber = iconinfonumber + 1;
 	                			System.out.println(iconinfonumber);
 	                			
-	    	        			iconinfowriter.write(iconinfonumber);
+	    	        				iconinfowriter.write(iconinfonumber);
+	    	        		  
 	    	        			iconinfowriter.flush();
 	    	        			iconinfowriter.close();
 	                			
