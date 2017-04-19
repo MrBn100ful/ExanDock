@@ -1,5 +1,5 @@
-![ExanLauncher logo](https://puu.sh/s6gG9/1622eb4d0d.png)
-# ExanLauncher
+![ExanDock logo](https://puu.sh/s6gG9/1622eb4d0d.png)
+# ExanDock
 A crossplatform dock in java.
 
           todo
